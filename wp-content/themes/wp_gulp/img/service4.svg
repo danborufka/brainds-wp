@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4516.5 201 239.824 267.885">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #f46d43;
+      }
+
+      .cls-2 {
+        fill: #4a5860;
+        font-size: 20px;
+        font-family: CoreSansCR-35Light, Core Sans CR;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </defs>
+  <g id="Group_2203" data-name="Group 2203" transform="translate(3340)">
+    <path id="Path_1586" data-name="Path 1586" class="cls-1" d="M119.412,266.885a27.736,27.736,0,0,1-13.732-3.582L13.533,210.165A27.567,27.567,0,0,1,0,186.481V80.2A27,27,0,0,1,13.533,56.721L106.078,3.582A29.069,29.069,0,0,1,119.412,0a27.735,27.735,0,0,1,13.732,3.582L225.29,56.721A27.567,27.567,0,0,1,238.824,80.4V186.68a27,27,0,0,1-13.533,23.484L132.746,263.3a26.819,26.819,0,0,1-13.334,3.582" transform="translate(1177 201.5)"/>
+    <text id="INVESTMENT_DECISION_SUPPORT" data-name="INVESTMENT
+DECISION
+SUPPORT" class="cls-2" transform="translate(1296.999 327.254)"><tspan x="-68.52" y="0">INVESTMENT</tspan><tspan x="-52.83" y="25">DECISION</tspan><tspan x="-49.305" y="50">SUPPORT</tspan></text>
+  </g>
+</svg>

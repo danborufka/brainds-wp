@@ -1,0 +1,104 @@
+# Translation of Plugins - WordPress Database Reset - Stable (latest release) in German
+# This file is distributed under the same license as the Plugins - WordPress Database Reset - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2016-05-04 09:24:54+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.0\n"
+"Language: de\n"
+"Project-Id-Version: Plugins - WordPress Database Reset - Stable (latest release)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://github.com/chrisberthe"
+msgstr "https://github.com/chrisberthe"
+
+#. Author of the plugin/theme
+msgid "Chris Berthe"
+msgstr "Chris Berthe"
+
+#. Description of the plugin/theme
+msgid "A plugin that allows you to skip the 5 minute installation and reset WordPress's database back to its original state."
+msgstr "Ein Plugin, das die Fünf-Minuten-Installation überflüssig macht und die WordPress-Datenbank in den Originalzustand zurücksetzt."
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/chrisberthe/wordpress-database-reset"
+msgstr "https://github.com/chrisberthe/wordpress-database-reset"
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress Database Reset"
+msgstr "WordPress Database Reset"
+
+#: views/partials/submit-button.php:2
+msgid "Reset Tables"
+msgstr "Tabellen zurücksetzen"
+
+#: views/partials/select-tables.php:15
+msgid "Reactivate current theme and plugins after reset?"
+msgstr "Das aktuelle Theme und die Plugins nach dem Reset reaktivieren?"
+
+#: views/partials/select-tables.php:4
+msgid "Select All"
+msgstr "Alle auswählen"
+
+#: views/partials/select-tables.php:1
+msgid "Select the database tables you would like to reset"
+msgstr "Wähle die Datenbank-Tabellen, die zurückgesetzt werden sollen"
+
+#: views/partials/security-code.php:2
+msgid "Enter the security code into the text box"
+msgstr "Gib den folgenden Sicherheitscode unten ein"
+
+#: views/partials/disclaimer.php:2
+msgid "You selected the users table. Only the <strong><u>%s</u></strong> user will be restored"
+msgstr "Die Tabelle &#8222;users&#8220; wurde selektiert. Nur der Benutzer <strong><u>%s</u></strong> wird wiederhergestellt"
+
+#: lib/helpers.php:119
+msgid "User already exists. Password inherited."
+msgstr "Benutzer existiert bereits. Passwort wurde übernommen."
+
+#: lib/helpers.php:116
+msgid "Your chosen password."
+msgstr "Dein gewähltes Passwort."
+
+#: lib/helpers.php:111
+msgid "<strong><em>Note that password</em></strong> carefully! It is a <em>random</em> password that was generated just for you."
+msgstr "<strong><em>Passwort sorgfältig notieren!</em></strong> Es ist ein <em>zufällig</em> generiertes Passwort."
+
+#: lib/helpers.php:33
+msgid "The WordPress Database Reset plugin requires at least WordPress 3.0!"
+msgstr "Das „WordPress Database Reset“-Plugin benötigt mindestens WordPress 3.0 !"
+
+#: lib/helpers.php:29
+msgid "The WordPress Database Reset plugin requires at least PHP 5.3!"
+msgstr "Das „WordPress Database Reset“-Plugin benötigt mindestens PHP 5.3 !"
+
+#: class-db-resetter.php:35
+msgid "You did not select any database tables"
+msgstr "Es wurden keine Datenbank-Tabellen ausgewählt"
+
+#: class-db-reset-command.php:95
+msgid "The current theme and plugins were reactivated"
+msgstr "Das derzeitige Theme und die Plugins wurden reaktiviert"
+
+#: class-db-reset-admin.php:177
+msgid "Select Tables"
+msgstr "Tabellen auswählen"
+
+#: class-db-reset-admin.php:176
+msgid "Are you sure you want to continue?"
+msgstr "Bist du wirklich sicher, dass du den Datenbank-Reset machen willst?"
+
+#: class-db-reset-admin.php:107 class-db-reset-admin.php:108 views/index.php:2
+msgid "Database Reset"
+msgstr "Datenbank-Reset"
+
+#: class-db-reset-admin.php:98
+msgid "You entered the wrong security code"
+msgstr "Ein ungültiger Sicherheitscode wurde eingegeben"
+
+#: class-db-reset-admin.php:79 class-db-reset-command.php:92
+msgid "The selected tables were reset"
+msgstr "Die ausgewählten Tabellen wurden zurückgesetzt"

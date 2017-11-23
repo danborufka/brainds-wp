@@ -1,0 +1,402 @@
+body.services {
+	
+	.content {
+		background: $white;
+		
+
+		.services {
+			display: flex;
+			flex-wrap: wrap;
+			
+			// @include breakpoint(medium) {
+			// 	flex-wrap: no-wrap;
+			// }
+
+			.service {			
+				position: relative;
+				flex: 1 1 50%;
+				
+				@include breakpoint(medium) {
+					flex: 1 1 25%;
+				}
+
+				padding: 5px;
+				cursor: pointer;
+				
+				&.active, &:hover {
+					&:before {
+						content: "";
+						background: url("../img/serviceArrow.svg") no-repeat;
+						position: absolute;
+						width: 36%;
+						height: 10%;
+						bottom: 10%;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						z-index: 4938;
+					}
+				}
+
+				img {
+					transition: all 1s;
+				}
+			}
+		}
+
+
+
+
+		.package {
+
+			display: none;
+
+			margin-top: 50px;
+			&.show {
+				display: flex;
+			}
+
+			h4 {
+				padding-left: 50px;
+				margin: 10px 0;
+			}
+			.img {
+				.box {
+					padding: 0;
+					.img {
+
+						background: url(http://via.placeholder.com/950x950?text=Placeholder) no-repeat center center;
+						background-size: cover;
+						width: 100%;
+						min-height: 220px;
+						@include breakpoint(medium) {
+							height: 100%;
+						}
+					}
+				}
+			}
+
+			.include {
+				.box {
+					padding: 20px 20px 80px 20px;
+					@include breakpoint(large) {
+						padding: 30px;
+					}
+				}
+			}
+
+			.box {
+				padding: 30px;
+				margin: 10px;
+				
+				ul {
+					font-size: 16px;
+					text-transform: uppercase;
+					@inlucde core(55);
+		
+					// li {
+					// 	list-style-image: url('../img/bulletpoint.svg');
+					//     margin-bottom: 5px;
+					// }
+				}
+			}
+
+		}
+		
+
+		.package1 {
+			.img {
+				h4 {
+					padding-left: 10px;
+					color: $blue;
+				}
+			}	
+			.desc {
+				.box {
+
+					strong {
+						color: $blue;
+					}
+					border: 1px solid $blue;
+				}
+			}
+		
+			.include {
+				h4 {
+					padding-left: 10px;
+					color: $blue;
+				}
+				.box {
+					position: relative;
+					
+					ul {
+						margin: 0;
+						list-style: none;
+						li {
+							padding-left: 1em;
+							text-indent: -1.5em;
+							line-height: 1;
+  							&:before {
+  								content: "• ";
+  								color: $blue;
+  								font-size: 32px;
+  								top: 5px;
+  								position: relative;
+  							}
+						}
+					}
+					background: rgba($blue, 0.15);
+					.button {
+						position: absolute;
+						bottom: 0;
+						background: $blue;
+						&:after {
+							background: white url(../img/buttonarrow_blue.svg) no-repeat;
+						}
+						&:hover {
+							border: 1px solid $blue;
+							background: $white;
+							color: $blue;
+							&:after {
+								background: $blue url(../img/buttonarrow_hover.svg) no-repeat;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.package2 {
+			.img {
+				h4 {
+					padding-left: 10px;
+					color: $pink;
+				}
+			}	
+			.desc {
+				.box {
+					strong {
+						color: $pink;
+					}
+					border: 1px solid $pink;
+				}
+			}
+		
+			.include {
+				h4 {
+					padding-left: 10px;
+					color: $pink;
+				}
+				.box {
+					position: relative;
+					ul {
+						margin: 0;
+						list-style: none;
+						li {
+							padding-left: 1em;
+							text-indent: -1.5em;
+							line-height: 1;
+  							&:before {
+  								content: "• ";
+  								color: $pink;
+  								font-size: 32px;
+  								top: 5px;
+  								position: relative;
+  							}
+						}
+					}
+					background: rgba($pink, 0.15);
+					.button {
+						position: absolute;
+						bottom: 0;
+						background: $pink;
+						&:after {
+							background: white url(../img/buttonarrow_pink.svg) no-repeat;
+						}
+						&:hover {
+							border: 1px solid $pink;
+							background: $white;
+							color: $pink;
+							&:after {
+								background: $pink url(../img/buttonarrow_hover.svg) no-repeat;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.package3 {
+			.img {
+				h4 {
+					padding-left: 10px;
+					color: $lightGreen;
+				}
+			}	
+			.desc {
+				.box {
+					strong {
+						color: $lightGreen;
+					}
+					border: 1px solid $lightGreen;
+				}
+			}
+		
+			.include {
+				h4 {
+					padding-left: 10px;
+					color: $lightGreen;
+				}
+				.box {
+					position: relative;
+					ul {
+						margin: 0;
+						list-style: none;
+						li {
+							padding-left: 1em;
+							text-indent: -1.5em;
+							line-height: 1;
+  							&:before {
+  								content: "• ";
+  								color: $lightGreen;
+  								font-size: 32px;
+  								top: 5px;
+  								position: relative;
+  							}
+						}
+					}
+					background: rgba($lightGreen, 0.15);
+					.button {
+						position: absolute;
+						bottom: 0;
+						background: $lightGreen;
+						&:after {
+							background: white url(../img/buttonarrow.svg) no-repeat;
+						}
+						&:hover {
+							border: 1px solid $lightGreen;
+							background: $white;
+							color: $lightGreen;
+							&:after {
+								background: $lightGreen url(../img/buttonarrow_hover.svg) no-repeat;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.package4 {
+			.img {
+				h4 {
+					padding-left: 10px;
+					color: $orange;
+				}
+			}	
+			.desc {
+				.box {
+					strong {
+						color: $orange;
+					}
+					border: 1px solid $orange;
+				}
+			}
+		
+			.include {
+				h4 {
+					padding-left: 10px;
+					color: $orange;
+				}
+				.box {
+					position: relative;
+					ul {
+						margin: 0;
+						list-style: none;
+						li {
+							padding-left: 1em;
+							text-indent: -1.5em;
+							line-height: 1;
+  							&:before {
+  								content: "• ";
+  								color: $orange;
+  								font-size: 32px;
+  								top: 5px;
+  								position: relative;
+  							}
+						}
+					}
+					background: rgba($orange, 0.15);
+					.button {
+						position: absolute;
+						bottom: 0;
+						background: $orange;
+						&:after {
+							background: white url(../img/buttonarrow_orange.svg) no-repeat;
+						}
+						&:hover {
+							border: 1px solid $orange;
+							background: $white;
+							color: $orange;
+							&:after {
+								background: $orange url(../img/buttonarrow_hover.svg) no-repeat;
+							}
+						}
+					}
+				}
+			}
+		}
+
+
+		// if ($key == 0) {
+		// 	$color = "#087E95";
+		// 	$lightcolor = "#087E95";
+		// 	$show = "";
+		// } else if ($key == 1) {
+		// 	$color ="#AD1265";
+		// 	$lightcolor ="#AD1265";
+		// 	$show = "";
+		// } else if ($key == 2) {
+		// 	$color ="#00BFA5";
+		// 	$lightcolor ="#00BFA5";
+		// 	$show = "show";
+		// } else if ($key == 3) {
+		// 	$color ="#F46D43";
+		// 	$lightcolor ="#F46D43";
+		// 	$show = "";
+		// }
+
+
+
+
+
+		// <div class="package">
+		// 	<div class="desc">
+		// 		<h4>Package Description/</h4>
+		// 		<div class="box">
+		// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+		// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo illum qui non, ratione praesentium magni eum minima illo in, porro quibusdam quo ut est debitis quod mollitia quam atque iste!</p>
+		// 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum omnis id quaerat eum magnam.</p>
+		// 		</div>
+		// 	</div>
+		// 	<div class="include">
+		// 		<h4>This package Includes/</h4>
+		// 		<div class="box">
+		// 			<ul>
+		// 				<li>Lorem ipsum dolor.</li>
+		// 				<li>Non, molestias, illum.</li>
+		// 				<li>Alias, autem ea?</li>
+		// 				<li>Eos, quas nihil.</li>
+		// 			</ul>
+		// 			<button class="arrow">Optimisation Potential</button>
+
+		// 		</div>
+		// 	</div>
+		// </div>
+
+
+
+
+
+
+	}
+}

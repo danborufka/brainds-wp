@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3987.5 1371 239.824 267.885">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ad1265;
+        stroke: #ad1265;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 20px;
+        font-family: CoreSansCR-35Light, Core Sans CR;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+      }
+    </style>
+  </defs>
+  <g id="Group_2204" data-name="Group 2204" transform="translate(3340 1170)">
+    <path id="Path_1584" data-name="Path 1584" class="cls-1" d="M119.412,266.885a27.736,27.736,0,0,1-13.732-3.582L13.533,210.165A27.567,27.567,0,0,1,0,186.481V80.2A27,27,0,0,1,13.533,56.721L106.078,3.582A29.069,29.069,0,0,1,119.412,0a27.735,27.735,0,0,1,13.732,3.582L225.29,56.721A27.567,27.567,0,0,1,238.824,80.4V186.68a27,27,0,0,1-13.533,23.484L132.746,263.3a26.819,26.819,0,0,1-13.334,3.582" transform="translate(648 201.5)"/>
+    <text id="POWER_TRADING" data-name="POWER
+TRADING" class="cls-2" transform="translate(767 327.254)"><tspan x="-38.725" y="0">POWER</tspan><tspan x="-47.99" y="25">TRADING</tspan></text>
+  </g>
+</svg>

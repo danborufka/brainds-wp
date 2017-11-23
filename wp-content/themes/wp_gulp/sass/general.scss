@@ -1,0 +1,31 @@
+
+//mixins:
+
+
+h1 {color: red}
+
+@include breakpoint(small) {
+
+	h1 {color: green}
+
+}
+@include breakpoint(medium) {
+
+	h1 {color: yellow}
+
+}
+@include breakpoint(large) {
+
+	h1 {color: blue}
+
+}
+@include breakpoint(xlarge) {
+
+	h1 {color: yellow}
+
+}
+@include breakpoint(xxlarge) {
+
+	h1 {color: crimson}
+
+}

@@ -1,0 +1,135 @@
+{
+    "key": "group_59dc94a22bc85",
+    "title": "Global Options",
+    "fields": [
+        {
+            "key": "field_59dc94aee9aac",
+            "label": "Main Telephone Number",
+            "name": "telephone_number",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59dc95a07fb7a",
+            "label": "Main Email Adress",
+            "name": "main_email",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a09623a8830f",
+            "label": "Show Alert",
+            "name": "show_alert",
+            "type": "true_false",
+            "instructions": "Show a Alert on the Startpage",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "show",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a09627488310",
+            "label": "Alert Message",
+            "name": "alert_message",
+            "type": "text",
+            "instructions": "Alert Message",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a09623a8830f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a09642f8e62e",
+            "label": "Alert Link",
+            "name": "alert_link",
+            "type": "text",
+            "instructions": "External Link for the alert message",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a09623a8830f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "http:\/\/www.google.at",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-hydrogrid-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1510564955
+}

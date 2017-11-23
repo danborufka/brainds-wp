@@ -1,0 +1,220 @@
+
+.imperial-history {
+
+
+
+
+
+	
+	background: $grey;
+	
+	.frame {
+		// border-color: white;
+		// border-image: none;
+		padding-top: 50px;
+	
+		h1, h3, p {
+			color: black;	
+			line-height: 1.3;	
+		}
+		h1 {
+			font-size: 33px;
+			@include avenir('demi')
+			line-height: 1.1;
+
+			margin: 20px 0 40px 0;
+			&:last-child {
+				margin-bottom: 60px;	
+			}
+
+
+			@include breakpoint(medium) {
+				font-size: 46px;
+			}
+			@include breakpoint(large) {
+				font-size: 64px;
+			}
+		}
+
+		h3 {
+			margin-bottom: 20px;
+			@include avenir('bold')
+			
+			font-size: 22px;
+
+			@include breakpoint(medium) {
+				font-size: 32px;
+			}
+
+			@include breakpoint(large) {
+				font-size: 48px;
+			}
+		}
+		
+
+		p {
+			letter-spacing: 0px;
+			font-size: 14px;
+			
+			@include breakpoint(medium) {
+				font-size: 18px;
+			}
+
+			@include breakpoint(large) {
+				font-size: 20px;
+			}
+
+
+			$elements: 24;
+			@for $i from 0 to $elements {
+
+			  #link#{$i} {
+			  	&:before {
+			  		background: url(../img/#{$i}.svg)  no-repeat;
+			  	}
+			  }
+
+
+			}
+
+
+
+
+
+			 span.strong {
+				cursor: pointer;
+			 	position: relative;
+			 	display: inline-block;
+			 	margin-left: 25px;
+				@include freight(100)
+				color: $gold-dark;
+				
+				&:before {
+					position: absolute;
+					content: "";
+					font-size: 12px;
+					color: white;
+					// background: url(../img/01.svg)  no-repeat;
+					width: 20px;
+					height: 20px;
+					transform: scale(0.8, 0.8);
+					left: -24px;
+					top: -3px;
+					background-position: 0px 0px;
+					text-align: center;
+					line-height: 1.2;
+					
+					@include breakpoint(medium) {
+						font-size: 14px;
+						width: 20px;
+						height: 20px;
+						transform: scale(0.9, 0.9);
+						left: -24px;
+						top: -1px;
+
+					}
+
+					@include breakpoint(large) {
+						font-size: 16px;
+						left: -24px;
+						width: 20px;
+						height: 20px;
+						transform: scale(1, 1);
+					}
+
+				}
+			}
+		}
+		
+		.bigimg {
+			position: relative;
+			width: 100vw;
+			left: -39px;
+			margin-bottom: 40px;
+			
+			@include breakpoint(medium) {
+			    left: -58px;
+				margin-bottom: 100px;
+	    	}
+			img {
+				max-width: auto;
+				width: 100%;
+			}
+
+
+	    }
+
+	    .smallimgleft {
+			left: -34px;
+			width: 70vw;
+			position: relative;
+			margin-bottom: 20px;
+			
+			@include breakpoint(medium) {
+			    left: -58px;
+			    width: calc(50vw - 25px);
+
+	    	}
+
+
+
+	    	img {
+	    		
+	    	// height: 400px;
+	    	}
+	    }
+
+
+		#map {
+			width: 100%;
+			height: 300px;
+			border-top: 7px solid white;
+			@include breakpoint(medium) {
+				height: 400px;
+			}
+			@include breakpoint(large) {
+				height: 700px;
+			}
+
+
+			svg {
+				
+			}
+
+		}
+
+
+		.spacer {
+			@include breakpoint(medium) {
+				// height: 300px;
+			}
+		}
+
+	    .space-h {
+	    	height: 100px;
+	    }
+
+	}
+
+
+	.infoWindow {
+		.miniFrame {
+			border: 2px $gold-dark solid;
+			padding: 10px;
+			margin: 10px;
+			
+			h6 {
+				color: $gold-dark;
+				font-size: 20px;
+				@include freight(100)
+				
+			}
+			p {
+				color: black;
+			}
+		}
+
+	}
+
+
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1373.5 930.5 41 45.706">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+        stroke: #00bfa5;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #4a5860;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_1758" data-name="Group 1758" transform="translate(1350)">
+    <path id="path-13" class="cls-1" d="M20,44.706a4.85,4.85,0,0,1-2.286-.588L2.266,35.207A4.671,4.671,0,0,1,0,31.237V13.446a4.506,4.506,0,0,1,2.266-3.94L17.773.595A4.8,4.8,0,0,1,20,0h0a4.845,4.845,0,0,1,2.286.588L37.734,9.5A4.67,4.67,0,0,1,40,13.469V31.26a4.507,4.507,0,0,1-2.266,3.94L22.227,44.111A4.8,4.8,0,0,1,20,44.706h0Z" transform="translate(24 931)"/>
+    <g id="Group_1407" data-name="Group 1407" transform="translate(33.5 944.5)">
+      <g id="Rectangle_66" data-name="Rectangle 66" class="cls-2" transform="translate(0 0)">
+        <rect class="cls-3" width="21" height="18.136" rx="5"/>
+        <rect class="cls-4" x="0.5" y="0.5" width="20" height="17.136" rx="4.5"/>
+      </g>
+      <path id="Path_1688" data-name="Path 1688" class="cls-2" d="M7487.19,2210.132l9.259,9.9,8.878-9.9" transform="translate(-7485.758 -2208.097)"/>
+      <line id="Line_126" data-name="Line 126" class="cls-2" x1="6.682" y2="6.682" transform="translate(0.955 8.114)"/>
+      <line id="Line_128" data-name="Line 128" class="cls-2" x1="6.682" y1="6.682" transform="translate(13.841 8.114)"/>
+    </g>
+  </g>
+</svg>
