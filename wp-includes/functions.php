@@ -5642,3 +5642,8 @@ function wp_cache_get_last_changed( $group ) {
 
 	return $last_changed;
 }
+
+function get_section() {
+	global $pagename;
+	return ucfirst($pagename);
+}

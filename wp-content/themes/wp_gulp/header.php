@@ -39,8 +39,8 @@
 	  <div class="top-bar-left">
 	    <ul class="menu">
 	      <li class="menu-text">
-	      	brainds
-	      	<span class="current-menu">Design</span>
+	      	<a class="brand" href="<?= get_home_url(); ?>">brainds</a>
+	      	<span class="current-menu"><?= get_section(); ?></span>
 	      </li>
 	    </ul>
 	  </div>

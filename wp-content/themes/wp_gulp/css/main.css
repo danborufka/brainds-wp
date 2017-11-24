@@ -8955,12 +8955,20 @@ body {
 .vspacer {
   flex-grow: 2; }
 
+.grid-container {
+  height: calc(100vh - 60px); }
+  .grid-container > div {
+    height: 100%; }
+
 .section {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px);
+  height: 100%;
   padding: 44px 0;
   text-align: center; }
+  @media screen and (max-width: 63.9375em) {
+    .section {
+      height: 50%; } }
   .section.design {
     background-color: #59a6dd; }
     .section.design .hoverText {
@@ -9236,3 +9244,10 @@ body {
 body {
   width: 100%;
   height: 100vh; }
+
+.menu .brand {
+  display: inline; }
+
+.featured-image {
+  max-height: 240px;
+  width: 100%; }

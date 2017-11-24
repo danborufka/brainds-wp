@@ -17,7 +17,6 @@ get_header();
 // Get Page Title & content
 // +++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 /*
 
 if ( have_posts() ) {
@@ -30,7 +29,6 @@ if ( have_posts() ) {
 	endwhile;
 
 }
-
 
 	// +++++++++++++++++++++++++++++++++++++++++++++++++
 	// Get Child Elements:
@@ -53,44 +51,13 @@ foreach ($pages as $key => $value) {
 	$teaser_desc = get_field('teaser_desc', $post_id);
 	$link = get_page_link($post_id);
 ?>
-
-
-	// +++++++++++++++++++++++++++++++++++++++++++++++++
-	// Get ACF
-	// +++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-// $field = get_field('fieldname');
-
-// if (has_post_thumbnail( $fieldname->ID ) ) {
-// 	$teaserimage1 = wp_get_attachment_image_src( get_post_thumbnail_id( $fieldname->ID ), 'single-post-thumbnail' );
-// 	$teaserimage1 = $teaserimage1[0];
-// 	$linkto1 = get_field ('linkto', $fieldname->ID );
-// }
-
-
-
-<!--
-		// 	$hintergrundbild = get_field ('hintergrundbild', $value->ID );
-		// 	$title = get_field ('the_title', $value->ID );
-		// 	$jahr = get_field ('veroffentlicht_im_jahr', $value->ID );
-		// 	$art = get_field ('art_des_filmes', $value->ID );
-		// 	$abdunklung = get_field ('abdunklung', $value->ID );
-		// 	$regisseur = get_field ('regisseur', $value->ID )[0]->post_title;
-		// 	$kunde = get_field ('kunde', $value->ID );
-
-		// 	if (get_field ('upload_oder_link', $value->ID ) == "Upload") {
-		// 		$film_oder_trailer = get_field ('movie_file', $value->ID );
-		// 	} else {
-		// 		$film_oder_trailer = get_field ('filmurl', $value->ID );
-		// 	} -->
 */
 
 ?>
 
-
-<div class="mainFrame">
-
+	<?php if(has_post_thumbnail()): ?>
+		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
+	<?php endif; ?>
 	<?php
 
 	if ( have_rows( 'dyn' ) ):
@@ -145,106 +112,58 @@ foreach ($pages as $key => $value) {
 
 ?>
 
-<!-- 
-<div class="bigslider">
-<div class="indicator hide-for-large">
+<?php 
+	global $post;
 
-			<?php
+	if (count(get_post_ancestors($post->ID)) > 1):
 
+		var_dump('childreeeen!');
+
+		$args = array(
+			'child_of' => $post->post_parent,
+		    // 'exclude' => $post->ID,
+		    'depth' => 1
+		); 
+		$siblings = get_pages($args); 
+
+		if ($siblings):
+
+			echo '<a class="extraMobileMenuOpener hide-for-large"></button></a>
+				<div class="extraMobileMenu hide-for-large">';
+
+			echo "<a href=\"#\" class=\"close\"></a>";
 			global $post;
+			echo '<div class="header">' . get_the_title( $post->post_parent ) .   '</div>';
 
-			if (count(get_post_ancestors($post->ID)) > 2):
-
-			$args = array(
-				'child_of' => $post->post_parent,
-			    // 'exclude' => $post->ID,
-			    'depth' => 1
-			); 
-			$siblings = get_pages($args); 
+			echo "<ul>";
 
 			foreach ( $siblings as $key => $value ) :
 
 				$cat_name = $value->post_title;
 				$active    = ( $value->ID == $post->ID ) ? "active" : "";
-				$separator = ( $key == count( $siblings ) - 1 ) ? "" : '<div class="sepa"></div>';
 				$link = get_permalink($value->ID);
+				$nested = ($post->post_parent != $value->post_parent) ? "nested" : "";
+				
 				?>
-                <style>
-                    .bigslider .indicator .item-<?=$key?>:before {
-                        content: "<?=html_entity_decode($cat_name)?>";
-                    }
-                </style>
 
-                <a href="<?=$link?>" class="item item-<?= $key . " " . $active ?> noclick" data-element="big-container-<?= $key ?>"></a>
-				<?= $separator ?>
+				<li><a href="<?=$link?>" class="item item-<?= $key . " " . $active . " " . $nested ?>"><?=html_entity_decode($cat_name)?></a></li>
 
-				<?php
+					<?php
 			endforeach;
 
-			endif;
-
-			?>
-
-        </div>
-</div>
-
--->
-
-<?php 
+				echo "</ul>
+						</div>";
 
 
-	global $post;
-
-	if (count(get_post_ancestors($post->ID)) > 1):
-
-	$args = array(
-		'child_of' => $post->post_parent,
-	    // 'exclude' => $post->ID,
-	    'depth' => 1
-	); 
-	$siblings = get_pages($args); 
-
-	if ($siblings):
-
-echo '<a class="extraMobileMenuOpener hide-for-large"></button></a>
-		<div class="extraMobileMenu hide-for-large">';
-
-	echo "<a href=\"#\" class=\"close\"></a>";
-	global $post;
-	echo '<div class="header">' . get_the_title( $post->post_parent ) .   '</div>';
-
-	echo "<ul>";
-
-	foreach ( $siblings as $key => $value ) :
-
-		$cat_name = $value->post_title;
-		$active    = ( $value->ID == $post->ID ) ? "active" : "";
-		$link = get_permalink($value->ID);
-		$nested = ($post->post_parent != $value->post_parent) ? "nested" : "";
-	
-	?>
-
-	<li><a href="<?=$link?>" class="item item-<?= $key . " " . $active . " " . $nested ?>"><?=html_entity_decode($cat_name)?></a></li>
-
-		<?php
-	endforeach;
-
-	echo "</ul>
-			</div>";
-
-
+		endif;
 	endif;
-	endif;
-
-
- ?>
+?>
 
 
 
 
 
 <?php 
-
 
 		echo '<div class="scrollTop show-for-small-only"></div>
                 <div class="row expanded">
@@ -335,8 +254,6 @@ echo '<a class="extraMobileMenuOpener hide-for-large"></button></a>
                         </div><!-- column -->
 			        </div><!-- row -->
                 </div> <!-- subcontent -->
-			
-			</div><!-- mainFrame -->
 			';
 
 	else :
@@ -344,45 +261,29 @@ echo '<a class="extraMobileMenuOpener hide-for-large"></button></a>
 		?>
 
 
-
-<!-- <div class="mainFrame"> -->
 	<div class="subcontent">
 		<div class="row">
+			<div class="medium-12 columns">
+				<?php echo "<h1>". $post->post_title . "</h1>"; ?>
 
-		<div class="medium-12 columns">
-
-			<?php echo "<h1>". $post->post_title . "</h1>"; ?>
-
-			<div class="content-box border">
-				
-			<?php 
-
-			if ( have_posts() ) : while ( have_posts() ) :
-			the_post();
-			the_content();
-			endwhile; endif;
-
-			?>
-
+				<div class="content-box border">
+					<?php 
+						if ( have_posts() ) : while ( have_posts() ) :
+							the_post();
+							the_content();
+						endwhile; endif;
+					?>
+				</div>
 			</div>
-			</div>
-
 		</div>
 	</div>
-<!-- </div> -->
 
 
 <?php 
 		// no layouts found
 		echo "<!-- <h2>No Layouts selected!!</h2> -->";
 
-	
-
 		endif;
-	?>
+?>
 
-
-	<?php get_footer(); ?>
-
-
-
+<?php get_footer(); ?>
