@@ -551,7 +551,7 @@ textarea {
 .grid-container {
   padding-right: 0.625rem;
   padding-left: 0.625rem;
-  max-width: 75rem;
+  max-width: 50rem;
   margin: 0 auto; }
   @media print, screen and (min-width: 40em) {
     .grid-container {
@@ -3114,7 +3114,7 @@ a {
 
 hr {
   clear: both;
-  max-width: 75rem;
+  max-width: 50rem;
   height: 0;
   margin: 1.25rem auto;
   border-top: 0;
@@ -5634,21 +5634,21 @@ html.is-reveal-open body {
   @media print, screen and (min-width: 40em) {
     .reveal {
       width: 600px;
-      max-width: 75rem; } }
+      max-width: 50rem; } }
   .reveal.collapse {
     padding: 0; }
   @media print, screen and (min-width: 40em) {
     .reveal.tiny {
       width: 30%;
-      max-width: 75rem; } }
+      max-width: 50rem; } }
   @media print, screen and (min-width: 40em) {
     .reveal.small {
       width: 50%;
-      max-width: 75rem; } }
+      max-width: 50rem; } }
   @media print, screen and (min-width: 40em) {
     .reveal.large {
       width: 90%;
-      max-width: 75rem; } }
+      max-width: 50rem; } }
   .reveal.full {
     top: 0;
     left: 0;
@@ -6475,7 +6475,7 @@ a.thumbnail {
 .grid-container {
   padding-right: 0.625rem;
   padding-left: 0.625rem;
-  max-width: 75rem;
+  max-width: 50rem;
   margin: 0 auto; }
   @media print, screen and (min-width: 40em) {
     .grid-container {
@@ -8914,27 +8914,25 @@ a.thumbnail {
   .grid-margin-y.xxlarge-grid-frame {
     height: calc(100vh + 1.875rem); } }
 
-h1 {
-  color: red; }
+body {
+  color: #000;
+  font-size: 24px;
+  height: 100vh;
+  width: 100%; }
 
-h1 {
-  color: green; }
+.vspacer {
+  flex-grow: 2; }
 
-@media print, screen and (min-width: 40em) {
-  h1 {
-    color: yellow; } }
+.menu .brand {
+  display: inline; }
 
-@media print, screen and (min-width: 64em) {
-  h1 {
-    color: blue; } }
+.featured-image {
+  max-height: 360px;
+  min-height: 40vh;
+  width: 100%; }
 
-@media screen and (min-width: 75em) {
-  h1 {
-    color: yellow; } }
-
-@media screen and (min-width: 90em) {
-  h1 {
-    color: crimson; } }
+.main-container {
+  padding-top: 55px; }
 
 .top-bar {
   height: 60px; }
@@ -8946,48 +8944,47 @@ h1 {
 
 .top-bar,
 .top-bar ul {
-  background-color: #fff; }
+  background-color: #f5f4f4; }
 
-body {
-  color: #000;
-  font-size: 24px; }
-
-.vspacer {
-  flex-grow: 2; }
-
-.grid-container {
+.homepage .grid-container {
   height: calc(100vh - 60px); }
-  .grid-container > div {
+  .homepage .grid-container > div {
     height: 100%; }
 
-.section {
+.homepage .section {
   display: flex;
   flex-direction: column;
   height: 100%;
   padding: 44px 0;
   text-align: center; }
   @media screen and (max-width: 63.9375em) {
-    .section {
+    .homepage .section {
       height: 50%; } }
-  .section.design {
+  .homepage .section.design {
     background-color: #59a6dd; }
-    .section.design .hoverText {
+    .homepage .section.design .hoverText {
       left: 0; }
-  .section.consulting {
+      @media screen and (max-width: 63.9375em) {
+        .homepage .section.design .hoverText {
+          top: calc(50% + 30px); } }
+  .homepage .section.consulting {
     background-color: #fee35f; }
-    .section.consulting .hoverText {
+    .homepage .section.consulting .hoverText {
       left: 50%; }
-  .section h3 {
+      @media screen and (max-width: 63.9375em) {
+        .homepage .section.consulting .hoverText {
+          left: 0; } }
+  .homepage .section h3 {
     font-weight: 700; }
-  .section a {
+  .homepage .section a {
     font-family: sans-serif;
     font-size: 120%;
     text-decoration: underline; }
-    .section a:hover + .hoverText, .section a.active + .hoverText {
+    .homepage .section a:hover + .hoverText, .homepage .section a.active + .hoverText {
       opacity: 1; }
-    .section a.active + .hoverText {
+    .homepage .section a.active + .hoverText {
       pointer-events: auto; }
-  .section .hoverText {
+  .homepage .section .hoverText {
     transition: 0.3s all;
     background-color: #fff;
     font-weight: 700;
@@ -8999,7 +8996,11 @@ body {
     position: absolute;
     top: 60px;
     width: 50%; }
-    .section .hoverText:hover {
+    @media screen and (max-width: 63.9375em) {
+      .homepage .section .hoverText {
+        height: calc(50vh - 30px);
+        width: 100%; } }
+    .homepage .section .hoverText:hover {
       opacity: 1; }
 
 /*
@@ -9241,13 +9242,3 @@ body {
 /* ==========================================================================
    Generell Custom Styling
    ========================================================================== */
-body {
-  width: 100%;
-  height: 100vh; }
-
-.menu .brand {
-  display: inline; }
-
-.featured-image {
-  max-height: 240px;
-  width: 100%; }

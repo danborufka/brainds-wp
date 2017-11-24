@@ -5,15 +5,15 @@
 @include foundation-everything(true);
 @include foundation-xy-grid-classes;
 @import 'util/mixins';
-
-
 @import "helper";
+
 @import 'fonts';
 @import 'general';
 
 @import "header";
 @import 'nav';
-@import 'homepage';
+
+@import "home-page";
 
 // @import 'static';
 // @import 'contact';
@@ -29,18 +29,3 @@
 
 
 @import "footer";
-
-
-body {
-	width: 		100%;
-	height: 	100vh;
-}
-
-.menu .brand {
-	display: inline;
-}
-
-.featured-image {
-	max-height: 240px;
-	width: 100%;
-}

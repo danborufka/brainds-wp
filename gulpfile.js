@@ -129,9 +129,8 @@ gulp.task('sass', function () {
     var onError = function(err) {
         console.log(err.message);
           notify.onError({
-            title:    "Gulp Sass",
-            subtitle: err.message,
-            message:  "Error"
+            title:    'Gulp SASS error',
+            message:  err.message
           })(err);
           this.emit('end');
         };

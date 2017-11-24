@@ -9,19 +9,22 @@ jQuery(document).ready(function ($) {
     //init Foundation
     //++++++++++++++++++++++++++++++++++++++++++
 
+    $(document).foundation();
 
-    $(document)
-        .on('touchend', '.section > a', function(event) {
-            $('.section a.active').not(this).removeClass('active');
-            $(this).toggleClass('active');
-            event.preventDefault();
-        })
-        .on('click', '.hoverText', function(event) {
-            location.href = $('a', this)[0].href;
-            event.stopImmediatePropagation();
-            event.preventDefault();
-        })
-        .foundation();
+    //++++++++++++++++++++++++++++++++++++++++++
+    //  Init Slick
+    //++++++++++++++++++++++++++++++++++++++++++
+
+
+    // $('.slides').slick({
+    //  /*dots: false,*/
+    //  infinite: true,
+    //  adaptiveHeight: false,
+    //  arrows: true,
+    //  // appendArrows: $('.sliderarrows')
+    //     // variableWidth: true,
+    //     // slidesToShow: 1
+    // });
 
     //++++++++++++++++++++++++++++++++++++++++++
     //Share icons
