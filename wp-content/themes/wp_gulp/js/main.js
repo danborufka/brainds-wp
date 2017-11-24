@@ -9,7 +9,15 @@ jQuery(document).ready(function ($) {
     //init Foundation
     //++++++++++++++++++++++++++++++++++++++++++
 
-    $(document).foundation();
+    $(document)
+        .on('click', '.homepage .section .hoverLink', function(event) {
+            if(!Foundation.MediaQuery.atLeast('large')) {
+                $('.hoverLink.active').removeClass('active');
+                $(this).toggleClass('active');
+                event.preventDefault();
+            }
+        })
+        .foundation();
 
     //++++++++++++++++++++++++++++++++++++++++++
     //  Init Slick
