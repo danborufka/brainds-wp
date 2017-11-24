@@ -35,3 +35,21 @@
 
 
 <div class="mainContent">
+	<div class="top-bar">
+	  <div class="top-bar-left">
+	    <ul class="menu">
+	      <li class="menu-text">
+	      	brainds
+	      	<span class="current-menu">Design</span>
+	      </li>
+	    </ul>
+	  </div>
+	  <div class="top-bar-right">
+	    <ul class="menu">
+	      <li><a class="menu-icon"><span></span></a></li>
+	      <li><a href="#"><i class="fi-magnifying-glass"></i></a></li>
+	    </ul>
+	  </div>
+	</div>
+	<div class="grid-container fluid">
+		<div class="grid-x grid-padding-x">

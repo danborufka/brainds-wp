@@ -1,3 +1,18 @@
 .top-bar {
 	height: $brainds-header-height;
+
+
+	.menu-icon {
+		top: 15px;
+		&::after {
+			background-color: #000;
+			box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+		}
+	}
+
+}
+
+.top-bar,
+.top-bar ul {
+	background-color: #fff;
 }

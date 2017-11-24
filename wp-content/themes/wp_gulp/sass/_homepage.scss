@@ -16,13 +16,13 @@ body 							{
 	&.design 					{
 									background-color: 		$brainds-design;
 		.hoverText 				{
-									left: 					50%;
+									left: 					0;
 		}							
 	}
 	&.consulting				{
 									background-color: 		$brainds-consulting;
 		.hoverText 				{
-									left: 					0;
+									left: 					50%;
 		}							
 	}
 
@@ -40,6 +40,9 @@ body 							{
 									opacity: 				1;
 			}
 		}
+		&.active + .hoverText 	{
+									pointer-events: 		auto;
+		}
 	}
 
 	.hoverText 					{
@@ -47,7 +50,7 @@ body 							{
 									background-color: 		#fff;
 									font-weight:  			700;
 									font-size:  			5vh;
-									height: 				100%;
+									height: 				calc(100% - #{$brainds-header-height});
 									opacity: 				0;
 									padding: 				10vh;
 									pointer-events: 		none;

@@ -8938,6 +8938,15 @@ h1 {
 
 .top-bar {
   height: 60px; }
+  .top-bar .menu-icon {
+    top: 15px; }
+    .top-bar .menu-icon::after {
+      background-color: #000;
+      box-shadow: 0 7px 0 #000, 0 14px 0 #000; }
+
+.top-bar,
+.top-bar ul {
+  background-color: #fff; }
 
 body {
   color: #000;
@@ -8955,11 +8964,11 @@ body {
   .section.design {
     background-color: #59a6dd; }
     .section.design .hoverText {
-      left: 50%; }
+      left: 0; }
   .section.consulting {
     background-color: #fee35f; }
     .section.consulting .hoverText {
-      left: 0; }
+      left: 50%; }
   .section h3 {
     font-weight: 700; }
   .section a {
@@ -8968,12 +8977,14 @@ body {
     text-decoration: underline; }
     .section a:hover + .hoverText, .section a.active + .hoverText {
       opacity: 1; }
+    .section a.active + .hoverText {
+      pointer-events: auto; }
   .section .hoverText {
     transition: 0.3s all;
     background-color: #fff;
     font-weight: 700;
     font-size: 5vh;
-    height: 100%;
+    height: calc(100% - 60px);
     opacity: 0;
     padding: 10vh;
     pointer-events: none;

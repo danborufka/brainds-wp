@@ -11,9 +11,16 @@ jQuery(document).ready(function ($) {
 
 
     $(document)
-        .on('click', '.section a', function(event) {
+        .on('click', '.section > a', function(event) {
             $('.section a.active').not(this).removeClass('active');
             $(this).toggleClass('active');
+            event.preventDefault();
+        })
+        .on('click', '.hoverText', function(event) {
+            if(this === event.target) {
+                location.href = $('a', this)[0].href;
+            }
+            event.stopImmediatePropagation();
             event.preventDefault();
         })
         .foundation();
