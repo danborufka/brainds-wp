@@ -7,10 +7,20 @@ body 							{
 									flex-grow: 				2;
 }
 
+.grid-container 				{
+									height: 				calc(100vh - #{$brainds-header-height});
+	> div 						{
+									height: 				100%;
+	}
+}
+
 .section 						{
 									display: 				flex;
 									flex-direction:  		column;
-									height: 				calc(100vh - #{$brainds-header-height});
+									height: 				100%;
+	@include breakpoint(medium down) {
+									height: 				50%;
+  	}
 									padding: 				44px 0;	
 									text-align: 			center;
 	&.design 					{
