@@ -15,10 +15,12 @@ body 							{
 
 .featured-image {
 	max-height: 360px;
-	min-height: 40vh;
+	height: 40vh;
+	margin-top: -55px;
+	margin-bottom: 55px;
 	width: 100%;
 }
 
-.main-container {
+.mainContainer {
 	padding-top: 55px;
 }

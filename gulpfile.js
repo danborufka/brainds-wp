@@ -3,7 +3,7 @@
 
  *********/
 
-var dirName = "prettylogic/2017/src",
+var dirName = "/brainds-wp/",
     themeDirName = "wp_gulp";
 
 
@@ -195,7 +195,7 @@ gulp.task('minify-css', function () {
 gulp.task('watch', function (event, file) {
 
     const server = browserSync.init({
-        proxy: "http://localhost:8888/brainds/src"
+        proxy: "http://localhost:8888/brainds-wp"
     });
 
     gulp.watch([bases.theme + "**/*.php"], browserSync.reload);

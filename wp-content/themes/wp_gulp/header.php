@@ -46,4 +46,4 @@
 		    </ul>
 		  </div>
 		</div>
-		<div class="grid-container grid-x full">
+		<div class="mainContainer grid-x full">

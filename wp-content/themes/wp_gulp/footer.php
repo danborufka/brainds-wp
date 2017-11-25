@@ -9,22 +9,20 @@
  * @package wp_gulp
  */
 
-$menuitems = wp_get_nav_menu_items( "hauptmenu", array( 'order' => 'DESC' ) );
+	$menuitems = wp_get_nav_menu_items( "hauptmenu", array( 'order' => 'DESC' ) );
 
 
-function getUrl() {
-	$url = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
-	$url .= '://' . $_SERVER['SERVER_NAME'];
-	$url .= in_array( $_SERVER['SERVER_PORT'], array( '80', '443' ) ) ? '' : ':' . $_SERVER['SERVER_PORT'];
-	$url .= $_SERVER['REQUEST_URI'];
+	function getUrl() {
+		$url = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
+		$url .= '://' . $_SERVER['SERVER_NAME'];
+		$url .= in_array( $_SERVER['SERVER_PORT'], array( '80', '443' ) ) ? '' : ':' . $_SERVER['SERVER_PORT'];
+		$url .= $_SERVER['REQUEST_URI'];
 
-	return urlencode( $url );
-}
+		return urlencode( $url );
+	}
 
 ?>
-
-
-
+	</div> <!-- mainContainer -->
 </div> <!-- mainContent -->
 
 <!-- Global site tag (gtag.js) - Google Analytics -->

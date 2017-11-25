@@ -12,7 +12,6 @@ get_header();
 		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
 	<?php endif; ?>
 
-	<div class="main-container grid-container full">
 <?php
 		if(have_rows('sections')) {
 			while( have_rows('sections')) {

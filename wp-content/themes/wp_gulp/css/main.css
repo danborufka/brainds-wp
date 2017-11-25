@@ -8928,14 +8928,18 @@ body {
 
 .featured-image {
   max-height: 360px;
-  min-height: 40vh;
+  height: 40vh;
+  margin-top: -55px;
+  margin-bottom: 55px;
   width: 100%; }
 
-.main-container {
+.mainContainer {
   padding-top: 55px; }
 
 .top-bar {
-  height: 60px; }
+  height: 60px;
+  margin: 0;
+  padding: 0; }
   .top-bar .menu-icon {
     top: 15px; }
     .top-bar .menu-icon::after {
@@ -8946,9 +8950,10 @@ body {
 .top-bar ul {
   background-color: #f5f4f4; }
 
-.homepage .grid-container {
-  height: calc(100vh - 60px); }
-  .homepage .grid-container > div {
+.homepage .mainContainer {
+  height: calc(100vh - 60px);
+  padding-top: 0; }
+  .homepage .mainContainer > div {
     height: 100%; }
 
 .homepage .area {
