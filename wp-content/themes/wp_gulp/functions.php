@@ -891,3 +891,17 @@ function contactForm() {
     
 // }
 
+function get_section() {
+	global $pagename;
+	return ucfirst($pagename);
+}
+
+function on_post_updated($post_ID, $post_after, $post_before) {
+	$templatePath = get_template_directory();
+	
+	$post_version = floatval(@file_get_contents("$templatePath/post.version"));
+	$post_version += .1;
+	@file_put_contents("$templatePath/post.version", $post_version);
+}
+
+add_action('post_updated', 'on_post_updated', 10, 3);
