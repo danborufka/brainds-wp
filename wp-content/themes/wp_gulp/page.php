@@ -7,17 +7,19 @@
  */
 get_header();
 ?>
-
+<div class="mainContainer">
 	<?php if(has_post_thumbnail()): ?>
 		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
 	<?php endif; ?>
 
-<?php
+	<?php
 		if(have_rows('sections')) {
+			?><div class="sections grid-x full"><?php
 			while( have_rows('sections')) {
 				the_row();
-				include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
+					include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
 			}
+			?></div><?php
 		} else {
 			?>
 			<h2>Kein Layout definiert!</h2>
@@ -29,7 +31,7 @@ get_header();
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			<?php
 		}
-?>
-	</div>
+	?>
+</div>
 	
 <?php get_footer(); ?>

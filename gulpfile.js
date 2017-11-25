@@ -199,6 +199,7 @@ gulp.task('watch', function (event, file) {
     });
 
     gulp.watch([bases.theme + "**/*.php"], browserSync.reload);
+    gulp.watch([bases.theme + "**/*.version"], browserSync.reload);
     gulp.watch([bases.es + "**/*.js"], ["scripts", browserSync.reload]);
     gulp.watch([bases.sass + "**/*.scss"], ['sass']);
     gulp.watch(bases.css + "main.css", function() {

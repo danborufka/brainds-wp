@@ -9,18 +9,25 @@ body 							{
 									flex-grow: 				2;
 }
 
-.menu .brand {
-	display: inline;
+.menu .brand 					{
+									display: 				inline;
 }
 
-.featured-image {
-	max-height: 360px;
-	height: 40vh;
-	margin-top: -55px;
-	margin-bottom: 55px;
-	width: 100%;
+.featured-image 				{
+									height: 				40vh;
+									max-height: 			360px;
+									width: 					100%;
 }
 
-.mainContainer {
-	padding-top: 55px;
+.mainContainer 					{
+									
+}
+
+.sections 						{
+									margin-top: 			55px;
+	.section 					{
+		&:nth-child(2) 			{
+									background: 			#ddd;
+		}
+	}
 }

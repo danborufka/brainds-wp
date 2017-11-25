@@ -13,6 +13,7 @@ $title = $post->post_title;
 $postID = $post->ID;
 
 ?>
+	<div class="mainContainer grid-x">
 	    <div class="cell small-12 large-6 area consulting">
 	    	<h3>brainds</h3>
 	    	<div class="vspacer"></div>
@@ -38,6 +39,5 @@ $postID = $post->ID;
     		</span>
 		</div>
   	</div>
-</div>
 
 <?php get_footer(); ?>

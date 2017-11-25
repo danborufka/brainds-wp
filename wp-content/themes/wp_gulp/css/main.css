@@ -8927,14 +8927,14 @@ body {
   display: inline; }
 
 .featured-image {
-  max-height: 360px;
   height: 40vh;
-  margin-top: -55px;
-  margin-bottom: 55px;
+  max-height: 360px;
   width: 100%; }
 
-.mainContainer {
-  padding-top: 55px; }
+.sections {
+  margin-top: 55px; }
+  .sections .section:nth-child(2) {
+    background: #ddd; }
 
 .top-bar {
   height: 60px;
