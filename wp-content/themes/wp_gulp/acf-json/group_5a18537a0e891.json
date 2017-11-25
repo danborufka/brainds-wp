@@ -19,7 +19,7 @@
                 "5a1853918f369": {
                     "key": "5a1853918f369",
                     "name": "text-simple",
-                    "label": "Text (simpel)",
+                    "label": "",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -27,7 +27,7 @@
                             "label": "Überschrift",
                             "name": "title",
                             "type": "text",
-                            "instructions": "(Einfach auslassen, wenn unerwünscht)",
+                            "instructions": "In Zeiten zunehmender Komplexität und sich immer schneller verändernder Rahmenbedingungen wird Orientierung zur Führungsaufgabe Nummer 1. Aber wie schafft man Orientierung? Für die Mitarbeiter, …",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -42,15 +42,39 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5a19d30d83259",
+                            "label": "Bild links",
+                            "name": "img_left",
+                            "type": "image",
+                            "instructions": "Mehr über unseren Beratungsansatz und unsere Arbeitsweise erfahren Sie in der Brainds Consultung Broschüre \"Orientierung in dynamischen Zeiten\".",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "aktualisieren",
                             "label": "Inhalt (Text)",
                             "name": "content",
                             "type": "textarea",
-                            "instructions": "Some moar!",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "70",
                                 "class": "",
                                 "id": ""
                             },
@@ -94,5 +118,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511638462
+    "modified": 1511642298
 }

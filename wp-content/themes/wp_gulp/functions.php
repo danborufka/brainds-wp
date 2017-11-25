@@ -903,5 +903,11 @@ function on_post_updated($post_ID, $post_after, $post_before) {
 	$post_version += .1;
 	@file_put_contents("$templatePath/post.version", $post_version);
 }
-
 add_action('post_updated', 'on_post_updated', 10, 3);
+
+
+
+function admin_colorbar() {
+    echo '<div style="display:block; height: 3px; width: 100%; background:'.get_field('background-color').'; margin-top: -75px; margin-bottom: 75px;"></div>';
+}
+add_action( 'edit_form_after_title', 'admin_colorbar' );

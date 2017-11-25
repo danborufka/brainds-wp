@@ -24,10 +24,12 @@ body 							{
 }
 
 .sections 						{
-									margin-top: 			55px;
+									padding-top: 			7px;
 	.section 					{
-		&:nth-child(2) 			{
-									background: 			#ddd;
+									padding-bottom: 		48px;
+									padding-top: 			48px;
+		&:nth-child(even)		{
+									background: 			#f6f6f6;
 		}
 	}
 }
