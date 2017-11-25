@@ -46,5 +46,4 @@
 		    </ul>
 		  </div>
 		</div>
-		<div class="grid-container fluid">
-			<div class="grid-x grid-padding-x">
+		<div class="grid-container grid-x full">

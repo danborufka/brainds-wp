@@ -13,7 +13,7 @@ $title = $post->post_title;
 $postID = $post->ID;
 
 ?>
-	    <div class="cell small-12 large-6 section consulting">
+	    <div class="cell small-12 large-6 area consulting">
 	    	<h3>brainds</h3>
 	    	<div class="vspacer"></div>
 	    	<a class="hoverLink" href="<?= get_home_url(); ?>/consulting">
@@ -25,7 +25,7 @@ $postID = $post->ID;
 				<a class="hide-for-mediumo" href="<?= get_home_url(); ?>/consulting">zu Consulting</a>
     		</span>
 		</div>
-	    <div class="cell small-12 large-6 section design">
+	    <div class="cell small-12 large-6 area design">
 	    	<h3>brainds</h3>
 	    	<div class="vspacer"></div>
 	    	<a class="hoverLink" href="<?= get_home_url(); ?>/design">

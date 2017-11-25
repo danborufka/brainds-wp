@@ -8951,40 +8951,42 @@ body {
   .homepage .grid-container > div {
     height: 100%; }
 
-.homepage .section {
+.homepage .area {
   display: flex;
   flex-direction: column;
+  width: 50%;
   height: 100%;
   padding: 44px 0;
   text-align: center; }
   @media screen and (max-width: 63.9375em) {
-    .homepage .section {
-      height: 50%; } }
-  .homepage .section.design {
+    .homepage .area {
+      height: 50% !important;
+      width: 100%; } }
+  .homepage .area.design {
     background-color: #59a6dd; }
-    .homepage .section.design .hoverText {
+    .homepage .area.design .hoverText {
       left: 0; }
       @media screen and (max-width: 63.9375em) {
-        .homepage .section.design .hoverText {
+        .homepage .area.design .hoverText {
           top: calc(50% + 30px); } }
-  .homepage .section.consulting {
+  .homepage .area.consulting {
     background-color: #fee35f; }
-    .homepage .section.consulting .hoverText {
+    .homepage .area.consulting .hoverText {
       left: 50%; }
       @media screen and (max-width: 63.9375em) {
-        .homepage .section.consulting .hoverText {
+        .homepage .area.consulting .hoverText {
           left: 0; } }
-  .homepage .section h3 {
+  .homepage .area h3 {
     font-weight: 700; }
-  .homepage .section a {
+  .homepage .area a {
     font-family: sans-serif;
     font-size: 120%;
     text-decoration: underline; }
-    .homepage .section a:hover + .hoverText, .homepage .section a.active + .hoverText {
+    .homepage .area a:hover + .hoverText, .homepage .area a.active + .hoverText {
       opacity: 1; }
-    .homepage .section a.active + .hoverText {
+    .homepage .area a.active + .hoverText {
       pointer-events: auto; }
-  .homepage .section .hoverText {
+  .homepage .area .hoverText {
     transition: 0.3s all;
     background-color: #fff;
     font-weight: 700;
@@ -8997,10 +8999,10 @@ body {
     top: 60px;
     width: 50%; }
     @media screen and (max-width: 63.9375em) {
-      .homepage .section .hoverText {
+      .homepage .area .hoverText {
         height: calc(50vh - 30px);
         width: 100%; } }
-    .homepage .section .hoverText:hover {
+    .homepage .area .hoverText:hover {
       opacity: 1; }
 
 /*

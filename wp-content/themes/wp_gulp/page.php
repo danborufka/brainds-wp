@@ -12,21 +12,13 @@ get_header();
 		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
 	<?php endif; ?>
 
-	<div class="grid-container main-container">
+	<div class="main-container grid-container full">
 <?php
 		if(have_rows('sections')) {
-			while( have_rows('sections')):
+			while( have_rows('sections')) {
 				the_row();
-
-				$filename = dirname( __FILE__ ) . "/template-parts/" . get_row_layout() . "-part.php";
-
-				if(file_exists( $filename )) {
-					include($filename);
-				} else {
-					echo "<h2>Template <i>\"" . get_row_layout() . "\"</i> not found!</h2>";
-				}
-
-			endwhile; 
+				include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
+			}
 		} else {
 			?>
 			<h2>Kein Layout definiert!</h2>
