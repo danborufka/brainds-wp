@@ -11,7 +11,6 @@
 
 	$menuitems = wp_get_nav_menu_items( "hauptmenu", array( 'order' => 'DESC' ) );
 
-
 	function getUrl() {
 		$url = isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ? 'https' : 'http';
 		$url .= '://' . $_SERVER['SERVER_NAME'];
@@ -20,18 +19,13 @@
 
 		return urlencode( $url );
 	}
-
 ?>
+	<script src="https://use.typekit.net/kfl2wyz.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script> 
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor<?php echo (WP_DEBUG) ? "" : ".min" ?>.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main<?php echo (WP_DEBUG) ? "" : ".min" ?>.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
 
-<script src="https://use.typekit.net/kfl2wyz.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script> 
-
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor<?php echo (WP_DEBUG) ? "" : ".min" ?>.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
-
-<?php wp_footer(); ?>
-
+	<?php wp_footer(); ?>
 </body>
 </html>

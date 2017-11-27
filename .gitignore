@@ -60,3 +60,4 @@ typings/
 .htaccess
 .DS_Store
 wp-content/uploads
+wp-config.php
