@@ -56,3 +56,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+.htaccess
+.DS_Store
+wp-content/uploads
