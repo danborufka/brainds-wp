@@ -209,27 +209,14 @@ function customPostTypeTeaser() {
 // add_action( 'init', 'wporg_register_taxonomy_course' );
 
 
-add_action( 'init', 'customPostCaseStudies' );
-function customPostCaseStudies() {
-	$labels = array(
-		"name"               => __( 'Case Studies' ),
-		"singular_name"      => __( 'Case Study' ),
-		"menu_name"          => __( 'Case Studies' ),
-		"all_items"          => __( 'All Case Studies' ),
-		"add_new"            => __( 'Add Case Study' ),
-		"add_new_item"       => __( 'Add new Case Study' ),
-		"edit_item"          => __( 'Edit Case Study' ),
-		"new_item"           => __( 'New Case Study' ),
-		"view_item"          => __( 'Show Case Studies' ),
-		"search_items"       => __( 'Search Case Studies' ),
-		"not_found"          => __( 'No Case Study found' ),
-		"not_found_in_trash" => __( 'No Case Study found in trash' ),
-		"parent_item_colon"  => __( 'Parent Case Study' ),
-	);
-
-	$args = array(
-		"label"               => __( 'Case Studies' ),
-		"labels"              => $labels,
+add_action( 'init', 'addCustomPostTypes' );
+function addCustomPostTypes() {
+	register_post_type( "consulting-case", array(
+		"label"               => __( 'Consulting Cases' ),
+		"labels"              => array(
+			"name"               => __( 'Consulting Cases' ),
+			"singular_name"      => __( 'Consulting Case' )
+		),
 		"description"         => "",
 		"public"              => true,
 		// "publicly_queryable" => false,
@@ -242,39 +229,18 @@ function customPostCaseStudies() {
 		"capability_type"     => "post",
 		"map_meta_cap"        => true,
 		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "casestudy", "with_front" => true ),
+		"rewrite"             => array( "slug" => "consulting-case", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		// "menu_icon" => "//lorempixel.com/13/13",
-		"menu_icon"           => 'dashicons-media-text',
 		"supports"            => array( "title", "editor", "thumbnail" ),
-	);
-	register_post_type( "casestudy", $args );
-	flush_rewrite_rules();
-// End of customPostTypeFAQ()
-}
+	));
 
-add_action( 'init', 'customPostInsights' );
-function customPostInsights() {
-	$labels = array(
-		"name"               => __( 'Insights' ),
-		"singular_name"      => __( 'Insight' ),
-		"menu_name"          => __( 'Insights' ),
-		"all_items"          => __( 'All Insights' ),
-		"add_new"            => __( 'Add Insight' ),
-		"add_new_item"       => __( 'Add new Insight' ),
-		"edit_item"          => __( 'Edit Insight' ),
-		"new_item"           => __( 'New Insight' ),
-		"view_item"          => __( 'Show Insights' ),
-		"search_items"       => __( 'Search Insights' ),
-		"not_found"          => __( 'No Insight found' ),
-		"not_found_in_trash" => __( 'No Insight found in trash' ),
-		"parent_item_colon"  => __( 'Parent Insight' ),
-	);
-
-	$args = array(
-		"label"               => __( 'Insights' ),
-		"labels"              => $labels,
+	register_post_type( "consulting-journal", array(
+		"label"               => __( 'Consulting Journals' ),
+		"labels"              => array(
+			"name"               => __( 'Consulting Journals' ),
+			"singular_name"      => __( 'Consulting Journal' )
+		),
 		"description"         => "",
 		"public"              => true,
 		// "publicly_queryable" => false,
@@ -287,28 +253,71 @@ function customPostInsights() {
 		"capability_type"     => "post",
 		"map_meta_cap"        => true,
 		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "insight", "with_front" => true ),
+		"rewrite"             => array( "slug" => "consulting-journal", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		// "menu_icon" => "//lorempixel.com/13/13",
-		"menu_icon"           => 'dashicons-media-text',
 		"supports"            => array( "title", "editor", "thumbnail" ),
-	);
-	register_post_type( "insight", $args );
+	));
+
+	register_post_type( "design-case", array(
+		"label"               => __( 'Design Cases' ),
+		"labels"              => array(
+			"name"               => __( 'Design Cases' ),
+			"singular_name"      => __( 'Design Case' )
+		),
+		"description"         => "",
+		"public"              => true,
+		// "publicly_queryable" => false,
+		"show_ui"             => true,
+		"show_in_rest"        => false,
+		"rest_base"           => "",
+		"has_archive"         => true,
+		"show_in_menu"        => true,
+		"exclude_from_search" => false,
+		"capability_type"     => "post",
+		"map_meta_cap"        => true,
+		"hierarchical"        => true,
+		"rewrite"             => array( "slug" => "design-case", "with_front" => true ),
+		"query_var"           => true,
+		"hierarchical"        => true,
+		"supports"            => array( "title", "editor", "thumbnail" ),
+	));
+
+	register_post_type( "design-journal", array(
+		"label"               => __( 'Design Journals' ),
+		"labels"              => array(
+			"name"               => __( 'Design Journals' ),
+			"singular_name"      => __( 'Design Journal' )
+		),
+		"description"         => "",
+		"public"              => true,
+		// "publicly_queryable" => false,
+		"show_ui"             => true,
+		"show_in_rest"        => false,
+		"rest_base"           => "",
+		"has_archive"         => true,
+		"show_in_menu"        => true,
+		"exclude_from_search" => false,
+		"capability_type"     => "post",
+		"map_meta_cap"        => true,
+		"hierarchical"        => true,
+		"rewrite"             => array( "slug" => "design-journal", "with_front" => true ),
+		"query_var"           => true,
+		"hierarchical"        => true,
+		"supports"            => array( "title", "editor", "thumbnail" ),
+	));
+
+
 	flush_rewrite_rules();
 // End of customPostTypeFAQ()
 }
-
-
 
 
 
 //ACF Options Pane
 
 if( function_exists('acf_add_options_page') ) {
-	
-	acf_add_options_page('Hydrogrid Options');
-	
+	acf_add_options_page('Brainds Options');
 }
 
 
@@ -861,7 +870,7 @@ function contactForm() {
 
 		$header = "MIME-Version: 1.0" . "\r\n";
 		$header .= "Content-type:text/html; charset=utf-8" . PHP_EOL;
-		$header .= "From: Hydrogrid Server <noreply@hydrogrid.eu>" . PHP_EOL;
+		$header .= "From: Brainds Server <noreply@brainds.at>" . PHP_EOL;
 		$header .= "Reply-To: $name <$email>" . PHP_EOL;
 		$header .= "X-Mailer: PHP/" . phpversion() . PHP_EOL;
 
