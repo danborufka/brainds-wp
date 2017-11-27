@@ -19,15 +19,15 @@
                 "5a1853918f369": {
                     "key": "5a1853918f369",
                     "name": "text-simple",
-                    "label": "",
+                    "label": "Textblock",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_5a18561fa6048",
+                            "key": "field_5a1c0f455b1aa",
                             "label": "Überschrift",
                             "name": "title",
                             "type": "text",
-                            "instructions": "In Zeiten zunehmender Komplexität und sich immer schneller verändernder Rahmenbedingungen wird Orientierung zur Führungsaufgabe Nummer 1. Aber wie schafft man Orientierung? Für die Mitarbeiter, …",
+                            "instructions": "(optional)",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -46,7 +46,7 @@
                             "label": "Bild links",
                             "name": "img_left",
                             "type": "image",
-                            "instructions": "Mehr über unseren Beratungsansatz und unsere Arbeitsweise erfahren Sie in der Brainds Consultung Broschüre \"Orientierung in dynamischen Zeiten\".",
+                            "instructions": "(optional)",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -85,6 +85,155 @@
                             "new_lines": "br"
                         }
                     ],
+                    "min": "Partner",
+                    "max": ""
+                },
+                "5a1c0a4834a23": {
+                    "key": "5a1c0a4834a23",
+                    "name": "people-block",
+                    "label": "Personen-Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a1c10197700d",
+                            "label": "Überschrift",
+                            "name": "people-title",
+                            "type": "text",
+                            "instructions": "(optional)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a1c14f93efd2",
+                            "label": "Personen",
+                            "name": "people",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a1c150c3efd3",
+                                    "label": "Name",
+                                    "name": "name",
+                                    "type": "text",
+                                    "instructions": "Format: Vorname Nachname",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "Max Mustermann",
+                                    "placeholder": "Max Mustermann",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a1c15243efd4",
+                                    "label": "Bild",
+                                    "name": "person-portrait",
+                                    "type": "image",
+                                    "instructions": "(optional)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5a1c154a3efd5",
+                                    "label": "Rolle",
+                                    "name": "role",
+                                    "type": "text",
+                                    "instructions": "(optional)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a1c15523efd6",
+                                    "label": "Department",
+                                    "name": "department",
+                                    "type": "text",
+                                    "instructions": "(optional)",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a1c159ad79a7",
+                                    "label": "Kontakt",
+                                    "name": "contact",
+                                    "type": "email",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": ""
+                                }
+                            ]
+                        }
+                    ],
                     "min": "",
                     "max": ""
                 }
@@ -118,5 +267,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511642298
+    "modified": 1511789986
 }

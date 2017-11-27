@@ -8943,6 +8943,14 @@ body {
     .sections .section:nth-child(even) {
       background: #f6f6f6; }
 
+.link {
+  text-decoration: underline; }
+
+.person {
+  text-align: center; }
+  .person .portrait {
+    border-radius: 300px; }
+
 .top-bar {
   height: 60px;
   margin: 0;
