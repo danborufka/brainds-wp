@@ -915,7 +915,7 @@ function on_post_updated($post_ID, $post_after, $post_before) {
 add_action('post_updated', 'on_post_updated', 10, 3);
 
 
-
+/* Color bar indicator for posts with background colors */
 function admin_colorbar() {
     echo '<div style="display:block; height: 3px; width: 100%; background:'.get_field('background-color').'; margin-top: -75px; margin-bottom: 75px;"></div>';
 }
