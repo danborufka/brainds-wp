@@ -63,6 +63,7 @@
 									font-size:  			5vh;
 									height: 				calc(100% - #{$brainds-header-height});
 									opacity: 				0;
+									overflow: 				hidden;
 									padding: 				10vh;
 									pointer-events: 		none;
 									position: 				absolute;
@@ -72,9 +73,6 @@
 									height: 				calc(50vh - #{$brainds-header-height / 2});
 									width: 					100%;
   			}						
-			&:hover 			{
-									opacity: 				1;
-			}							
 		}
 	}
 }

@@ -9,39 +9,11 @@ jQuery(document).ready(function ($) {
     //init Foundation
     //++++++++++++++++++++++++++++++++++++++++++
 
-    $(document).foundation();
-
-    //++++++++++++++++++++++++++++++++++++++++++
-    //  Init Slick
-    //++++++++++++++++++++++++++++++++++++++++++
-
-
-    // $('.slides').slick({
-    //  /*dots: false,*/
-    //  infinite: true,
-    //  adaptiveHeight: false,
-    //  arrows: true,
-    //  // appendArrows: $('.sliderarrows')
-    //     // variableWidth: true,
-    //     // slidesToShow: 1
-    // });
-
-    //++++++++++++++++++++++++++++++++++++++++++
-    //Share icons
-    //++++++++++++++++++++++++++++++++++++++++++
-
-    $('.shareicon').on('click', function (event) {
-        event.preventDefault();
-        /* Act on the event */
-        var $this = $(this),
-            url = $this.parent("a").attr('href');
-
-        // function share(, title, descr, image, winWidth, winHeight) {
-        var winTop = screen.height / 2 - 520 / 2;
-        var winLeft = screen.width / 2 - 350 / 2;
-        window.open(url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + 520 + ',height=' + 350);
-        // }
-    });
+    $(document).on('click', '.hoverLink', function (event) {
+        if (!Foundation.MediaQuery.atLeast('medium')) {
+            event.preventDefault();
+        }
+    }).foundation();
 
     //++++++++++++++++++++++++++++++++++++++++++
     //Scroll to top/down
@@ -80,7 +52,7 @@ jQuery(document).ready(function ($) {
     });
 
     //++++++++++++++++++++++++++++++++++++++++++
-    //To to url
+    // Go to url
     //++++++++++++++++++++++++++++++++++++++++++
 
     $('.gotourl').on('click', function (event) {
@@ -100,7 +72,5 @@ jQuery(document).ready(function ($) {
     $(window).on('resize', function (event) {
         var width = $(window).width(),
             height = $(window).height();
-    });
-
-    $(window).trigger('resize');
+    }).trigger('resize');
 });

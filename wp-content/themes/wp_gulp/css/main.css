@@ -8921,9 +8921,6 @@ body {
   height: 100vh;
   width: 100%; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Proxima N W01 Bold"; }
-
 h2 {
   font-weight: 600; }
 
@@ -9020,6 +9017,7 @@ h2 {
     font-size: 5vh;
     height: calc(100% - 60px);
     opacity: 0;
+    overflow: hidden;
     padding: 10vh;
     pointer-events: none;
     position: absolute;
@@ -9029,8 +9027,6 @@ h2 {
       .homepage .area .hoverText {
         height: calc(50vh - 30px);
         width: 100%; } }
-    .homepage .area .hoverText:hover {
-      opacity: 1; }
 
 /*
 .alert {
