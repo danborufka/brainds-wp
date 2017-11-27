@@ -8,7 +8,6 @@
  */
 
 ?>
-
 <div class="section cell">
 	<div class="grid-container grid-x">
 		<?php if(get_sub_field('title')): ?>

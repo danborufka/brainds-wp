@@ -8947,6 +8947,10 @@ h2 {
     .sections .section:nth-child(even) {
       background: #f6f6f6; }
 
+.more-link {
+  display: block; }
+
+.more-link,
 .link {
   text-decoration: underline; }
 

@@ -21609,7 +21609,7 @@ module.exports = __webpack_require__(19);
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.8.1
+ Version: 1.7.1
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -21664,7 +21664,6 @@ module.exports = __webpack_require__(19);
                 edgeFriction: 0.35,
                 fade: false,
                 focusOnSelect: false,
-                focusOnChange: false,
                 infinite: true,
                 initialSlide: 0,
                 lazyLoad: 'ondemand',
@@ -22087,7 +22086,7 @@ module.exports = __webpack_require__(19);
         var _ = this,
             i, dot;
 
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.dots === true) {
 
             _.$slider.addClass('slick-dotted');
 
@@ -22162,7 +22161,7 @@ module.exports = __webpack_require__(19);
         newSlides = document.createDocumentFragment();
         originalSlides = _.$slider.children();
 
-        if(_.options.rows > 0) {
+        if(_.options.rows > 1) {
 
             slidesPerSection = _.options.slidesPerRow * _.options.rows;
             numOfSlides = Math.ceil(
@@ -22377,8 +22376,8 @@ module.exports = __webpack_require__(19);
             _.$nextArrow && _.$nextArrow.off('click.slick', _.changeSlide);
 
             if (_.options.accessibility === true) {
-                _.$prevArrow && _.$prevArrow.off('keydown.slick', _.keyHandler);
-                _.$nextArrow && _.$nextArrow.off('keydown.slick', _.keyHandler);
+                _.$prevArrow.off('keydown.slick', _.keyHandler);
+                _.$nextArrow.off('keydown.slick', _.keyHandler);
             }
         }
 
@@ -22424,7 +22423,7 @@ module.exports = __webpack_require__(19);
 
         var _ = this, originalSlides;
 
-        if(_.options.rows > 0) {
+        if(_.options.rows > 1) {
             originalSlides = _.$slides.children().children();
             originalSlides.removeAttr('style');
             _.$slider.empty().append(originalSlides);
@@ -22683,8 +22682,7 @@ module.exports = __webpack_require__(19);
             targetLeft,
             verticalHeight,
             verticalOffset = 0,
-            targetSlide,
-            coef;
+            targetSlide;
 
         _.slideOffset = 0;
         verticalHeight = _.$slides.first().outerHeight(true);
@@ -22692,16 +22690,7 @@ module.exports = __webpack_require__(19);
         if (_.options.infinite === true) {
             if (_.slideCount > _.options.slidesToShow) {
                 _.slideOffset = (_.slideWidth * _.options.slidesToShow) * -1;
-                coef = -1
-
-                if (_.options.vertical === true && _.options.centerMode === true) {
-                    if (_.options.slidesToShow === 2) {
-                        coef = -1.5;
-                    } else if (_.options.slidesToShow === 1) {
-                        coef = -2
-                    }
-                }
-                verticalOffset = (verticalHeight * _.options.slidesToShow) * coef;
+                verticalOffset = (verticalHeight * _.options.slidesToShow) * -1;
             }
             if (_.slideCount % _.options.slidesToScroll !== 0) {
                 if (slideIndex + _.options.slidesToScroll > _.slideCount && _.slideCount > _.options.slidesToShow) {
@@ -22922,21 +22911,18 @@ module.exports = __webpack_require__(19);
                     'role': 'tabpanel',
                     'id': 'slick-slide' + _.instanceUid + i,
                     'tabindex': -1
-                });
+                });            
 
                 if (slideControlIndex !== -1) {
-                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
-                   if ($('#' + ariaButtonControl).length) {
-                     $(this).attr({
-                         'aria-describedby': ariaButtonControl
-                     });
-                   }
+                    $(this).attr({
+                        'aria-describedby': 'slick-slide-control' + _.instanceUid + slideControlIndex
+                    });
                 }
             });
 
             _.$dots.attr('role', 'tablist').find('li').each(function(i) {
                 var mappedSlideIndex = tabControlIndexes[i];
-
+        
                 $(this).attr({
                     'role': 'presentation'
                 });
@@ -22957,11 +22943,7 @@ module.exports = __webpack_require__(19);
         }
 
         for (var i=_.currentSlide, max=i+_.options.slidesToShow; i < max; i++) {
-          if (_.options.focusOnChange) {
-            _.$slides.eq(i).attr({'tabindex': '0'});
-          } else {
-            _.$slides.eq(i).removeAttr('tabindex');
-          }
+            _.$slides.eq(i).attr('tabindex', 0);
         }
 
         _.activateADA();
@@ -22987,7 +22969,7 @@ module.exports = __webpack_require__(19);
             if (_.options.accessibility === true) {
                 _.$prevArrow.on('keydown.slick', _.keyHandler);
                 _.$nextArrow.on('keydown.slick', _.keyHandler);
-            }
+            }   
         }
 
     };
@@ -22996,7 +22978,7 @@ module.exports = __webpack_require__(19);
 
         var _ = this;
 
-        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
+        if (_.options.dots === true) {
             $('li', _.$dots).on('click.slick', {
                 message: 'index'
             }, _.changeSlide);
@@ -23006,7 +22988,7 @@ module.exports = __webpack_require__(19);
             }
         }
 
-        if (_.options.dots === true && _.options.pauseOnDotsHover === true && _.slideCount > _.options.slidesToShow) {
+        if ( _.options.dots === true && _.options.pauseOnDotsHover === true ) {
 
             $('li', _.$dots)
                 .on('mouseenter.slick', $.proxy(_.interrupt, _, true))
@@ -23307,8 +23289,8 @@ module.exports = __webpack_require__(19);
 
             if (_.options.accessibility === true) {
                 _.initADA();
-
-                if (_.options.focusOnChange) {
+                // for non-autoplay: once active slide (group) has updated, set focus on first newly showing slide 
+                if (!_.options.autoplay) {
                     var $currentSlide = $(_.$slides.get(_.currentSlide));
                     $currentSlide.attr('tabindex', 0).focus();
                 }
@@ -23906,15 +23888,14 @@ module.exports = __webpack_require__(19);
 
         if (_.options.centerMode === true) {
 
-            var evenCoef = _.options.slidesToShow % 2 === 0 ? 1 : 0;
-
             centerOffset = Math.floor(_.options.slidesToShow / 2);
 
             if (_.options.infinite === true) {
 
                 if (index >= centerOffset && index <= (_.slideCount - 1) - centerOffset) {
+
                     _.$slides
-                        .slice(index - centerOffset + evenCoef, index + centerOffset + 1)
+                        .slice(index - centerOffset, index + centerOffset + 1)
                         .addClass('slick-active')
                         .attr('aria-hidden', 'false');
 
@@ -23922,7 +23903,7 @@ module.exports = __webpack_require__(19);
 
                     indexOffset = _.options.slidesToShow + index;
                     allSlides
-                        .slice(indexOffset - centerOffset + 1 + evenCoef, indexOffset + centerOffset + 2)
+                        .slice(indexOffset - centerOffset + 1, indexOffset + centerOffset + 2)
                         .addClass('slick-active')
                         .attr('aria-hidden', 'false');
 
@@ -24100,7 +24081,7 @@ module.exports = __webpack_require__(19);
         if (_.options.infinite === false && _.options.centerMode === false && (index < 0 || index > _.getDotCount() * _.options.slidesToScroll)) {
             if (_.options.fade === false) {
                 targetSlide = _.currentSlide;
-                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
+                if (dontAnimate !== true) {
                     _.animateSlide(slideLeft, function() {
                         _.postSlide(targetSlide);
                     });
@@ -24112,7 +24093,7 @@ module.exports = __webpack_require__(19);
         } else if (_.options.infinite === false && _.options.centerMode === true && (index < 0 || index > (_.slideCount - _.options.slidesToScroll))) {
             if (_.options.fade === false) {
                 targetSlide = _.currentSlide;
-                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
+                if (dontAnimate !== true) {
                     _.animateSlide(slideLeft, function() {
                         _.postSlide(targetSlide);
                     });
@@ -24182,7 +24163,7 @@ module.exports = __webpack_require__(19);
             return;
         }
 
-        if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
+        if (dontAnimate !== true) {
             _.animateSlide(targetLeft, function() {
                 _.postSlide(animSlide);
             });
@@ -24614,8 +24595,8 @@ module.exports = __webpack_require__(19);
 }));
 
 /*!
- * VERSION: 1.20.3
- * DATE: 2017-10-02
+ * VERSION: 1.20.2
+ * DATE: 2017-06-30
  * UPDATES AND DOCS AT: http://greensock.com
  * 
  * Includes all of the following: TweenLite, TweenMax, TimelineLite, TimelineMax, EasePack, CSSPlugin, RoundPropsPlugin, BezierPlugin, AttrPlugin, DirectionalRotationPlugin
@@ -24655,9 +24636,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				this._yoyo = (this.vars.yoyo === true || !!this.vars.yoyoEase);
 				this._repeat = this.vars.repeat || 0;
 				this._repeatDelay = this.vars.repeatDelay || 0;
-				if (this._repeat) {
-					this._uncache(true); //ensures that if there is any repeat, the totalDuration will get recalculated to accurately report it.
-				}
+				this._dirty = true; //ensures that if there is any repeat, the totalDuration will get recalculated to accurately report it.
 				this.render = TweenMax.prototype.render; //speed optimization (avoid prototype lookup on this "hot" method)
 			},
 			_tinyNum = 0.0000000001,
@@ -24667,7 +24646,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			p = TweenMax.prototype = TweenLite.to({}, 0.1, {}),
 			_blankArray = [];
 
-		TweenMax.version = "1.20.3";
+		TweenMax.version = "1.20.2";
 		p.constructor = TweenMax;
 		p.kill()._gc = false;
 		TweenMax.killTweensOf = TweenMax.killDelayedCallsTo = TweenLite.killTweensOf;
@@ -24902,7 +24881,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				}
 				if (this._startAt) {
 					if (time >= 0) {
-						this._startAt.render(time, true, force);
+						this._startAt.render(time, suppressEvents, force);
 					} else if (!callback) {
 						callback = "_dummyGS"; //if no callback is defined, use a dummy value just so that the condition at the end evaluates as true because _startAt should render AFTER the normal render loop when the time is negative. We could handle this in a more intuitive way, of course, but the render loop is the MOST important thing to optimize, so this technique allows us to avoid adding extra conditional logic in a high-frequency area.
 					}
@@ -24924,7 +24903,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			
 			if (this._onUpdate) {
 				if (time < 0) if (this._startAt && this._startTime) { //if the tween is positioned at the VERY beginning (_startTime 0) of its parent timeline, it's illegal for the playhead to go back further, so we should not render the recorded startAt values.
-					this._startAt.render(time, true, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
+					this._startAt.render(time, suppressEvents, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
 				}
 				if (!suppressEvents) if (this._totalTime !== prevTotalTime || callback) {
 					this._callback("onUpdate");
@@ -24935,7 +24914,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			}
 			if (callback) if (!this._gc || force) { //check gc because there's a chance that kill() could be called in an onUpdate
 				if (time < 0 && this._startAt && !this._onUpdate && this._startTime) { //if the tween is positioned at the VERY beginning (_startTime 0) of its parent timeline, it's illegal for the playhead to go back further, so we should not render the recorded startAt values.
-					this._startAt.render(time, true, force);
+					this._startAt.render(time, suppressEvents, force);
 				}
 				if (isComplete) {
 					if (this._timeline.autoRemoveChildren) {
@@ -25317,7 +25296,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			},
 			p = TimelineLite.prototype = new SimpleTimeline();
 
-		TimelineLite.version = "1.20.3";
+		TimelineLite.version = "1.20.2";
 		p.constructor = TimelineLite;
 		p.kill()._gc = p._forcingPlayhead = p._hasPause = false;
 
@@ -25425,7 +25404,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			}
 			var tl = new TimelineLite(vars),
 				root = tl._timeline,
-				hasNegativeStart, time,	tween, next;
+				tween, next;
 			if (ignoreDelayedCalls == null) {
 				ignoreDelayedCalls = true;
 			}
@@ -25436,18 +25415,11 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			while (tween) {
 				next = tween._next;
 				if (!ignoreDelayedCalls || !(tween instanceof TweenLite && tween.target === tween.vars.onComplete)) {
-					time = tween._startTime - tween._delay;
-					if (time < 0) {
-						hasNegativeStart = 1;
-					}
-					tl.add(tween, time);
+					tl.add(tween, tween._startTime - tween._delay);
 				}
 				tween = next;
 			}
 			root.add(tl, 0);
-			if (hasNegativeStart) { //calling totalDuration() will force the adjustment necessary to shift the children forward so none of them start before zero, and moves the timeline backwards the same amount, so the playhead is still aligned where it should be globally, but the timeline doesn't have illegal children that start before zero.
-				tl.totalDuration();
-			}
 			return tl;
 		};
 
@@ -25587,7 +25559,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					}
 				}
 			}
-			clippedDuration = (typeof(timeOrLabel) === "number" && !offsetOrLabel) ? 0 : (this.duration() > 99999999999) ? this.recent().endTime(false) : this._duration; //in case there's a child that infinitely repeats, users almost never intend for the insertion point of a new child to be based on a SUPER long value like that so we clip it and assume the most recently-added child's endTime should be used instead.
+			clippedDuration = (this.duration() > 99999999999) ? this.recent().endTime(false) : this._duration; //in case there's a child that infinitely repeats, users almost never intend for the insertion point of a new child to be based on a SUPER long value like that so we clip it and assume the most recently-added child's endTime should be used instead.
 			if (typeof(offsetOrLabel) === "string") {
 				return this._parseTimeOrLabel(offsetOrLabel, (appendIfAbsent && typeof(timeOrLabel) === "number" && this._labels[offsetOrLabel] == null) ? timeOrLabel - clippedDuration : 0, appendIfAbsent);
 			}
@@ -25628,15 +25600,12 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			if (this._gc) {
 				this._enabled(true, false);
 			}
-			var prevTime = this._time,
-				totalDur = (!this._dirty) ? this._totalDuration : this.totalDuration(),
+			var totalDur = (!this._dirty) ? this._totalDuration : this.totalDuration(),
+				prevTime = this._time,
 				prevStart = this._startTime,
 				prevTimeScale = this._timeScale,
 				prevPaused = this._paused,
 				tween, isComplete, next, callback, internalForce, pauseTween, curTime;
-			if (prevTime !== this._time) { //if totalDuration() finds a child with a negative startTime and smoothChildTiming is true, things get shifted around internally so we need to adjust the time accordingly. For example, if a tween starts at -30 we must shift EVERYTHING forward 30 seconds and move this timeline's startTime backward by 30 seconds so that things align with the playhead (no jump).
-				time += this._time - prevTime;
-			}
 			if (time >= totalDur - 0.0000001 && time >= 0) { //to work around occasional floating point math artifacts.
 				this._totalTime = this._time = totalDur;
 				if (!this._reversed) if (!this._hasPausedChild()) {
@@ -25969,10 +25938,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						if (tween._dirty) {
 							tween.totalDuration(); //could change the tween._startTime, so make sure the tween's cache is clean before analyzing it.
 						}
-						if (tween._startTime > prevStart && this._sortChildren && !tween._paused && !this._calculatingDuration) { //in case one of the tweens shifted out of order, it needs to be re-inserted into the correct position in the sequence
-							this._calculatingDuration = 1; //prevent endless recursive calls - there are methods that get triggered that check duration/totalDuration when we add(), like _parseTimeOrLabel().
+						if (tween._startTime > prevStart && this._sortChildren && !tween._paused) { //in case one of the tweens shifted out of order, it needs to be re-inserted into the correct position in the sequence
 							this.add(tween, tween._startTime - tween._delay);
-							this._calculatingDuration = 0;
 						} else {
 							prevStart = tween._startTime;
 						}
@@ -25980,9 +25947,6 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 							max -= tween._startTime;
 							if (this._timeline.smoothChildTiming) {
 								this._startTime += tween._startTime / this._timeScale;
-								this._time -= tween._startTime;
-								this._totalTime -= tween._startTime;
-								this._rawPrevTime -= tween._startTime;
 							}
 							this.shiftChildren(-tween._startTime, false, -9999999999);
 							prevStart = 0;
@@ -26068,7 +26032,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 
 		p.constructor = TimelineMax;
 		p.kill()._gc = false;
-		TimelineMax.version = "1.20.3";
+		TimelineMax.version = "1.20.2";
 
 		p.invalidate = function() {
 			this._yoyo = (this.vars.yoyo === true);
@@ -26140,9 +26104,9 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			if (this._gc) {
 				this._enabled(true, false);
 			}
-			var prevTime = this._time,
-				totalDur = (!this._dirty) ? this._totalDuration : this.totalDuration(),
+			var totalDur = (!this._dirty) ? this._totalDuration : this.totalDuration(),
 				dur = this._duration,
+				prevTime = this._time,
 				prevTotalTime = this._totalTime,
 				prevStart = this._startTime,
 				prevTimeScale = this._timeScale,
@@ -26150,9 +26114,6 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				prevPaused = this._paused,
 				prevCycle = this._cycle,
 				tween, isComplete, next, callback, internalForce, cycleDuration, pauseTween, curTime;
-			if (prevTime !== this._time) { //if totalDuration() finds a child with a negative startTime and smoothChildTiming is true, things get shifted around internally so we need to adjust the time accordingly. For example, if a tween starts at -30 we must shift EVERYTHING forward 30 seconds and move this timeline's startTime backward by 30 seconds so that things align with the playhead (no jump).
-				time += this._time - prevTime;
-			}
 			if (time >= totalDur - 0.0000001 && time >= 0) { //to work around occasional floating point math artifacts.
 				if (!this._locked) {
 					this._totalTime = totalDur;
@@ -27198,7 +27159,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			p = CSSPlugin.prototype = new TweenPlugin("css");
 
 		p.constructor = CSSPlugin;
-		CSSPlugin.version = "1.20.3";
+		CSSPlugin.version = "1.20.0";
 		CSSPlugin.API = 2;
 		CSSPlugin.defaultTransformPerspective = 0;
 		CSSPlugin.defaultSkewType = "compensated";
@@ -27665,7 +27626,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 							g = (l <= 0.5) ? l * (s + 1) : l + s - l * s;
 							r = l * 2 - g;
 							if (a.length > 3) {
-								a[3] = Number(a[3]);
+								a[3] = Number(v[3]);
 							}
 							a[0] = _hue(h + 1 / 3, r, g);
 							a[1] = _hue(h, r, g);
@@ -28047,13 +28008,8 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					autoRound = (_autoRound !== false),
 					i, xi, ni, bv, ev, bnums, enums, bn, hasAlpha, temp, cv, str, useHSL;
 				if (e.indexOf(",") !== -1 || b.indexOf(",") !== -1) {
-					if ((e + b).indexOf("rgb") !== -1 || (e + b).indexOf("hsl") !== -1) { //keep rgb(), rgba(), hsl(), and hsla() values together! (remember, we're splitting on spaces)
-						ba = ba.join(" ").replace(_commasOutsideParenExp, ", ").split(" ");
-						ea = ea.join(" ").replace(_commasOutsideParenExp, ", ").split(" ");
-					} else {
-						ba = ba.join(" ").split(",").join(", ").split(" ");
-						ea = ea.join(" ").split(",").join(", ").split(" ");
-					}
+					ba = ba.join(" ").replace(_commasOutsideParenExp, ", ").split(" ");
+					ea = ea.join(" ").replace(_commasOutsideParenExp, ", ").split(" ");
 					l = ba.length;
 				}
 				if (l !== ea.length) {
@@ -28461,7 +28417,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				}
 			},
 			_getBBoxHack = function(swapIfPossible) { //works around issues in some browsers (like Firefox) that don't correctly report getBBox() on SVG elements inside a <defs> element and/or <mask>. We try creating an SVG, adding it to the documentElement and toss the element in there so that it's definitely part of the rendering tree, then grab the bbox and if it works, we actually swap out the original getBBox() method for our own that does these extra steps whenever getBBox is needed. This helps ensure that performance is optimal (only do all these extra steps when absolutely necessary...most elements don't need it).
-				var svg = _createElement("svg", (this.ownerSVGElement && this.ownerSVGElement.getAttribute("xmlns")) || "http://www.w3.org/2000/svg"),
+				var svg = _createElement("svg", this.ownerSVGElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg"),
 					oldParent = this.parentNode,
 					oldSibling = this.nextSibling,
 					oldCSS = this.style.cssText,
@@ -28495,7 +28451,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				}
 			},
 			_isSVG = function(e) { //reports if the element is an SVG on which getBBox() actually works
-				return !!(_SVGElement && e.getCTM && (!e.parentNode || e.ownerSVGElement) && _getBBox(e));
+				return !!(_SVGElement && e.getCTM && _getBBox(e) && (!e.parentNode || e.ownerSVGElement));
 			},
 			_identity2DMatrix = [1,0,0,1,0,0],
 			_getMatrix = function(e, force2D) {
@@ -28511,7 +28467,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					s = (s && s.length === 4) ? [s[0].substr(4), Number(s[2].substr(4)), Number(s[1].substr(4)), s[3].substr(4), (tm.x || 0), (tm.y || 0)].join(",") : "";
 				}
 				isDefault = (!s || s === "none" || s === "matrix(1, 0, 0, 1, 0, 0)");
-				if (_transformProp && ((none = (!_getComputedStyle(e) || _getComputedStyle(e).display === "none")) || !e.parentNode)) { //note: Firefox returns null for getComputedStyle() if the element is in an iframe that has display:none. https://bugzilla.mozilla.org/show_bug.cgi?id=548397
+				if (_transformProp && ((none = (_getComputedStyle(e).display === "none")) || !e.parentNode)) {
 					if (none) { //browsers don't report transforms accurately unless the element is in the DOM and has a display value that's not "none". Firefox and Microsoft browsers have a partial bug where they'll report transforms even if display:none BUT not any percentage-based values like translate(-50%, 8px) will be reported as if it's translate(0, 8px).
 						n = style.display;
 						style.display = "block";
@@ -30381,7 +30337,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			if (p < this._p1) {
 				return this._calcEnd ? 1 - ((p = 1 - (p / this._p1)) * p) : r - ((p = 1 - (p / this._p1)) * p * p * p * r);
 			} else if (p > this._p3) {
-				return this._calcEnd ? (p === 1 ? 0 : 1 - (p = (p - this._p3) / this._p1) * p) : r + ((p - r) * (p = (p - this._p3) / this._p1) * p * p * p); //added p === 1 ? 0 to avoid floating point rounding errors from affecting the final value, like 1 - 0.7 = 0.30000000000000004 instead of 0.3
+				return this._calcEnd ? 1 - (p = (p - this._p3) / this._p1) * p : r + ((p - r) * (p = (p - this._p3) / this._p1) * p * p * p);
 			}
 			return this._calcEnd ? 1 : r;
 		};
@@ -30966,9 +30922,6 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 			};
 
 			_self.lagSmoothing = function(threshold, adjustedLag) {
-				if (!arguments.length) { //if lagSmoothing() is called with no arguments, treat it like a getter that returns a boolean indicating if it's enabled or not. This is purposely undocumented and is for internal use.
-					return (_lagThreshold < 1 / _tinyNum);
-				}
 				_lagThreshold = threshold || (1 / _tinyNum); //zero should be interpreted as basically unlimited
 				_adjustedLag = Math.min(adjustedLag, _lagThreshold, 0);
 			};
@@ -31076,7 +31029,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 
 		//some browsers (like iOS) occasionally drop the requestAnimationFrame event when the user switches to a different tab and then comes back again, so we use a 2-second setTimeout() to sense if/when that condition occurs and then wake() the ticker.
 		var _checkTimeout = function() {
-				if (_tickerActive && _getTime() - _lastUpdate > 2000 && (_doc.visibilityState !== "hidden" || !_ticker.lagSmoothing())) { //note: if the tab is hidden, we should still wake if lagSmoothing has been disabled.
+				if (_tickerActive && _getTime() - _lastUpdate > 2000 && _doc.visibilityState !== "hidden") {
 					_ticker.wake();
 				}
 				var t = setTimeout(_checkTimeout, 2000);
@@ -31342,21 +31295,14 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 			if (!arguments.length) {
 				return this._timeScale;
 			}
-			var pauseTime, t;
 			value = value || _tinyNum; //can't allow zero because it'll throw the math off
 			if (this._timeline && this._timeline.smoothChildTiming) {
-				pauseTime = this._pauseTime;
-				t = (pauseTime || pauseTime === 0) ? pauseTime : this._timeline.totalTime();
+				var pauseTime = this._pauseTime,
+					t = (pauseTime || pauseTime === 0) ? pauseTime : this._timeline.totalTime();
 				this._startTime = t - ((t - this._startTime) * this._timeScale / value);
 			}
 			this._timeScale = value;
-			t = this.timeline;
-			while (t && t.timeline) { //must update the duration/totalDuration of all ancestor timelines immediately in case in the middle of a render loop, one tween alters another tween's timeScale which shoves its startTime before 0, forcing the parent timeline to shift around and shiftChildren() which could affect that next tween's render (startTime). Doesn't matter for the root timeline though.
-				t._dirty = true;
-				t.totalDuration();
-				t = t.timeline;
-			}
-			return this;
+			return this._uncache(false);
 		};
 
 		p.reversed = function(value) {
@@ -31593,7 +31539,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 		p._firstPT = p._targets = p._overwrittenProps = p._startAt = null;
 		p._notifyPluginsOfEnabled = p._lazy = false;
 
-		TweenLite.version = "1.20.3";
+		TweenLite.version = "1.20.2";
 		TweenLite.defaultEase = p._ease = new Ease(null, null, 1, 1);
 		TweenLite.defaultOverwrite = "auto";
 		TweenLite.ticker = _ticker;
@@ -31621,7 +31567,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 					min = 0.000001,
 					val;
 				while (pt) {
-					val = !pt.blob ? pt.c * v + pt.s : (v === 1 && this.end != null) ? this.end : v ? this.join("") : this.start;
+					val = !pt.blob ? pt.c * v + pt.s : (v === 1 && this.end) ? this.end : v ? this.join("") : this.start;
 					if (pt.m) {
 						val = pt.m(val, this._target || pt.t);
 					} else if (val < min) if (val > -min && !pt.blob) { //prevents issues with converting very small numbers to strings in the browser
@@ -31692,7 +31638,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 				}
 				a.setRatio = _setRatio;
 				if (_relExp.test(end)) { //if the end string contains relative values, delete it so that on the final render (in _setRatio()), we don't actually set it to the string with += or -= characters (forces it to use the calculated value).
-					a.end = null;
+					a.end = 0;
 				}
 				return a;
 			},
@@ -31914,13 +31860,11 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 				for (p in v.startAt) { //copy the properties/values into a new object to avoid collisions, like var to = {x:0}, from = {x:500}; timeline.fromTo(e, 1, from, to).fromTo(e, 1, to, from);
 					startVars[p] = v.startAt[p];
 				}
-				startVars.data = "isStart";
 				startVars.overwrite = false;
 				startVars.immediateRender = true;
 				startVars.lazy = (immediate && v.lazy !== false);
 				startVars.startAt = startVars.delay = null; //no nesting of startAt objects allowed (otherwise it could cause an infinite loop).
 				startVars.onUpdate = v.onUpdate;
-				startVars.onUpdateParams = v.onUpdateParams;
 				startVars.onUpdateScope = v.onUpdateScope || v.callbackScope || this;
 				this._startAt = TweenLite.to(this.target, 0, startVars);
 				if (immediate) {
@@ -32173,7 +32117,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 			if (prevTime === 0) {
 				if (this._startAt) {
 					if (time >= 0) {
-						this._startAt.render(time, true, force);
+						this._startAt.render(time, suppressEvents, force);
 					} else if (!callback) {
 						callback = "_dummyGS"; //if no callback is defined, use a dummy value just so that the condition at the end evaluates as true because _startAt should render AFTER the normal render loop when the time is negative. We could handle this in a more intuitive way, of course, but the render loop is the MOST important thing to optimize, so this technique allows us to avoid adding extra conditional logic in a high-frequency area.
 					}
@@ -32194,7 +32138,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 
 			if (this._onUpdate) {
 				if (time < 0) if (this._startAt && time !== -0.0001) { //if the tween is positioned at the VERY beginning (_startTime 0) of its parent timeline, it's illegal for the playhead to go back further, so we should not render the recorded startAt values.
-					this._startAt.render(time, true, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
+					this._startAt.render(time, suppressEvents, force); //note: for performance reasons, we tuck this conditional logic inside less traveled areas (most tweens don't have an onUpdate). We'd just have it at the end before the onComplete, but the values should be updated before any onUpdate is called, so we ALSO put it here and then if it's not called, we do so later near the onComplete.
 				}
 				if (!suppressEvents) if (this._time !== prevTime || isComplete || force) {
 					this._callback("onUpdate");
@@ -32202,7 +32146,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 			}
 			if (callback) if (!this._gc || force) { //check _gc because there's a chance that kill() could be called in an onUpdate
 				if (time < 0 && this._startAt && !this._onUpdate && time !== -0.0001) { //-0.0001 is a special value that we use when looping back to the beginning of a repeated TimelineMax, in which case we shouldn't render the _startAt values.
-					this._startAt.render(time, true, force);
+					this._startAt.render(time, suppressEvents, force);
 				}
 				if (isComplete) {
 					if (this._timeline.autoRemoveChildren) {
@@ -46722,7 +46666,7 @@ module.exports = function(Chart) {
 });
 /*!
 * Parsley.js
-* Version 2.8.0 - built Wed, Sep 13th 2017, 11:04 pm
+* Version 2.7.2 - built Tue, May 9th 2017, 11:21 am
 * http://parsleyjs.org
 * Guillaume Potier - <guillaume@wisembly.com>
 * Marc-Andre Lafortune - <petroselinum@marc-andre.ca>
@@ -46786,20 +46730,17 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       element.setAttribute(this.dasherize(namespace + attr), String(value));
     },
 
-    getType: function getType(element) {
-      return element.getAttribute('type') || 'text';
-    },
-
     generateID: function generateID() {
       return '' + globalID++;
     },
 
     /** Third party functions **/
+    // Zepto deserialize function
     deserializeValue: function deserializeValue(value) {
       var num;
 
       try {
-        return value ? value == "true" || (value == "false" ? false : value == "null" ? null : !isNaN(num = Number(value)) ? num : /^[\[\{]/.test(value) ? JSON.parse(value) : value) : value;
+        return value ? value == "true" || (value == "false" ? false : value == "null" ? null : !isNaN(num = Number(value)) ? num : /^[\[\{]/.test(value) ? $.parseJSON(value) : value) : value;
       } catch (e) {
         return value;
       }
@@ -47209,7 +47150,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   };
 
   var typeTesters = {
-    email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
+    email: /^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))$/i,
 
     // Follow https://www.w3.org/TR/html5/infrastructure.html#floating-point-numbers
     number: /^-?(\d*\.)?\d+(e[-+]?\d+)?$/i,
@@ -47358,10 +47299,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         return;
       }
       return this._setValidator.apply(this, arguments);
-    },
-
-    hasValidator: function hasValidator(name) {
-      return !!this.validators[name];
     },
 
     updateValidator: function updateValidator(name, arg1, arg2) {
@@ -47786,25 +47723,19 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
     // Determine which element will have `parsley-error` and `parsley-success` classes
     _manageClassHandler: function _manageClassHandler() {
-      // Class handled could also be determined by function given in Parsley options
-      if ('string' === typeof this.options.classHandler && $(this.options.classHandler).length) return $(this.options.classHandler);
+      // An element selector could be passed through DOM with `data-parsley-class-handler=#foo`
+      if ('string' === typeof this.options.classHandler) {
+        if ($(this.options.classHandler).length === 0) ParsleyUtils.warn('No elements found that match the selector `' + this.options.classHandler + '` set in options.classHandler or data-parsley-class-handler');
 
-      // Class handled could also be determined by function given in Parsley options
-      var $handlerFunction = this.options.classHandler;
-
-      // It might also be the function name of a global function
-      if ('string' === typeof this.options.classHandler && 'function' === typeof window[this.options.classHandler]) $handlerFunction = window[this.options.classHandler];
-
-      if ('function' === typeof $handlerFunction) {
-        var $handler = $handlerFunction.call(this, this);
-
-        // If this function returned a valid existing DOM element, go for it
-        if ('undefined' !== typeof $handler && $handler.length) return $handler;
-      } else if ('object' === typeof $handlerFunction && $handlerFunction instanceof jQuery && $handlerFunction.length) {
-        return $handlerFunction;
-      } else if ($handlerFunction) {
-        Utils.warn('The class handler `' + $handlerFunction + '` does not exist in DOM nor as a global JS function');
+        //return element or empty set
+        return $(this.options.classHandler);
       }
+
+      // Class handled could also be determined by function given in Parsley options
+      if ('function' === typeof this.options.classHandler) var $handler = this.options.classHandler.call(this, this);
+
+      // If this function returned a valid existing DOM element, go for it
+      if ('undefined' !== typeof $handler && $handler.length) return $handler;
 
       return this._inputHolder();
     },
@@ -47818,18 +47749,16 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     },
 
     _insertErrorWrapper: function _insertErrorWrapper() {
-      var $errorsContainer = this.options.errorsContainer;
+      var $errorsContainer;
 
       // Nothing to do if already inserted
       if (0 !== this._ui.$errorsWrapper.parent().length) return this._ui.$errorsWrapper.parent();
 
-      if ('string' === typeof $errorsContainer) {
-        if ($($errorsContainer).length) return $($errorsContainer).append(this._ui.$errorsWrapper);else if ('function' === typeof window[$errorsContainer]) $errorsContainer = window[$errorsContainer];else Utils.warn('The errors container `' + $errorsContainer + '` does not exist in DOM nor as a global JS function');
-      }
+      if ('string' === typeof this.options.errorsContainer) {
+        if ($(this.options.errorsContainer).length) return $(this.options.errorsContainer).append(this._ui.$errorsWrapper);else Utils.warn('The errors container `' + this.options.errorsContainer + '` does not exist in DOM');
+      } else if ('function' === typeof this.options.errorsContainer) $errorsContainer = this.options.errorsContainer.call(this, this);
 
-      if ('function' === typeof $errorsContainer) $errorsContainer = $errorsContainer.call(this, this);
-
-      if ('object' === typeof $errorsContainer && $errorsContainer.length) return $errorsContainer.append(this._ui.$errorsWrapper);
+      if ('undefined' !== typeof $errorsContainer && $errorsContainer.length) return $errorsContainer.append(this._ui.$errorsWrapper);
 
       return this._inputHolder().after(this._ui.$errorsWrapper);
     },
@@ -48074,11 +48003,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       return Utils.all(promises);
     },
 
-    refresh: function refresh() {
-      this._refreshFields();
-      return this;
-    },
-
     // Reset UI
     reset: function reset() {
       // Form case: emit a reset event for each field
@@ -48256,7 +48180,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       var group = _ref9.group;
 
       // do not validate a field if not the same as given validation group
-      this.refresh();
+      this.refreshConstraints();
       if (group && !this._isInGroup(group)) return;
 
       this.value = this.getValue();
@@ -48333,7 +48257,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       var _refreshed = _ref10._refreshed;
 
       // Recompute options and rebind constraints to have latest changes
-      if (!_refreshed) this.refresh();
+      if (!_refreshed) this.refreshConstraints();
       // do not validate a field if not the same as given validation group
       if (group && !this._isInGroup(group)) return;
 
@@ -48406,19 +48330,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       this._trigger('destroy');
     },
 
-    // Actualize options and rebind constraints
-    refresh: function refresh() {
-      this._refreshConstraints();
-      return this;
-    },
-
-    _refreshConstraints: function _refreshConstraints() {
-      return this.actualizeOptions()._bindConstraints();
-    },
-
+    // Actualize options that could have change since previous validation
+    // Re-bind accordingly constraints (could be some new, removed or updated)
     refreshConstraints: function refreshConstraints() {
-      Utils.warnOnce("Parsley's refreshConstraints is deprecated. Please use refresh");
-      return this.refresh();
+      return this.actualizeOptions()._bindConstraints();
     },
 
     /**
@@ -48513,7 +48428,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
         else if (null !== this.element.getAttribute('maxlength')) this.addConstraint('maxlength', this.element.getAttribute('maxlength'), undefined, true);
 
       // html5 types
-      var type = Utils.getType(this.element);
+      var type = this.element.type;
 
       // Small special case here for HTML5 number: integer validator if step attribute is undefined or an integer value, number otherwise
       if ('number' === type) {
@@ -48600,8 +48515,8 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       return this;
     },
 
-    // See `Field._refreshConstraints()`
-    _refreshConstraints: function _refreshConstraints() {
+    // See `Field.refreshConstraints()`
+    refreshConstraints: function refreshConstraints() {
       var fieldConstraints;
 
       this.constraints = [];
@@ -48622,7 +48537,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
           continue;
         }
 
-        fieldConstraints = this.$elements[i].data('FieldMultiple')._refreshConstraints().constraints;
+        fieldConstraints = this.$elements[i].data('FieldMultiple').refreshConstraints().constraints;
 
         for (var j = 0; j < fieldConstraints.length; j++) this.addConstraint(fieldConstraints[j].name, fieldConstraints[j].requirements, fieldConstraints[j].priority, fieldConstraints[j].isDomConstraint);
       }
@@ -48637,11 +48552,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
       // Radio input case
       if (this.element.nodeName === 'INPUT') {
-        var type = Utils.getType(this.element);
-        if (type === 'radio') return this._findRelated().filter(':checked').val() || '';
+        if (this.element.type === 'radio') return this._findRelated().filter(':checked').val() || '';
 
         // checkbox input case
-        if (type === 'checkbox') {
+        if (this.element.type === 'checkbox') {
           var values = [];
 
           this._findRelated().filter(':checked').each(function () {
@@ -48699,7 +48613,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   Factory.prototype = {
     init: function init(options) {
       this.__class__ = 'Parsley';
-      this.__version__ = '2.8.0';
+      this.__version__ = '2.7.2';
       this.__id__ = Utils.generateID();
 
       // Pre-compute options
@@ -48713,8 +48627,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     },
 
     isMultiple: function isMultiple() {
-      var type = Utils.getType(this.element);
-      return type === 'radio' || type === 'checkbox' || this.element.nodeName === 'SELECT' && null !== this.element.getAttribute('multiple');
+      return this.element.type === 'radio' || this.element.type === 'checkbox' || this.element.nodeName === 'SELECT' && null !== this.element.getAttribute('multiple');
     },
 
     // Multiples fields are a real nightmare :(
@@ -48746,8 +48659,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
       // Add proper `data-parsley-multiple` to siblings if we have a valid multiple name
       if (name) {
         $('input[name="' + name + '"]').each(function (i, input) {
-          var type = Utils.getType(input);
-          if (type === 'radio' || type === 'checkbox') input.setAttribute(_this13.options.namespace + 'multiple', _this13.options.multiple);
+          if (input.type === 'radio' || input.type === 'checkbox') input.setAttribute(_this13.options.namespace + 'multiple', _this13.options.multiple);
         });
       }
 
@@ -48823,7 +48735,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     actualizeOptions: null,
     _resetOptions: null,
     Factory: Factory,
-    version: '2.8.0'
+    version: '2.7.2'
   });
 
   // Supplement Field and Form with Base
@@ -48847,7 +48759,9 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
     }
 
     // Return undefined if applied to non existing DOM element
-    if (this.length == 0) {
+    if (!$(this).length) {
+      Utils.warn('You must bind Parsley on an existing element.');
+
       return;
     }
 
@@ -48879,7 +48793,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
   // ### Define methods that forward to the registry, and deprecate all access except through window.Parsley
   var registry = window.Parsley._validatorRegistry = new ValidatorRegistry(window.ParsleyConfig.validators, window.ParsleyConfig.i18n);
   window.ParsleyValidator = {};
-  $.each('setLocale addCatalog addMessage addMessages getErrorMessage formatMessage addValidator updateValidator removeValidator hasValidator'.split(' '), function (i, method) {
+  $.each('setLocale addCatalog addMessage addMessages getErrorMessage formatMessage addValidator updateValidator removeValidator'.split(' '), function (i, method) {
     window.Parsley[method] = function () {
       return registry[method].apply(registry, arguments);
     };
