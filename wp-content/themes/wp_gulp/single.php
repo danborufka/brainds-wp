@@ -11,6 +11,7 @@
 	<div class="mainContainer">
 		<div class="sections">
 			<div class="grid-x grid-padding-x section">
+				All the single pages, all the single pages.
 				<?php the_content(); ?>
 			</div>
 		</div>

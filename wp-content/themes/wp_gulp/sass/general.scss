@@ -10,6 +10,7 @@ h2 								{
 									font-weight: 			600;
 }
 
+
 .vspacer 						{
 									flex-grow: 				2;
 }
@@ -58,7 +59,14 @@ h2 								{
 
 .more-link,
 .link 							{
+									@include animated;
 									text-decoration: 		underline;
+}
+
+.link:hover,
+.more-link:hover 				{
+									color: 					$brainds-active;
+
 }
 
 .person 						{

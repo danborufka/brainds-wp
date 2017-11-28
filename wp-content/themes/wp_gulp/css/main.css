@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* COLORS */
 /* THEME */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -8959,7 +8958,12 @@ h2 {
 
 .more-link,
 .link {
+  transition: 0.3s all;
   text-decoration: underline; }
+
+.link:hover,
+.more-link:hover {
+  color: #071ac2; }
 
 .person {
   text-align: center; }

@@ -81,6 +81,9 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
+
+		add_image_size( 'header', 1280, 360  	 );
+		add_image_size( 'teaser', 600, 300, true );
 	}
 endif;
 add_action( 'after_setup_theme', 'espresso_setup' );
