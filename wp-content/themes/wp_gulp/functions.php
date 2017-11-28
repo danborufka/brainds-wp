@@ -41,6 +41,7 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'excerpt' );
 
 		// This theme uses wp_nav_menu() in one location.
 		// register_nav_menus( array(
@@ -92,7 +93,7 @@ add_action( 'after_setup_theme', 'espresso_setup' );
  * @global int $content_width
  */
 function espresso_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'espresso_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'espresso_content_width', 800 );
 }
 
 add_action( 'after_setup_theme', 'espresso_content_width', 0 );
@@ -132,7 +133,7 @@ function espresso_scripts() {
 }
 
 /* Disable WordPress Admin Bar for all users */
-show_admin_bar( false );
+//show_admin_bar( false );
 
 /*
 
@@ -173,7 +174,7 @@ function customPostTypeTeaser() {
 		"query_var"           => true,
 		// "menu_icon" => "//lorempixel.com/13/13",
 		"menu_icon"           => 'dashicons-megaphone',
-		"supports"            => array( "title", "editor", "thumbnail" ),
+		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
 	);
 	register_post_type( "Teaser", $args );
 
@@ -232,7 +233,7 @@ function addCustomPostTypes() {
 		"rewrite"             => array( "slug" => "consulting-case", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail" ),
+		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
 	));
 
 	register_post_type( "consulting-journal", array(
@@ -256,7 +257,7 @@ function addCustomPostTypes() {
 		"rewrite"             => array( "slug" => "consulting-journal", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail" ),
+		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
 	));
 
 	register_post_type( "design-case", array(
@@ -280,7 +281,7 @@ function addCustomPostTypes() {
 		"rewrite"             => array( "slug" => "design-case", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail" ),
+		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
 	));
 
 	register_post_type( "design-journal", array(
@@ -304,7 +305,7 @@ function addCustomPostTypes() {
 		"rewrite"             => array( "slug" => "design-journal", "with_front" => true ),
 		"query_var"           => true,
 		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail" ),
+		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
 	));
 
 
@@ -920,3 +921,13 @@ function admin_colorbar() {
     echo '<div style="display:block; height: 3px; width: 100%; background:'.get_field('background-color').'; margin-top: -75px; margin-bottom: 75px;"></div>';
 }
 add_action( 'edit_form_after_title', 'admin_colorbar' );
+
+
+function limit_text($text, $limit=55, $more='') {
+  if (str_word_count($text, 0) > $limit) {
+      $words = str_word_count($text, 2);
+      $pos = array_keys($words);
+      $text = substr($text, 0, $pos[$limit]) . $more;
+  }
+  return $text;
+}
