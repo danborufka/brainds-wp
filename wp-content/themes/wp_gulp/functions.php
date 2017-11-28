@@ -43,14 +43,12 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'excerpt' );
 
+		add_post_type_support( 'page', 'excerpt' );
+
 		// This theme uses wp_nav_menu() in one location.
 		// register_nav_menus( array(
 		// 	'primary' => esc_html__( 'Primary', 'espresso' ),
 		// ) );
-
-
-
-
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -84,6 +82,8 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 
 		add_image_size( 'header', 1280, 360  	 );
 		add_image_size( 'teaser', 600, 300, true );
+
+		flush_rewrite_rules();
 	}
 endif;
 add_action( 'after_setup_theme', 'espresso_setup' );
@@ -135,302 +135,13 @@ function espresso_scripts() {
 	}
 }
 
-/* Disable WordPress Admin Bar for all users */
-//show_admin_bar( false );
-
-/*
-
-add_action( 'init', 'customPostTypeTeaser' );
-function customPostTypeTeaser() {
-	$labels = array(
-		"name"               => __( 'Teaser' ),
-		"singular_name"      => __( 'Teaser' ),
-		"menu_name"          => __( 'Teaser' ),
-		"all_items"          => __( 'Alle Teaser' ),
-		"add_new"            => __( 'Teaser hinzufügen' ),
-		"add_new_item"       => __( 'Neuen Teaser hinzufügen' ),
-		"edit_item"          => __( 'Teaser bearbeiten' ),
-		"new_item"           => __( 'Neuen Teaser' ),
-		"view_item"          => __( 'Zeige Teaser' ),
-		"search_items"       => __( 'Durchsuche Teaser' ),
-		"not_found"          => __( 'Kein Teaser gefunden' ),
-		"not_found_in_trash" => __( 'Kein Teaser im Müll gefunden' ),
-		"parent_item_colon"  => __( 'Eltern Teaser' ),
-	);
-
-	$args = array(
-		"label"               => __( 'Teaser' ),
-		"labels"              => $labels,
-		"description"         => "",
-		"public"              => true,
-		// "publicly_queryable" => false,
-		"show_ui"             => true,
-		"show_in_rest"        => false,
-		"rest_base"           => "",
-		"has_archive"         => true,
-		"show_in_menu"        => true,
-		"exclude_from_search" => false,
-		"capability_type"     => "post",
-		"map_meta_cap"        => true,
-		"hierarchical"        => false,
-		"rewrite"             => array( "slug" => "Teaser", "with_front" => true ),
-		"query_var"           => true,
-		// "menu_icon" => "//lorempixel.com/13/13",
-		"menu_icon"           => 'dashicons-megaphone',
-		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
-	);
-	register_post_type( "Teaser", $args );
-
-// End of customPostTypeTeaser()
-}*/
-
-
-// function wporg_register_taxonomy_course() {
-// 	$labels = [
-// 		'name'              => _x( 'Courses', 'taxonomy general name' ),
-// 		'singular_name'     => _x( 'Course', 'taxonomy singular name' ),
-// 		'search_items'      => __( 'Search Courses' ),
-// 		'all_items'         => __( 'All Courses' ),
-// 		'parent_item'       => __( 'Parent Course' ),
-// 		'parent_item_colon' => __( 'Parent Course:' ),
-// 		'edit_item'         => __( 'Edit Course' ),
-// 		'update_item'       => __( 'Update Course' ),
-// 		'add_new_item'      => __( 'Add New Course' ),
-// 		'new_item_name'     => __( 'New Course Name' ),
-// 		'menu_name'         => __( 'Course' ),
-// 	];
-// 	$args   = [
-// 		'hierarchical'      => true, // make it hierarchical (like categories)
-// 		'labels'            => $labels,
-// 		'show_ui'           => true,
-// 		'show_admin_column' => true,
-// 		'query_var'         => true,
-// 		'rewrite'           => [ 'slug' => 'course' ],
-// 	];
-// 	register_taxonomy( 'course', [ 'post' ], $args );
-// }
-
-// add_action( 'init', 'wporg_register_taxonomy_course' );
-
-
-add_action( 'init', 'addCustomPostTypes' );
-function addCustomPostTypes() {
-	register_post_type( "consulting-case", array(
-		"label"               => __( 'Consulting Cases' ),
-		"labels"              => array(
-			"name"               => __( 'Consulting Cases' ),
-			"singular_name"      => __( 'Consulting Case' )
-		),
-		"description"         => "",
-		"public"              => true,
-		// "publicly_queryable" => false,
-		"show_ui"             => true,
-		"show_in_rest"        => false,
-		"rest_base"           => "",
-		"has_archive"         => true,
-		"show_in_menu"        => true,
-		"exclude_from_search" => false,
-		"capability_type"     => "post",
-		"map_meta_cap"        => true,
-		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "consulting-case", "with_front" => true ),
-		"query_var"           => true,
-		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
-	));
-
-	register_post_type( "consulting-journal", array(
-		"label"               => __( 'Consulting Journals' ),
-		"labels"              => array(
-			"name"               => __( 'Consulting Journals' ),
-			"singular_name"      => __( 'Consulting Journal' )
-		),
-		"description"         => "",
-		"public"              => true,
-		// "publicly_queryable" => false,
-		"show_ui"             => true,
-		"show_in_rest"        => false,
-		"rest_base"           => "",
-		"has_archive"         => true,
-		"show_in_menu"        => true,
-		"exclude_from_search" => false,
-		"capability_type"     => "post",
-		"map_meta_cap"        => true,
-		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "consulting-journal", "with_front" => true ),
-		"query_var"           => true,
-		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
-	));
-
-	register_post_type( "design-case", array(
-		"label"               => __( 'Design Cases' ),
-		"labels"              => array(
-			"name"               => __( 'Design Cases' ),
-			"singular_name"      => __( 'Design Case' )
-		),
-		"description"         => "",
-		"public"              => true,
-		// "publicly_queryable" => false,
-		"show_ui"             => true,
-		"show_in_rest"        => false,
-		"rest_base"           => "",
-		"has_archive"         => true,
-		"show_in_menu"        => true,
-		"exclude_from_search" => false,
-		"capability_type"     => "post",
-		"map_meta_cap"        => true,
-		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "design-case", "with_front" => true ),
-		"query_var"           => true,
-		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
-	));
-
-	register_post_type( "design-journal", array(
-		"label"               => __( 'Design Journals' ),
-		"labels"              => array(
-			"name"               => __( 'Design Journals' ),
-			"singular_name"      => __( 'Design Journal' )
-		),
-		"description"         => "",
-		"public"              => true,
-		// "publicly_queryable" => false,
-		"show_ui"             => true,
-		"show_in_rest"        => false,
-		"rest_base"           => "",
-		"has_archive"         => true,
-		"show_in_menu"        => true,
-		"exclude_from_search" => false,
-		"capability_type"     => "post",
-		"map_meta_cap"        => true,
-		"hierarchical"        => true,
-		"rewrite"             => array( "slug" => "design-journal", "with_front" => true ),
-		"query_var"           => true,
-		"hierarchical"        => true,
-		"supports"            => array( "title", "editor", "thumbnail", "excerpt" ),
-	));
-
-
-	flush_rewrite_rules();
-// End of customPostTypeFAQ()
-}
-
 
 
 //ACF Options Pane
 
 if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page('Brainds Options');
+	//acf_add_options_page('Brainds Options');
 }
-
-
-
-
-// Custom Column @ Wohnungen
-// add_filter( 'manage_wohnung_posts_columns', 'set_custom_edit_wohnung_columns' );
-// add_action( 'manage_wohnung_posts_custom_column' , 'custom_wohnung_column', 10, 2 );
-
-// function set_custom_edit_wohnung_columns($columns) {
-// 	$columns['wohnung_cat'] = __( 'Kategorie' );
-// 	return $columns;
-// }
-
-// function custom_wohnung_column( $column, $post_id ) {
-// 	switch ( $column ) {
-// 		case 'wohnung_cat' :
-
-// 			switch ( get_field('cat', $post_id) ) {
-// 				case 'ap': 
-// 					echo "Apartment";
-// 					break;
-// 				case 'loft': 
-// 					echo "Loft";
-// 					break;
-// 				case 'pent': 
-// 					echo "Penthouse";
-// 					break;
-// 				case 'loftC': 
-// 					echo "Loft Collection";
-// 					break;
-// 				case 'pentC': 
-// 					echo "Penthouse Colletion";
-// 					break;
-// 				case 'appC': 
-// 					echo "Appartment Colletion";
-// 					break;
-// 			}
-
-
-// 			break;
-// 	}
-// }
-
-//---
-
-
-add_action( 'init', 'addExtraImageFormats' );
-
-function addExtraImageFormats() {
-
-	add_image_size( 'small', 640 );
-	add_image_size( 'medium', 1040 );
-	add_image_size( 'large', 1400 );
-
-}
-
-
-function findParent($item) {
-	if (!$item->post_parent) {
-		return 0;
-	} else {
-	}
-}
-
-
-
-// add_action( 'init', 'customPostTypeFilm' );
-// function customPostTypeFilm() {
-// 	$labels = array(
-// 		"name" => __( 'Filme'),
-// 		"singular_name" => __( 'Film'),
-// 		"menu_name" => __( 'Filme'),
-// 		"all_items" => __( 'Alle Filme'),
-// 		"add_new" => __( 'Filme hinzufügen'),
-// 		"add_new_item" => __( 'Neuen Film hinzufügen'),
-// 		"edit_item" => __( 'Filme bearbeiten'),
-// 		"new_item" => __( 'Neuen Film'),
-// 		"view_item" => __( 'Zeige Filme'),
-// 		"search_items" => __( 'Durchsuche Filme'),
-// 		"not_found" => __( 'Kein Film gefunden'),
-// 		"not_found_in_trash" => __( 'Kein Film im Müll gefunden'),
-// 		"parent_item_colon" => __( 'Eltern Film'),
-// 		);
-
-// 	$args = array(
-// 		"label" => __( 'Filme'),
-// 		"labels" => $labels,
-// 		"description" => "",
-// 		"public" => true,
-// 		// "publicly_queryable" => false,
-// 		"show_ui" => true,
-// 		"show_in_rest" => false,
-// 		"rest_base" => "",
-// 		"has_archive" => true,
-// 		"show_in_menu" => true,
-// 		"exclude_from_search" => false,
-// 		"capability_type" => "post",
-// 		"map_meta_cap" => true,
-// 		"hierarchical" => true,
-// 		"rewrite" => array( "slug" => "film", "with_front" => true ),
-// 		"query_var" => true,
-// 		// "menu_icon" => "//lorempixel.com/13/13",
-// 		"menu_icon" => 'dashicons-format-video',
-// 		"supports" => array( "title", "editor", "thumbnail" ),					);
-// 	register_post_type( "film", $args );
-
-// // End of customPostTypeFilm()
-// }
 
 
 add_filter( 'wp_image_editors', 'change_graphic_lib' );
@@ -439,51 +150,35 @@ function change_graphic_lib( $array ) {
 	return array( 'WP_Image_Editor_GD', 'WP_Image_Editor_Imagick' );
 }
 
-
-function fontawesomeicons() {
-	// echo '<link href="/link/to/admin-styles.css"  rel="stylesheet">';
-}
-
-add_action( 'admin_head', 'fontawesomeicons' );
-
-
 function remove_menus() {
 
-	// remove_menu_page( 'index.php' );                  //Dashboard
-	remove_menu_page( 'edit.php' );                   //Posts
+	remove_menu_page( 'edit.php' );                   	// Posts
+	remove_menu_page( 'edit-comments.php' );          	// Comments
 
-	//remove_menu_page( 'upload.php' );                 //Media
-	// remove_menu_page( 'edit.php?post_type=page' );    //Pages
-
-	remove_menu_page( 'edit-comments.php' );          //Comments
-	// remove_menu_page( 'themes.php' );                 //Appearance
-	// remove_menu_page( 'plugins.php' );                //Plugins
-	// remove_menu_page( 'users.php' );                  //Users
-	// remove_menu_page( 'tools.php' );                  //Tools
-	// remove_menu_page( 'options-general.php' );        //Settings
+	// remove_menu_page( 'upload.php' );                // Media
+	// remove_menu_page( 'themes.php' );                // Appearance
+	// remove_menu_page( 'plugins.php' );               // Plugins
+	// remove_menu_page( 'users.php' );                 // Users
+	// remove_menu_page( 'tools.php' );                 // Tools
+	// remove_menu_page( 'options-general.php' );       // Settings
 
 }
-
 add_action( 'admin_menu', 'remove_menus' );
 
 
 //Nav Menus:
 
-// register_nav_menus(array(
-// 		'primary' => __('Hauptmenu'),
-// 		'footer' => __('Anderes Menu')
-// ));
+register_nav_menus(array('primary' => __('Hauptmenu')));
 
 //Remove Wordpress Logo in BE:
 
-// function annointed_admin_bar_remove() {
-//         global $wp_admin_bar;
+function annointed_admin_bar_remove() {
+        global $wp_admin_bar;
 
-//         /* Remove their stuff */
-//         $wp_admin_bar->remove_menu('wp-logo');
-// }
-
-// add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
+        /* Remove their stuff */
+        $wp_admin_bar->remove_menu('wp-logo');
+}
+add_action('wp_before_admin_bar_render', 'annointed_admin_bar_remove', 0);
 
 
 //Page Slug Body Class
