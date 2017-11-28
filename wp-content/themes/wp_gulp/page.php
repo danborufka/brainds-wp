@@ -15,9 +15,13 @@ get_header();
 	<?php
 		if(have_rows('sections')) {
 			?><div class="sections grid-x full"><?php
+
+			$is_first_row = true;
+
 			while( have_rows('sections')) {
 				the_row();
-					include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
+				include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
+				$is_first_row = false;
 			}
 			?></div><?php
 		} else {

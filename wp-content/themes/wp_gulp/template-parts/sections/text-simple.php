@@ -12,8 +12,9 @@
 	<div class="grid-container grid-x">
 		<?php if(get_sub_field('title')): ?>
 			<h2><?php the_sub_field('title'); ?></h2>
+		<?php elseif($is_first_row): ?>
+			<h2><?php the_title(); ?></h2>	
 		<?php endif; ?>
-
 
 		<?php if(get_sub_field('img_left')): ?>
 			<div class="image-container cell small-12 medium-3">

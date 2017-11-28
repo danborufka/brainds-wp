@@ -8965,6 +8965,10 @@ h2 {
 .more-link:hover {
   color: #071ac2; }
 
+.text-wide {
+  padding: 0 140px;
+  text-align: center; }
+
 .person {
   text-align: center; }
   .person .portrait {
