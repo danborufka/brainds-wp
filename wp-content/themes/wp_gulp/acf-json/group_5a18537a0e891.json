@@ -250,6 +250,34 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "consulting-case"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "consulting-journal"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "design-case"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "design-journal"
+            }
         ]
     ],
     "menu_order": 0,
@@ -258,6 +286,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "the_content",
         "discussion",
         "comments",
         "categories",
@@ -266,5 +295,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511876864
+    "modified": 1511878564
 }

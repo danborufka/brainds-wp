@@ -903,6 +903,14 @@ function contactForm() {
 
 function get_section() {
 	global $pagename;
+
+	$parents = get_post_ancestors(get_The_ID());
+
+	if($parents) {
+		$rootId = end($parents);
+		return ucfirst(get_the_title($rootId));
+	}
+
 	return ucfirst($pagename);
 }
 
