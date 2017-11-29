@@ -9070,6 +9070,9 @@ h2 {
 .main-nav .current-page-ancestor a {
   color: #071ac2; }
 
+.brand {
+  margin-left: 56px; }
+
 .homepage .mainContainer {
   height: calc(100vh - 60px);
   padding-top: 0; }
