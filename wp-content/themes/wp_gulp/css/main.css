@@ -9051,8 +9051,6 @@ h2 {
     .top-bar .menu-icon::after {
       background-color: #000;
       box-shadow: 0 7px 0 #000, 0 14px 0 #000; }
-  .top-bar .menu-text {
-    margin-top: 20px; }
 
 .top-bar,
 .top-bar ul {

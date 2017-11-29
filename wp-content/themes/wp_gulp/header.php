@@ -39,7 +39,7 @@
 		    <ul class="menu">
 		      <li class="menu-text">
 		      	<a class="brand" href="<?= get_home_url(); ?>">brainds</a>
-		      	<a class="current-menu" href="<?= get_section_url(); ?>"><?= get_section_name(); ?></a>
+		      	<a class="current-menu" href="<?= get_section_url(); ?>"><?= get_section_name(); ?>&nbsp;</a>
 		      </li>
 		    </ul>
 		  </div>
