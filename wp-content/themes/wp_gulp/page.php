@@ -10,6 +10,8 @@ get_header();
 <div class="mainContainer">
 	<?php if(has_post_thumbnail()): ?>
 		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
+	<?php elseif(get_field('embed')): ?>
+		<iframe src="<?php the_field('embed'); ?>"></iframe>
 	<?php endif; ?>
 
 	<?php

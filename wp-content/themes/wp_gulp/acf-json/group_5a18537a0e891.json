@@ -584,6 +584,25 @@
                                     "append": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_5a1ee084f743d",
+                            "label": "Dunkler Hintergrund",
+                            "name": "darken",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -626,5 +645,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511964185
+    "modified": 1511973010
 }
