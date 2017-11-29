@@ -16,6 +16,16 @@ jQuery(document).ready(function ($) {
         if (!Foundation.MediaQuery.atLeast('medium')) {
             event.preventDefault();
         }
+    }).on('touchend', '.area', function (event) {
+        var $this = $(this);
+        var toggleClick = $this.data('toggleClick');
+
+        if (toggleClick) {
+            window.location = $this.find('.hoverLink')[0].href;
+        }
+
+        toggleClick = !toggleClick;
+        $this.data('toggleClick', toggleClick);
     }).on('click', '.menu-icon', function (event) {
         $body.toggleClass('modal-open');
         $nav.toggleClass('active');

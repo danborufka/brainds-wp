@@ -11,10 +11,21 @@ jQuery(document).ready(function ($) {
     var $nav    = $('.main-nav');
 
     $(document)
-        .on('click', '.hoverLink', (event) => {
+        .on('click', '.hoverLink', function(event) {
             if(!Foundation.MediaQuery.atLeast('medium')) {
                 event.preventDefault();
             }
+        })
+        .on('touchend', '.area', function(event) {
+                var $this = $(this);
+                var toggleClick = $this.data('toggleClick');
+                
+                if(toggleClick) {
+                    window.location = $this.find('.hoverLink')[0].href;
+                }
+                
+                toggleClick = !toggleClick;
+                $this.data('toggleClick', toggleClick);
         })
         .on('click', '.menu-icon', event => {
             $body.toggleClass('modal-open');
