@@ -9020,8 +9020,6 @@ h2 {
   .modal.active {
     opacity: 1;
     bottom: 0; }
-  .modal > div {
-    padding: 12%; }
   .modal .close {
     font-size: 200%;
     position: absolute;
@@ -9093,6 +9091,30 @@ h2 {
   .current-menu:hover {
     color: #071ac2;
     text-decoration: underline; }
+
+.menu-hauptmenue-container {
+  height: calc(100% - 60px); }
+
+#menu-hauptmenue {
+  align-items: center;
+  height: 100%;
+  list-style: none; }
+  #menu-hauptmenue ul {
+    list-style: none;
+    margin-left: 0; }
+  #menu-hauptmenue > .menu-item {
+    padding-left: 20%;
+    width: 50%; }
+    #menu-hauptmenue > .menu-item > a {
+      font-size: 150%;
+      font-weight: 700; }
+  #menu-hauptmenue .sub-menu {
+    font-size: 120%; }
+  #menu-hauptmenue a {
+    transition: 0.3s all; }
+    #menu-hauptmenue a:hover {
+      color: #071ac2;
+      text-decoration: underline; }
 
 .homepage .mainContainer {
   height: calc(100vh - 60px);

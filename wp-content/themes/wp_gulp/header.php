@@ -29,7 +29,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="modal main-nav"><?php wp_nav_menu(); // main navigation modal ?></div>
+	<div class="modal main-nav">
+		<?php wp_nav_menu(array(
+				'menu_class' => 'grid-container grid-x'
+			)); // main navigation modal ?>
+	</div>
 	<div class="mainContent">
 		<div class="top-bar">
 		  <div class="top-bar-left">

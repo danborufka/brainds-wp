@@ -52,3 +52,36 @@
 									text-decoration: underline;
 	}								
 }
+
+.menu-hauptmenue-container 		{
+									height: 		calc(100% - #{$brainds-header-height});	
+}
+
+#menu-hauptmenue 				{
+									align-items: 	center;
+									height: 		100%;
+									list-style: 	none;
+	ul 							{
+									list-style: 	none;
+									margin-left: 	0;
+
+	}								
+	> .menu-item 				{
+									padding-left: 	20%;
+									width: 			50%;
+		> a 					{
+									font-size: 		150%;
+									font-weight: 	700;
+		}
+	}
+	.sub-menu 					{
+									font-size: 		120%;
+	}
+	a 							{
+									@include animated;
+		&:hover 				{
+									color: 			$brainds-active;
+									text-decoration:underline;
+		}							
+	}
+}
