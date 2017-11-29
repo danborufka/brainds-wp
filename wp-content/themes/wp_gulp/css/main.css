@@ -8951,6 +8951,9 @@ h2 {
 .wide {
   padding: 0 140px; }
 
+.journal p {
+  column-count: 2; }
+
 .sections {
   padding-top: 7px;
   padding-bottom: 48px; }

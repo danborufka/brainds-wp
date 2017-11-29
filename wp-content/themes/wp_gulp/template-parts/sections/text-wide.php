@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="section cell text-wide wide">
+<div class="section cell text-wide wide<?php if(get_sub_field('journal')): ?> journal<?php endif; ?>">
 	<?php if(get_sub_field('title')): ?>
 		<h2><?php the_sub_field('title'); ?></h2>
 	<?php elseif($is_first_row): ?>
