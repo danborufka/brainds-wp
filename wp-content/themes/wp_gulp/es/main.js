@@ -7,6 +7,9 @@ jQuery(document).ready(function ($) {
     //init Foundation
     //++++++++++++++++++++++++++++++++++++++++++
 
+    var $body   = $('body');
+    var $nav    = $('.main-nav');
+
     $(document)
         .on('click', '.hoverLink', (event) => {
             if(!Foundation.MediaQuery.atLeast('medium')) {
@@ -14,7 +17,8 @@ jQuery(document).ready(function ($) {
             }
         })
         .on('click', '.menu-icon', event => {
-            $('.main-nav').toggleClass('in');
+            $body.toggleClass('modal-open');
+            $nav.toggleClass('active');
             event.preventDefault();
         })
         .on('click', '.modal .close', function(event) {

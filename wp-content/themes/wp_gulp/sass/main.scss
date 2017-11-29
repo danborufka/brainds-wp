@@ -1,3 +1,5 @@
+$brainds-header-height: 		60px;
+
 @import "colors";
 @import 'reset';
 @import 'foundation/settings';
@@ -10,7 +12,6 @@
 @import 'fonts';
 @import 'general';
 
-@import "header";
 @import 'nav';
 
 @import "home-page";

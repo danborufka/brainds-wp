@@ -9,12 +9,16 @@ jQuery(document).ready(function ($) {
     //init Foundation
     //++++++++++++++++++++++++++++++++++++++++++
 
+    var $body = $('body');
+    var $nav = $('.main-nav');
+
     $(document).on('click', '.hoverLink', function (event) {
         if (!Foundation.MediaQuery.atLeast('medium')) {
             event.preventDefault();
         }
     }).on('click', '.menu-icon', function (event) {
-        $('.main-nav').toggleClass('in');
+        $body.toggleClass('modal-open');
+        $nav.toggleClass('active');
         event.preventDefault();
     }).on('click', '.modal .close', function (event) {
         $(this).closest('.modal').removeClass('in');

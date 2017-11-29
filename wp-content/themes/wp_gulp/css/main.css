@@ -9010,16 +9010,16 @@ h2 {
   transition: 0.3s all;
   background-color: #f6f6f6;
   position: absolute;
-  height: 0;
+  bottom: 100%;
   left: 0;
   opacity: 0;
   overflow: hidden;
   right: 0;
-  top: 0;
+  top: 60px;
   z-index: 999; }
-  .modal.in {
+  .modal.active {
     opacity: 1;
-    height: 100%; }
+    bottom: 0; }
   .modal > div {
     padding: 12%; }
   .modal .close {
@@ -9051,17 +9051,29 @@ h2 {
 .logged-in .hoverText {
   margin-top: 32px; }
 
+.logged-in .modal {
+  margin-top: 32px; }
+
 .top-bar {
   height: 60px;
   margin: 0;
   overflow: hidden;
   padding: 0; }
   .top-bar .menu-icon {
+    transition: 0.3s all;
     margin-right: 86px;
     margin-top: 4px; }
     .top-bar .menu-icon::after {
       background-color: #000;
       box-shadow: 0 7px 0 #000, 0 14px 0 #000; }
+
+.modal-open .menu-icon::after {
+  background-color: transparent;
+  box-shadow: none;
+  content: "×";
+  font-size: 180%;
+  margin-top: -11px;
+  text-align: center; }
 
 .top-bar,
 .top-bar ul {

@@ -29,10 +29,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<div class="modal main-nav">
-		<a href="#" class="close">&times;</a>
-		<?php wp_nav_menu(); ?>
-	</div>
+	<div class="modal main-nav"><?php wp_nav_menu(); // main navigation modal ?></div>
 	<div class="mainContent">
 		<div class="top-bar">
 		  <div class="top-bar-left">

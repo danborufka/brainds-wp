@@ -133,17 +133,17 @@ $vspace-md: 30px;
 									@include animated;
 									background-color: 		$dirty-white;
 									position: 				absolute;
-									height: 				0;
+									bottom: 				100%;
 									left: 					0;
 									opacity: 				0;
 									overflow: 				hidden;
 									right: 					0;
-									top: 					0;
+									top: 					$brainds-header-height;
 									z-index: 				999;
 
-	&.in 						{
+	&.active 					{
 									opacity: 				1;
-									height: 				100%;
+									bottom: 				0;
 	}
 
 	> div 						{
@@ -186,6 +186,9 @@ $vspace-md: 30px;
 
 .logged-in 						{
 	.hoverText 					{
+									margin-top: 			32px;
+	}
+	.modal 						{
 									margin-top: 			32px;
 	}
 }
