@@ -8924,7 +8924,10 @@ h1, h2, h3, h4, h5 {
   width: 100%; }
 
 h2 {
-  font-weight: 600; }
+  font-weight: 600;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-bottom: 8px; }
 
 .vspacer {
   flex-grow: 2; }
