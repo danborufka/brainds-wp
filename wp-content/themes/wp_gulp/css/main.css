@@ -9040,6 +9040,9 @@ h2 {
   .person .portrait {
     border-radius: 300px; }
 
+.logged-in .hoverText {
+  margin-top: 32px; }
+
 .top-bar {
   height: 60px;
   margin: 0;
