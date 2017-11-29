@@ -8945,6 +8945,9 @@ h2 {
   max-height: 360px;
   width: 100%; }
 
+.embed {
+  border: none; }
+
 .post-thumbnail-container {
   background-size: cover;
   background-position: center;

@@ -11,7 +11,7 @@ get_header();
 	<?php if(has_post_thumbnail()): ?>
 		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
 	<?php elseif(get_field('embed')): ?>
-		<iframe class="embed" src="<?php the_field('embed'); ?>"></iframe>
+		<iframe class="embed" src="<?php the_field('embed'); ?>" frameborder="0" allowfullscreen></iframe>
 	<?php endif; ?>
 
 	<?php
