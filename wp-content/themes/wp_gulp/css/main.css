@@ -9042,6 +9042,7 @@ h2 {
   color: #071ac2; }
 
 .person {
+  padding: 30px;
   text-align: center; }
   .person .portrait {
     border-radius: 300px; }
