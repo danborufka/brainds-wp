@@ -144,8 +144,9 @@ $vspace-md: 30px;
 	.close 						{
 									font-size: 				200%;
 									position: 				absolute;
-									right: 					30px;
-									top: 					30px;
+									right: 					0;
+									top: 					0;
+									padding: 				$vspace-md;
 	}
 }
 
