@@ -421,16 +421,15 @@ function init_template(){
 	//Remove WYSIWYG
 }
 
-function restrict_by_parent() {
+function add_filter_to_restrict_by_parent() {
     global $typenow;
     global $wp_query;
 
     if ($typenow=='page') {
     	wp_dropdown_pages(array('name' => 'post_parent', 'show_option_none' => 'Alle Seiten'));
-        //echo '<a class="button" href="#test">Consulting Cases</a>';
     }
 }
-add_action('restrict_manage_posts','restrict_by_parent');
+add_action('restrict_manage_posts','add_filter_to_restrict_by_parent');
 
 
 
