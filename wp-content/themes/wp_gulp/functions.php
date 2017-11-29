@@ -413,6 +413,11 @@ add_filter( 'acf/load_field/name=faq_kategorie', 'acf_load_color_field_choices' 
 
 add_action('init', 'init_remove_support',100);
 function init_remove_support(){
+
+	if ( is_admin() ) {
+        $GLOBALS['wp']->add_query_var( 'post_parent' );
+	}
+
     remove_post_type_support('page', 'editor');
     // remove_post_type_support('wohnung', 'editor');
 }
