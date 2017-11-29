@@ -23,10 +23,16 @@
 .main-nav 						{
 	.current-page-ancestor,
 	.current-page-ancestor a 	{
-									color: $brainds-active;
+									color: 			$brainds-active;
 	}
 }
 
 .brand 							{
+									font-family: 	Times, "Times New Roman", serif;
 									margin-left: 	56px;
+}
+
+.current-menu	 				{
+									color: 			$brainds-active;
+									font-size: 		80%;
 }

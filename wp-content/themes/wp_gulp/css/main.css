@@ -9071,7 +9071,12 @@ h2 {
   color: #071ac2; }
 
 .brand {
+  font-family: Times, "Times New Roman", serif;
   margin-left: 56px; }
+
+.current-menu {
+  color: #071ac2;
+  font-size: 80%; }
 
 .homepage .mainContainer {
   height: calc(100vh - 60px);
@@ -9112,6 +9117,7 @@ h2 {
         .homepage .area.consulting .hoverText {
           left: 0; } }
   .homepage .area h3 {
+    font-family: Times, "Times New Roman", serif;
     font-weight: 700; }
   .homepage .area a {
     font-size: 120%;
