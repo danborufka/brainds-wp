@@ -8,9 +8,9 @@
  */
 
 ?>
-<div class="section cell">
-	<div class="img-double grid-container grid-x">
-		<img class="small-6" src="<?php the_sub_field('image-left')['url']; ?>">
-		<img class="small-6" src="<?php the_sub_field('image-right')['url']; ?>">
+<div class="section cell img-block img-double">
+	<div class="grid-x grid-padding-x wide">
+		<img class="cell small-6" src="<?php echo get_sub_field('image-left')['url']; ?>">
+		<img class="cell small-6" src="<?php echo get_sub_field('image-right')['url']; ?>">
 	</div>
 </div>

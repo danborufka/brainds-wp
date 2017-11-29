@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="section cell">
+<div class="section cell people-block">
 	<div class="grid-container grid-x">
 		<?php if(get_sub_field('people-title')): ?>
 			<h2 class="cell"><?php the_sub_field('people-title'); ?></h2>

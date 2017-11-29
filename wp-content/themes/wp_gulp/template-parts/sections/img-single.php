@@ -8,8 +8,8 @@
  */
 
 ?>
-<div class="section cell">
-	<div class="img-single">
-		<img src="<?php the_sub_field('image')['url']; ?>" width="100%">
+<div class="section cell img-block img-single">
+	<div class="grid-container grid-x">
+		<img class="cell small-12" src="<?php echo get_sub_field('image')['url']; ?>">
 	</div>
 </div>

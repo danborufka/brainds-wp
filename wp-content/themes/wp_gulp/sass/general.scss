@@ -42,17 +42,39 @@ h2 								{
 									height: 				300px;
 }
 
-.mainContainer 					{
-									
+.wide 							{
+									padding: 				0 140px;	
 }
+
+$vspace-lg: 48px;
+$vspace-md: 30px;
 
 .sections 						{
 									padding-top: 			7px;
+									padding-bottom: 		$vspace-lg;
 	.section 					{
-									padding-bottom: 		48px;
-									padding-top: 			48px;
+									padding-bottom: 		$vspace-lg;
+									padding-top: 			$vspace-lg;
+		&.text-simple
 		&:nth-child(even)		{
 									background: 			#f6f6f6;
+		}
+
+		&.text-simple + 
+		 .img-block 			{
+								 	margin-top: 			-$vspace-lg;
+		 }
+
+		&.text-wide 			{
+									text-align: 			center;
+		}
+
+		&.img-block 			{
+									padding-bottom: 		0;
+									padding-top: 			0;
+			+.img-block 		{
+									margin-top: 			$vspace-md;
+			}
 		}
 	}
 }
@@ -97,10 +119,6 @@ h2 								{
 
 }
 
-.text-wide 						{
-									padding: 				0 140px;	
-									text-align: 			center;
-}
 
 .person 						{
 									text-align: 			center;

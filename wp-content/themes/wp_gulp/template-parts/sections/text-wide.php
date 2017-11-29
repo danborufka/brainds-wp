@@ -8,13 +8,11 @@
  */
 
 ?>
-<div class="section cell">
-	<div class="text-wide wide">
-		<?php if(get_sub_field('title')): ?>
-			<h2><?php the_sub_field('title'); ?></h2>
-		<?php elseif($is_first_row): ?>
-			<h2><?php the_title(); ?></h2>
-		<?php endif; ?>
-		<p><?php the_sub_field('content'); ?></p>
-	</div>
+<div class="section cell text-wide wide">
+	<?php if(get_sub_field('title')): ?>
+		<h2><?php the_sub_field('title'); ?></h2>
+	<?php elseif($is_first_row): ?>
+		<h2><?php the_title(); ?></h2>
+	<?php endif; ?>
+	<p><?php the_sub_field('content'); ?></p>
 </div>
