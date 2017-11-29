@@ -9000,7 +9000,7 @@ h2 {
     padding: 0 10px; }
 
 .modal {
-  transition: 0.3s opacity;
+  transition: 0.3s all;
   background-color: #fff;
   position: absolute;
   height: 0;
