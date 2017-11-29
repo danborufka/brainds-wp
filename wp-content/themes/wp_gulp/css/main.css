@@ -9049,6 +9049,22 @@ h2 {
   .person .portrait {
     border-radius: 300px; }
 
+/**/
+.wpforms-field,
+.wpforms-field-row {
+  max-width: 100% !important; }
+  .wpforms-field input,
+  .wpforms-field-row input {
+    border: none !important;
+    height: 32px !important; }
+    .wpforms-field input::-webkit-input-placeholder, .wpforms-field input:-moz-placeholder, .wpforms-field input::-moz-placeholder, .wpforms-field input:-ms-input-placeholder,
+    .wpforms-field-row input::-webkit-input-placeholder,
+    .wpforms-field-row input:-moz-placeholder,
+    .wpforms-field-row input::-moz-placeholder,
+    .wpforms-field-row input:-ms-input-placeholder {
+      color: 979797 !important; }
+
+/* ADMIN VIEW */
 .logged-in .hoverText {
   margin-top: 32px; }
 

@@ -188,6 +188,27 @@ $vspace-md: 30px;
 	}
 }
 
+
+/**/
+
+.wpforms-field,
+.wpforms-field-row {
+									max-width: 100%!important;
+	input {
+									border: 	none!important;
+									height: 	32px!important;
+
+		&::-webkit-input-placeholder,
+		&:-moz-placeholder,
+		&::-moz-placeholder,
+		&:-ms-input-placeholder {  
+									color: 979797!important;  
+		}
+
+	}
+}
+
+/* ADMIN VIEW */
 .logged-in 						{
 	.hoverText 					{
 									margin-top: 			32px;
