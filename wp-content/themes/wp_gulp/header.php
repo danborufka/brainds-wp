@@ -46,7 +46,7 @@
 		  <div class="top-bar-right">
 		    <ul class="menu">
 		      <li><a class="menu-icon"><span></span></a></li>
-		      <li><a href="#"><i class="fi-magnifying-glass"></i></a></li>
+		      <!-- <li><a href="#"><i class="fi-magnifying-glass"></i></a></li> -->
 		    </ul>
 		  </div>
 		</div>
