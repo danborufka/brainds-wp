@@ -9,14 +9,6 @@
 	$post_type 	= get_field('posttype');
 	$query 		= new WP_Query("post_type=page&post_parent=$post->ID");
 
-	/*
-	'post_type'      => 'page',
-    'posts_per_page' => -1,
-    'post_parent'    => $post->ID,
-    'order'          => 'ASC',
-    'orderby'        => 'menu_order'
-    */
-
 	get_header();
 ?>
 	<div class="mainContainer">
