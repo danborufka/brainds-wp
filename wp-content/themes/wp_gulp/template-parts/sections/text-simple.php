@@ -11,9 +11,9 @@
 <div class="section cell">
 	<div class="grid-container grid-x">
 		<?php if(get_sub_field('title')): ?>
-			<h2><?php the_sub_field('title'); ?></h2>
+			<h2 <?php if(get_sub_field('title_for_section')): ?>class="section-title"<?php endif; ?>><span><?php the_sub_field('title'); ?></span></h2>
 		<?php elseif($is_first_row): ?>
-			<h2><?php the_title(); ?></h2>	
+			<h2><?php the_title(); ?></h2>
 		<?php endif; ?>
 
 		<?php if(get_sub_field('img_left')): ?>

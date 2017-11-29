@@ -8920,6 +8920,9 @@ body {
   height: 100vh;
   width: 100%; }
 
+h1, h2, h3, h4, h5 {
+  width: 100%; }
+
 h2 {
   font-weight: 600; }
 
@@ -8934,7 +8937,7 @@ h2 {
   text-align: center; }
 
 .featured-image {
-  height: 40vh;
+  min-height: 40vh;
   max-height: 360px;
   width: 100%; }
 
@@ -8952,6 +8955,26 @@ h2 {
     padding-top: 48px; }
     .sections .section:nth-child(even) {
       background: #f6f6f6; }
+
+.section-title {
+  font-size: 100%;
+  margin-bottom: 44px;
+  position: relative;
+  text-align: center;
+  z-index: 1; }
+  .section-title::before {
+    border-top: 2px solid #000;
+    bottom: 0;
+    content: "";
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -1; }
+  .section-title span {
+    background: #fff;
+    padding: 0 10px; }
 
 .more-link {
   display: block; }

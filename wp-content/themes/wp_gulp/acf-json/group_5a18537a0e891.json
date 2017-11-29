@@ -31,7 +31,7 @@
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "70",
                                 "class": "",
                                 "id": ""
                             },
@@ -40,6 +40,25 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a1e7d855bc86",
+                            "label": "Sektionsüberschrift",
+                            "name": "title_for_section",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         },
                         {
                             "key": "field_5a19d30d83259",
@@ -86,6 +105,54 @@
                         }
                     ],
                     "min": "Partner",
+                    "max": ""
+                },
+                "5a1db6cb38558": {
+                    "key": "5a1db6cb38558",
+                    "name": "text-wide",
+                    "label": "Textblock weit",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a1db78a8d930",
+                            "label": "Überschrift",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a1db6e338559",
+                            "label": "Inhalt (Text)",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
                     "max": ""
                 },
                 "5a1c0a4834a23": {
@@ -236,54 +303,6 @@
                     ],
                     "min": "",
                     "max": ""
-                },
-                "5a1db6cb38558": {
-                    "key": "5a1db6cb38558",
-                    "name": "text-wide",
-                    "label": "Textblock weit",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5a1db78a8d930",
-                            "label": "Überschrift",
-                            "name": "title",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5a1db6e338559",
-                            "label": "Inhalt (Text)",
-                            "name": "content",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
-                            "delay": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
                 }
             },
             "button_label": "Sektion hinzufügen",
@@ -322,5 +341,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511897042
+    "modified": 1511948191
 }
