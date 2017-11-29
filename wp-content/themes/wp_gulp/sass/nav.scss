@@ -35,4 +35,8 @@
 .current-menu	 				{
 									color: 			$brainds-active;
 									font-size: 		80%;
+	&:hover 					{	
+									color: 			$brainds-active;
+									text-decoration: underline;
+	}								
 }

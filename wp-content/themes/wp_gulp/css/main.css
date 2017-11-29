@@ -9077,6 +9077,9 @@ h2 {
 .current-menu {
   color: #071ac2;
   font-size: 80%; }
+  .current-menu:hover {
+    color: #071ac2;
+    text-decoration: underline; }
 
 .homepage .mainContainer {
   height: calc(100vh - 60px);
