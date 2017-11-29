@@ -8956,7 +8956,7 @@ h2 {
   height: 300px; }
 
 .wide {
-  padding: 0 140px; }
+  padding: 0 10%; }
 
 .journal p {
   column-count: 2; }
@@ -9067,6 +9067,11 @@ h2 {
     .top-bar .menu-icon::after {
       background-color: #000;
       box-shadow: 0 7px 0 #000, 0 14px 0 #000; }
+  @media screen and (max-width: 39.9375em) {
+    .top-bar .top-bar-left {
+      max-width: calc(100% - 53px); }
+    .top-bar .top-bar-right {
+      max-width: 52px; } }
 
 .modal-open .menu-icon::after {
   background-color: transparent;
@@ -9080,6 +9085,7 @@ h2 {
 .top-bar ul {
   background-color: #f6f6f6; }
 
+.main-nav .current-menu-item > a,
 .main-nav .current-page-ancestor,
 .main-nav .current-page-ancestor a {
   color: #071ac2; }
@@ -9087,6 +9093,9 @@ h2 {
 .brand {
   font-family: Times, "Times New Roman", serif;
   margin-left: 56px; }
+  @media screen and (max-width: 39.9375em) {
+    .brand {
+      margin-left: -16px; } }
 
 .current-menu {
   color: #071ac2;
@@ -9108,6 +9117,11 @@ h2 {
   #menu-hauptmenue > .menu-item {
     padding-left: 20%;
     width: 50%; }
+    @media screen and (max-width: 39.9375em) {
+      #menu-hauptmenue > .menu-item {
+        padding-left: 0;
+        text-align: center;
+        width: 100%; } }
     #menu-hauptmenue > .menu-item > a {
       font-size: 150%;
       font-weight: 700; }
@@ -9178,7 +9192,7 @@ h2 {
     height: calc(100% - 60px);
     opacity: 0;
     overflow: hidden;
-    padding: 10vh;
+    padding: 7vh;
     pointer-events: none;
     position: absolute;
     top: 60px;

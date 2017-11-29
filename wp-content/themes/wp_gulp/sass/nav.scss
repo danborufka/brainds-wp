@@ -12,6 +12,15 @@
 									box-shadow: 	0 7px 0 #000, 0 14px 0 #000;
 		}
 	}
+
+	@include breakpoint(small only) {
+		.top-bar-left 			{
+									max-width: 		calc(100% - 53px);
+		}
+		.top-bar-right 			{
+									max-width: 		52px;
+		}
+	}
 }
 
 .modal-open 					{	
@@ -33,6 +42,7 @@
 }
 
 .main-nav 						{
+	.current-menu-item > a,
 	.current-page-ancestor,
 	.current-page-ancestor a 	{
 									color: 			$brainds-active;
@@ -42,6 +52,9 @@
 .brand 							{
 									font-family: 	Times, "Times New Roman", serif;
 									margin-left: 	56px;
+	@include breakpoint(small only) {
+									margin-left: 	-16px;
+	}
 }
 
 .current-menu	 				{
@@ -69,6 +82,13 @@
 	> .menu-item 				{
 									padding-left: 	20%;
 									width: 			50%;
+		@include breakpoint(small only) {
+									padding-left: 	0;
+									text-align: 	center;
+									width: 			100%;
+		}
+
+
 		> a 					{
 									font-size: 		150%;
 									font-weight: 	700;
