@@ -9042,6 +9042,7 @@ h2 {
 .top-bar {
   height: 60px;
   margin: 0;
+  overflow: hidden;
   padding: 0; }
   .top-bar .menu-icon {
     top: 15px; }
