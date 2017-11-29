@@ -8929,7 +8929,7 @@ h2 {
 .vspacer {
   flex-grow: 2; }
 
-.menu .brand {
+.menu-text > a {
   display: inline; }
 
 .image-container {
@@ -9051,6 +9051,10 @@ h2 {
 .top-bar,
 .top-bar ul {
   background-color: #f5f4f4; }
+
+.main-nav .current-page-ancestor,
+.main-nav .current-page-ancestor a {
+  color: #071ac2; }
 
 .homepage .mainContainer {
   height: calc(100vh - 60px);

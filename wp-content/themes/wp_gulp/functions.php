@@ -612,10 +612,10 @@ function contactForm() {
     
 // }
 
-function get_section() {
+function get_section_name() {
 	global $pagename;
 
-	$parents = get_post_ancestors(get_The_ID());
+	$parents = get_post_ancestors(get_the_ID());
 
 	if($parents) {
 		$rootId = end($parents);
@@ -623,6 +623,16 @@ function get_section() {
 	}
 
 	return ucfirst($pagename);
+}
+
+function get_section_url() {
+	$parents = get_post_ancestors(get_the_ID());
+
+	if($parents) {
+		$rootId = end($parents);
+		return get_permalink($rootId);
+	}
+	return '';
 }
 
 function on_post_updated($post_ID, $post_after, $post_before) {

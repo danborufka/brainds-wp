@@ -18,3 +18,10 @@
 .top-bar ul {
 	background-color: #f5f4f4;
 }
+
+.main-nav 						{
+	.current-page-ancestor,
+	.current-page-ancestor a 	{
+									color: $brainds-active;
+	}
+}
