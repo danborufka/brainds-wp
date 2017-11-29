@@ -7,17 +7,22 @@
 		}
 	}
 
-	.area 					{
+	h3 							{
+									
+	}
+
+	.area 						{
 									display: 				flex;
 									flex-direction:  		column;
-									width: 					50%;
 									height: 				100%;
+									padding: 				37px 0;	
+									text-align: 			center;
+									width: 					50%;
+
 		@include breakpoint(medium down) {
 									height: 				50%!important;
 									width: 					100%;
   		}
-									padding: 				44px 0;	
-									text-align: 			center;
 		&.design 				{
 									background-color: 		$brainds-design;
 			.hoverText 			{
@@ -42,10 +47,8 @@
 		}
 
 		a 						{
-									font-family: 			sans-serif;
 									font-size: 				120%;
-									text-decoration: 		underline;
-
+									font-weight: 			700;
 			&:hover, &.active 	{ 
 				+ .hoverText 	{
 									opacity: 				1;
@@ -53,6 +56,11 @@
 			}
 			&.active + .hoverText {
 									pointer-events: 		auto;
+			}
+
+			span 				{
+									border-bottom: 			3px solid #000;
+									padding-bottom: 		3px;
 			}
 		}
 

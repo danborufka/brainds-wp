@@ -18,7 +18,7 @@ $postID = $post->ID;
 	    	<h3>brainds</h3>
 	    	<div class="vspacer"></div>
 	    	<a class="hoverLink" href="<?= get_home_url(); ?>/consulting">
-	    		Consulting
+	    		<span>Consulting</span>
 	    	</a>
     		<span class="hoverText">
     			Brainds Consulting zählt zu den führenden Markenberatungen im deutschsprachigen Raum. Das Unternehmen mit Sitz in Wien wurde 1995 gegründet und hat als spezialisierte Markenberatung weit über 100 Unternehmen und Organisationen betreut – aus allen Bereichen und in allen Unternehmensgrößen.
@@ -30,7 +30,7 @@ $postID = $post->ID;
 	    	<h3>brainds</h3>
 	    	<div class="vspacer"></div>
 	    	<a class="hoverLink" href="<?= get_home_url(); ?>/design">
-	    		Design
+	    		<span>Design</span>
 	    	</a>
     		<span class="hoverText">
     			Brainds Design ist eine der erfahrensten Designagenturen des Landes mit über 150 erfolgreichen CD- und Branding-Projekten seit 1997. Ausgezeichnet mit mehr als 40 internationalen Designpreisen. Die Designagentur Österreichs mit der größten Strategiekompetenz.
