@@ -8999,6 +8999,28 @@ h2 {
     background: #fff;
     padding: 0 10px; }
 
+.modal {
+  transition: 0.3s opacity;
+  background-color: #fff;
+  position: absolute;
+  height: 0;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  z-index: 999; }
+  .modal.in {
+    opacity: 1;
+    height: 100%; }
+  .modal > div {
+    padding: 12%; }
+  .modal .close {
+    font-size: 200%;
+    position: absolute;
+    right: 30px;
+    top: 30px; }
+
 .more-link {
   display: block; }
 

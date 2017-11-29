@@ -13,6 +13,12 @@ jQuery(document).ready(function ($) {
         if (!Foundation.MediaQuery.atLeast('medium')) {
             event.preventDefault();
         }
+    }).on('click', '.menu-icon', function (event) {
+        $('.main-nav').toggleClass('in');
+        event.preventDefault();
+    }).on('click', '.modal .close', function (event) {
+        $(this).closest('.modal').removeClass('in');
+        event.preventDefault();
     }).foundation();
 
     //++++++++++++++++++++++++++++++++++++++++++

@@ -13,6 +13,14 @@ jQuery(document).ready(function ($) {
                 event.preventDefault();
             }
         })
+        .on('click', '.menu-icon', event => {
+            $('.main-nav').toggleClass('in');
+            event.preventDefault();
+        })
+        .on('click', '.modal .close', function(event) {
+            $(this).closest('.modal').removeClass('in');
+            event.preventDefault();
+        })
         .foundation();
 
 
