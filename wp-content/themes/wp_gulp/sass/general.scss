@@ -55,8 +55,7 @@ $vspace-md: 30px;
 	.section 					{
 									padding-bottom: 		$vspace-lg;
 									padding-top: 			$vspace-lg;
-		&.text-simple
-		&:nth-child(even)		{
+		&.text-simple.darken	{
 									background: 			#f6f6f6;
 		}
 

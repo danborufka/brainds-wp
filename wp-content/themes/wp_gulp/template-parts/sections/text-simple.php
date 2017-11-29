@@ -8,7 +8,7 @@
  */
 
 ?>
-<div class="section cell text-simple">
+<div class="section cell text-simple<?php if(get_sub_field('darken')): ?> darken<?php endif; ?>">
 	<div class="grid-container grid-x">
 		<?php if(get_sub_field('title')): ?>
 			<h2 <?php if(get_sub_field('title_for_section')): ?>class="section-title"<?php endif; ?>><span><?php the_sub_field('title'); ?></span></h2>

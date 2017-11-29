@@ -8957,7 +8957,7 @@ h2 {
   .sections .section {
     padding-bottom: 48px;
     padding-top: 48px; }
-    .sections .section.text-simple .sections .section:nth-child(even) {
+    .sections .section.text-simple.darken {
       background: #f6f6f6; }
     .sections .section.text-simple + .img-block {
       margin-top: -48px; }
