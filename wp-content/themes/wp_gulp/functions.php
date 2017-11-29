@@ -409,19 +409,28 @@ add_filter( 'acf/load_field/name=faq_kategorie', 'acf_load_color_field_choices' 
 
 
 
-//Remove WYSIWYG
 
-add_action('init', 'init_remove_support',100);
-function init_remove_support(){
+add_action('init', 'init_template',100);
+function init_template(){
 
 	if ( is_admin() ) {
         $GLOBALS['wp']->add_query_var( 'post_parent' );
 	}
 
     remove_post_type_support('page', 'editor');
-    // remove_post_type_support('wohnung', 'editor');
+	//Remove WYSIWYG
 }
 
+function restrict_by_parent() {
+    global $typenow;
+    global $wp_query;
+
+    if ($typenow=='page') {
+    	wp_dropdown_pages(array('name' => 'post_parent', 'show_option_none' => 'Alle Seiten'));
+        //echo '<a class="button" href="#test">Consulting Cases</a>';
+    }
+}
+add_action('restrict_manage_posts','restrict_by_parent');
 
 
 
