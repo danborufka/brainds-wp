@@ -8939,6 +8939,7 @@ h2 {
   padding: 10px;
   text-align: center; }
 
+.embed,
 .featured-image {
   min-height: 40vh;
   max-height: 360px;
