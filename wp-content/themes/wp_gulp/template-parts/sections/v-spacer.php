@@ -8,4 +8,4 @@
  */
 
 ?>
-<div class="section cell v-spacer" style="height:<?php the_sub_field('spacing'); ?>px"></div>
+<div class="section cell v-spacer" style="height:<?php the_sub_field('spacing'); ?>px" data-spacing="<?php the_sub_field('spacing'); ?>"></div>

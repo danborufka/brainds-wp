@@ -23,6 +23,17 @@ jQuery(document).ready(function ($) {
         })
         .foundation();
 
+    $('.v-spacer').each(function() {
+        var $this = $(this);
+        var spacing = $this.data('spacing');
+
+        if(spacing < 0) {
+            $this.next().css('marginTop', function(mt){
+                return mt + spacing;
+            });
+        }
+    });
+
 
     //++++++++++++++++++++++++++++++++++++++++++
     //Scroll to top/down
