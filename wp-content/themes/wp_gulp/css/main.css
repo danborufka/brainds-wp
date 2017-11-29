@@ -8968,6 +8968,13 @@ h2 {
       padding-top: 0; }
       .sections .section.img-block + .img-block {
         margin-top: 30px; }
+    .sections .section.quote quote {
+      color: #071ac2;
+      font-size: 130%; }
+      .sections .section.quote quote + p {
+        font-size: 70%;
+        margin-top: 30px;
+        max-width: 400px; }
     .sections .section.v-spacer {
       padding-top: 0;
       padding-bottom: 0; }

@@ -77,6 +77,18 @@ $vspace-md: 30px;
 			}
 		}
 
+		&.quote 				{
+			quote 				{
+									color: 					$brainds-active;
+									font-size: 				130%;
+				+ p 			{
+									font-size: 				70%;
+									margin-top: 			$vspace-md;
+									max-width: 				400px;
+				}
+			}	
+		}
+
 		&.v-spacer 				{
 									padding-top: 			0;
 									padding-bottom: 		0;

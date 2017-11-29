@@ -247,6 +247,111 @@
                     "min": "",
                     "max": ""
                 },
+                "5a1ea79aa8ab9": {
+                    "key": "5a1ea79aa8ab9",
+                    "name": "quote",
+                    "label": "Zitat",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a1ea9a6e67b5",
+                            "label": "Überschrift",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "(optional)",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "70",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a1ea9b8e67b6",
+                            "label": "Sektionsüberschrift",
+                            "name": "title_for_section",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 1,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_5a1ea7a1a8aba",
+                            "label": "Inhalt",
+                            "name": "content",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5a1ea82da8abb",
+                            "label": "Name",
+                            "name": "name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "Maria Mustermann",
+                            "placeholder": "Maria Mustermann",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a1ea844a8abc",
+                            "label": "Rolle",
+                            "name": "role",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5a1ea62ee3144": {
                     "key": "5a1ea62ee3144",
                     "name": "v-spacer",
@@ -464,5 +569,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511958105
+    "modified": 1511959029
 }
