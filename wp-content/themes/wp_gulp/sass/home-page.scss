@@ -55,7 +55,7 @@
 									font-weight: 			700;
 		}
 
-		a 						{
+		> a 					{
 									font-size: 				120%;
 									font-weight: 			700;
 			&:hover, &.active 	{ 
@@ -90,6 +90,9 @@
 									height: 				calc(50vh - #{$brainds-header-height / 2});
 									width: 					100%;
   			}						
+  			a 					{
+  									text-decoration: 		underline;
+  			}
 		}
 	}
 }

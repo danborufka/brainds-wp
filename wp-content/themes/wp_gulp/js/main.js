@@ -32,6 +32,14 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('.hoverText').flowtype({
+        minimum: 300,
+        maximum: 600,
+        minFont: 14,
+        maxFont: 48,
+        fontRatio: Foundation.MediaQuery.atLeast('large') ? 18 : 30
+    });
+
     //++++++++++++++++++++++++++++++++++++++++++
     //Scroll to top/down
     //++++++++++++++++++++++++++++++++++++++++++

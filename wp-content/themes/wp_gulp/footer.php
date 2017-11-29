@@ -24,6 +24,7 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script> 
 
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor<?php echo (WP_DEBUG) ? "" : ".min" ?>.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/flowtype.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main<?php echo (WP_DEBUG) ? "" : ".min" ?>.js?<?php echo wp_get_theme()->get( 'Version' ) ?>"></script>
 
 	<?php wp_footer(); ?>

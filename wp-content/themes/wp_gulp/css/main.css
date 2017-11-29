@@ -9122,14 +9122,14 @@ h2 {
   .homepage .area h3 {
     font-family: Times, "Times New Roman", serif;
     font-weight: 700; }
-  .homepage .area a {
+  .homepage .area > a {
     font-size: 120%;
     font-weight: 700; }
-    .homepage .area a:hover + .hoverText, .homepage .area a.active + .hoverText {
+    .homepage .area > a:hover + .hoverText, .homepage .area > a.active + .hoverText {
       opacity: 1; }
-    .homepage .area a.active + .hoverText {
+    .homepage .area > a.active + .hoverText {
       pointer-events: auto; }
-    .homepage .area a span {
+    .homepage .area > a span {
       border-bottom: 3px solid #000;
       padding-bottom: 3px; }
   .homepage .area .hoverText {
@@ -9149,6 +9149,8 @@ h2 {
       .homepage .area .hoverText {
         height: calc(50vh - 30px);
         width: 100%; } }
+    .homepage .area .hoverText a {
+      text-decoration: underline; }
 
 /*
 .alert {
