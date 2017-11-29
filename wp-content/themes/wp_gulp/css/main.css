@@ -9008,7 +9008,7 @@ h2 {
 
 .modal {
   transition: 0.3s all;
-  background-color: #fff;
+  background-color: #f6f6f6;
   position: absolute;
   height: 0;
   left: 0;
@@ -9065,7 +9065,7 @@ h2 {
 
 .top-bar,
 .top-bar ul {
-  background-color: #f5f4f4; }
+  background-color: #f6f6f6; }
 
 .main-nav .current-page-ancestor,
 .main-nav .current-page-ancestor a {

@@ -131,7 +131,7 @@ $vspace-md: 30px;
 
 .modal 							{
 									@include animated;
-									background-color: 		#fff;
+									background-color: 		$dirty-white;
 									position: 				absolute;
 									height: 				0;
 									left: 					0;
