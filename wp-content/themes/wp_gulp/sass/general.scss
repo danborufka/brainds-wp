@@ -76,6 +76,11 @@ $vspace-md: 30px;
 									margin-top: 			$vspace-md;
 			}
 		}
+
+		&.v-spacer 				{
+									padding-top: 			0;
+									padding-bottom: 		0;
+		}
 	}
 }
 

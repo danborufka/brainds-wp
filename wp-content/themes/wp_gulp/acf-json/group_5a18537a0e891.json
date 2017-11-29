@@ -204,7 +204,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -228,7 +228,7 @@
                             "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
-                                "width": "",
+                                "width": "50",
                                 "class": "",
                                 "id": ""
                             },
@@ -242,6 +242,37 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a1ea62ee3144": {
+                    "key": "5a1ea62ee3144",
+                    "name": "v-spacer",
+                    "label": "Vertikaler Abstand",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a1ea638e3145",
+                            "label": "Abstand",
+                            "name": "spacing",
+                            "type": "number",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "Pixel",
+                            "min": "",
+                            "max": "",
+                            "step": ""
                         }
                     ],
                     "min": "",
@@ -433,5 +464,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511956870
+    "modified": 1511958105
 }

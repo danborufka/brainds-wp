@@ -8968,6 +8968,9 @@ h2 {
       padding-top: 0; }
       .sections .section.img-block + .img-block {
         margin-top: 30px; }
+    .sections .section.v-spacer {
+      padding-top: 0;
+      padding-bottom: 0; }
 
 .section-title {
   font-size: 100%;
