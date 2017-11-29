@@ -7,10 +7,6 @@
 		}
 	}
 
-	h3 							{
-									
-	}
-
 	.area 						{
 									display: 				flex;
 									flex-direction:  		column;
@@ -23,6 +19,12 @@
 									height: 				50%!important;
 									width: 					100%;
   		}
+
+		.vspacer 				{
+									background-repeat: 		no-repeat;
+									background-position: 	center;
+		}
+
 		&.design 				{
 									background-color: 		$brainds-design;
 			.hoverText 			{
@@ -31,9 +33,15 @@
 									top: 					calc(50% + #{$brainds-header-height / 2});
 				}							
 			}							
+			.vspacer 			{
+									background-image: 		url('../img/brainds_illu_design.svg');
+			}
 		}
 		&.consulting			{
 									background-color: 		$brainds-consulting;
+			.vspacer 			{
+									background-image: 		url('../img/brainds_illu_consulting.svg');
+			}
 			.hoverText 			{
 									left: 					50%;
 				@include breakpoint(medium down) {

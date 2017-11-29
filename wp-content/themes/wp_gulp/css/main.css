@@ -9087,6 +9087,9 @@ h2 {
     .homepage .area {
       height: 50% !important;
       width: 100%; } }
+  .homepage .area .vspacer {
+    background-repeat: no-repeat;
+    background-position: center; }
   .homepage .area.design {
     background-color: #59a6dd; }
     .homepage .area.design .hoverText {
@@ -9094,8 +9097,12 @@ h2 {
       @media screen and (max-width: 63.9375em) {
         .homepage .area.design .hoverText {
           top: calc(50% + 30px); } }
+    .homepage .area.design .vspacer {
+      background-image: url("../img/brainds_illu_design.svg"); }
   .homepage .area.consulting {
     background-color: #fee35f; }
+    .homepage .area.consulting .vspacer {
+      background-image: url("../img/brainds_illu_consulting.svg"); }
     .homepage .area.consulting .hoverText {
       left: 50%; }
       @media screen and (max-width: 63.9375em) {
