@@ -189,6 +189,64 @@
                     "min": "",
                     "max": ""
                 },
+                "5a1ea149a840e": {
+                    "key": "5a1ea149a840e",
+                    "name": "img-double",
+                    "label": "Doppelbild",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a1ea15da840f",
+                            "label": "Bild links",
+                            "name": "image-left",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5a1ea16ea8410",
+                            "label": "Bild rechts",
+                            "name": "image-right",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5a1c0a4834a23": {
                     "key": "5a1c0a4834a23",
                     "name": "people-block",
@@ -375,5 +433,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1511954528
+    "modified": 1511956870
 }
