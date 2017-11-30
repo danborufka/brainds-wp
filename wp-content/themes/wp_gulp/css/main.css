@@ -9099,6 +9099,17 @@ h2 {
     .wpforms-field-row input:-ms-input-placeholder {
       color: 979797 !important; }
 
+/* MOBILE VIEW */
+@media screen and (max-width: 39.9375em) {
+  h2 {
+    font-size: 130%; }
+  img + img {
+    margin-top: 30px; }
+  .section.quote, .section.text-simple {
+    padding: 30px; }
+  .journal p {
+    column-count: 1; } }
+
 /* ADMIN VIEW */
 .logged-in .hoverText {
   margin-top: 32px; }

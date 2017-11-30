@@ -10,7 +10,7 @@
 ?>
 <div class="section cell img-block img-double">
 	<div class="grid-x grid-padding-x wide">
-		<img class="cell small-6" src="<?php echo get_sub_field('image-left')['url']; ?>">
-		<img class="cell small-6" src="<?php echo get_sub_field('image-right')['url']; ?>">
+		<img class="cell medium-6" src="<?php echo get_sub_field('image-left')['url']; ?>">
+		<img class="cell medium-6" src="<?php echo get_sub_field('image-right')['url']; ?>">
 	</div>
 </div>

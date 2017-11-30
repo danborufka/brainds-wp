@@ -252,6 +252,24 @@ $vspace-md: 30px;
 	}
 }
 
+/* MOBILE VIEW */
+@include breakpoint(small only) {
+	h2 							{
+									font-size: 				130%;
+	}
+	img + img 					{
+									margin-top: 			$vspace-md;
+	}
+	.section 					{
+		&.quote,
+		&.text-simple 			{
+									padding: 				$vspace-md;
+		}
+	}
+	.journal p 					{
+									column-count: 			1;
+	}
+}
 
 /* ADMIN VIEW */
 .logged-in 						{
