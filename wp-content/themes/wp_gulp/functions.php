@@ -671,7 +671,8 @@ function str_replace_first($from, $to, $subject)
 
 function make_more_tags_expandable($str, $more='read more …', $less='read less …') {
 	if(has_more_tag($str)) {
-		$str = str_replace_first('<!--more-->', '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">' . $more . '</a><span class="more">', $str) . '</span>';
+		$link = '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">'.$more.'</a><span class="more">';
+		return str_replace_first('<!--more-->', $link, $str) . '</span>';
 	}
 	return $str;
 }
