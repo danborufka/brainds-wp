@@ -663,9 +663,15 @@ function has_more_tag($str) {
 	return strpos($str, '<!--more-->') !== false;
 }
 
+function str_replace_first($from, $to, $subject)
+{
+    $from = '/'.preg_quote($from, '/').'/';
+    return preg_replace($from, $to, $subject, 1);
+}
+
 function make_more_tags_expandable($str, $more='read more …', $less='read less …') {
 	if(has_more_tag($str)) {
-		$str = str_replace('<!--more-->', '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">' . $more . '</a><span class="more">', $str) . '</span>';
+		$str = str_replace_first('<!--more-->', '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">' . $more . '</a><span class="more">', $str) . '</span>';
 	}
 	return $str;
 }
