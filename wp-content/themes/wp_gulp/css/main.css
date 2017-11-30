@@ -8988,6 +8988,11 @@ h2 {
     .sections .section.v-spacer {
       padding-top: 0;
       padding-bottom: 0; }
+    .sections .section p a {
+      transition: 0.3s all;
+      text-decoration: underline; }
+      .sections .section p a:hover {
+        color: #071ac2; }
 
 .section-title {
   font-size: 100%;
@@ -9043,13 +9048,32 @@ h2 {
 .more-link:hover {
   color: #071ac2; }
 
+.link.special {
+  border-bottom: 2px solid #000;
+  font-size: 90%;
+  font-weight: 600;
+  text-decoration: none; }
+
 .person {
   padding: 30px;
   text-align: center; }
   .person .portrait {
-    border-radius: 300px; }
+    border-radius: 300px;
+    line-height: 1.5;
+    margin-bottom: 10px; }
+  .person .link {
+    display: inline-block;
+    margin-top: 10px; }
 
-/**/
+/* FORMS */
+.wpforms-container-full {
+  width: 100% !important; }
+  .wpforms-container-full button   {
+    background: transparent !important;
+    border: none !important;
+    font-size: 80% !important;
+    text-decoration: underline; }
+
 .wpforms-field,
 .wpforms-field-row {
   max-width: 100% !important; }
