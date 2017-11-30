@@ -22,7 +22,7 @@
 						$link = get_permalink();
 
 						if(has_post_thumbnail()) {
-							$image = get_the_post_thumbnail_url();
+							$image = get_the_post_thumbnail_url(get_the_ID(), 'teaser');
 						} else {
 							$image = 'http://placehold.it/600x300';
 						}
