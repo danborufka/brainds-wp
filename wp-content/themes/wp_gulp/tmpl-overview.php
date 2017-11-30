@@ -30,7 +30,9 @@
 						?>
 							<div class="small-12 medium-6 cell">
 								<a href="<?php echo $link; ?>">
-									<div class="post-thumbnail-container" style="background-image:url(<?php echo $image; ?>);">
+									<div class="post-thumbnail-container">
+										<div class="post-thumbnail" style="background-image:url(<?php echo $image; ?>);">
+										</div>
 									</div>
 									<h3><?php the_title(); ?></h3>
 									<p>
