@@ -80,6 +80,8 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 			'default-image' => '',
 		) ) );
 
+		add_editor_style();
+
 		add_image_size( 'header', 1280, 360  	 );
 		add_image_size( 'teaser', 600, 300, true );
 
@@ -651,6 +653,27 @@ function admin_colorbar() {
 }
 add_action( 'edit_form_after_title', 'admin_colorbar' );
 
+/* Custom styles for WYSIWYG editor */
+function custom_tinymce_formats( $init_array ) {  
+	$style_formats = array(  
+		array(  
+			'title' => 'Aktivzustand',  
+			'inline' => 'span',  
+			'classes' => 'active',
+			'wrapper' => true,
+		),
+		array(  
+			'title' => 'Blauer Link',  
+			'block' => 'a',
+			'classes' => 'link',
+			'wrapper' => true,
+		),
+	);  
+	$init_array['style_formats'] = json_encode( $style_formats );  
+	
+	return $init_array;  
+} 
+add_filter( 'tiny_mce_before_init', 'custom_tinymce_formats' );  
 
 function limit_text($text, $limit=55, $more='') {
   if (str_word_count($text, 0) > $limit) {

@@ -8929,6 +8929,9 @@ h2 {
   max-width: 800px;
   padding-bottom: 8px; }
 
+.active {
+  color: #071ac2; }
+
 .vspacer {
   flex-grow: 2; }
 
