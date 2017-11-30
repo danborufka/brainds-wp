@@ -9,7 +9,7 @@ get_header();
 ?>
 <div class="mainContainer">
 	<?php if(has_post_thumbnail()): ?>
-		<img src="<?= get_the_post_thumbnail_url(); ?>" class="featured-image" <?php if($featuredImageColor = get_field('background-color')): ?>style="background-color:<?= $featuredImageColor; ?>;"<?php endif; ?>>
+		<div class="image featured-image" style="background-image:url('<?= get_the_post_thumbnail_url(); ?>');<?php if($featuredImageColor = get_field('background-color')): ?>background-color:<?= $featuredImageColor; ?>;<?php endif; ?>"></div>
 	<?php elseif(get_field('embed')): ?>
 		<iframe class="embed" src="<?php the_field('embed'); ?>" frameborder="0" allowfullscreen></iframe>
 	<?php endif; ?>
@@ -35,15 +35,7 @@ get_header();
 				</div>
 			</div><?php
 		} else {
-			?>
-			<h2>Kein Layout definiert!</h2>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			<?php
+			?><h2>(Noch kein Layout definiert)</h2><?php
 		}
 	?>
 </div>

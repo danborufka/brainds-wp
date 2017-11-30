@@ -8956,8 +8956,19 @@ h2 {
   display: inline; }
 
 .image-container {
-  padding: 10px;
+  min-height: 200px;
+  margin-bottom: 30px;
+  padding-right: 20px;
+  padding-top: 7px;
   text-align: center; }
+
+.image {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 100%; }
 
 .embed,
 .featured-image {

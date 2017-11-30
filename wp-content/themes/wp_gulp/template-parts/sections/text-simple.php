@@ -20,7 +20,7 @@
 
 		<?php if(get_sub_field('img_left')): ?>
 			<div class="image-container cell small-12 medium-3">
-				<img src="<?= get_sub_field('img_left')['url']; ?>" width=150>
+				<div class="image" style="background-image:url('<?= get_sub_field('img_left')['url']; ?>');"></div>
 			</div>
 		<?php endif; ?>
 
