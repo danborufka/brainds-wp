@@ -8913,6 +8913,7 @@ a.thumbnail {
   .grid-margin-y.xxlarge-grid-frame {
     height: calc(100vh + 1.875rem); } }
 
+/* BRAINDS GENERAL SPACINGS */
 body {
   color: #000;
   color: #000;
@@ -8929,8 +8930,19 @@ h2 {
   max-width: 800px;
   padding-bottom: 8px; }
 
+/* HELPERS */
+.vspacer {
+  flex-grow: 2; }
+
+/* STATES  */
 .active {
   color: #071ac2; }
+
+.wide {
+  padding: 0 10%; }
+
+.journal p {
+  column-count: 2; }
 
 .arrow {
   background-image: url("../img/brainds_icon_up.svg");
@@ -8939,9 +8951,6 @@ h2 {
   width: 70px; }
   .arrow.back {
     transform: rotate(-90deg); }
-
-.vspacer {
-  flex-grow: 2; }
 
 .menu-text > a {
   display: inline; }
@@ -8966,11 +8975,19 @@ h2 {
   width: 100%;
   height: 300px; }
 
-.wide {
-  padding: 0 10%; }
+/* READ MORE TAG */
+span.more {
+  transition: 0.3s all;
+  display: inline-block;
+  line-height: 0;
+  opacity: 0; }
+  .open span.more {
+    line-height: inherit;
+    opacity: 1; }
 
-.journal p {
-  column-count: 2; }
+.read-more {
+  display: block;
+  margin-top: 16px; }
 
 .sections {
   padding-top: 7px;

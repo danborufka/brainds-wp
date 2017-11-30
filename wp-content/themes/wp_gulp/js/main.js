@@ -33,6 +33,13 @@ jQuery(document).ready(function ($) {
     }).on('click', '.modal .close', function (event) {
         $(this).closest('.modal').removeClass('in');
         event.preventDefault();
+    }).on('click', '.read-more', function (event) {
+        var $this = $(this);
+        var open = $this.parent().is('.open');
+
+        $this.text($this.data(open ? 'more' : 'less')).parent().toggleClass('open');
+
+        event.preventDefault();
     }).foundation();
 
     $('.v-spacer').each(function () {

@@ -655,6 +655,21 @@ function get_section_url() {
 	return '';
 }
 
+function p2br($str) {
+	return str_replace(array('<p>', '</p>'), array('', '<br><br>'), $str);
+}
+
+function has_more_tag($str) {
+	return strpos($str, '<!--more-->') !== false;
+}
+
+function make_more_tags_expandable($str, $more='read more …', $less='read less …') {
+	if(has_more_tag($str)) {
+		$str = str_replace('<!--more-->', '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">' . $more . '</a><span class="more">', $str) . '</span>';
+	}
+	return $str;
+}
+
 function on_post_updated($post_ID, $post_after, $post_before) {
 	$templatePath = get_template_directory();
 	

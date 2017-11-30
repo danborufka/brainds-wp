@@ -25,7 +25,7 @@
 		<?php endif; ?>
 
 		<p class="<?php if(get_sub_field('img_left')): ?>cell small-12 medium-9<?php endif; ?>">
-			<?php echo str_replace(array('<p>', '</p>'), array('', '<br><br>'), get_sub_field('content')); ?>
+			<?php echo make_more_tags_expandable( p2br( get_sub_field('content')), 'mehr lesen', 'weniger'); ?>
 		</p>
 	</div>
 </div>
