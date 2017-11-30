@@ -9136,7 +9136,7 @@ span.more {
 
 /* MOBILE VIEW */
 @media screen and (max-width: 39.9375em) {
-  h2 {
+  h2, h3 {
     font-size: 130%; }
   img + img {
     margin-top: 30px; }

@@ -301,7 +301,7 @@ span.more 						{
 
 /* MOBILE VIEW */
 @include breakpoint(small only) {
-	h2 							{
+	h2, h3 						{
 									font-size: 				130%;
 	}
 	img + img 					{
