@@ -8932,11 +8932,13 @@ h2 {
 .active {
   color: #071ac2; }
 
-.scrollTop {
+.arrow {
   background-image: url("../img/brainds_icon_up.svg");
   display: inline-block;
   height: 70px;
   width: 70px; }
+  .arrow.back {
+    transform: rotate(-90deg); }
 
 .vspacer {
   flex-grow: 2; }

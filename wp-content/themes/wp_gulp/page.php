@@ -26,7 +26,13 @@ get_header();
 				$is_first_row = false;
 			}
 			?>
-				<div class="cell text-center footer"><a href="#top" class="scrollTop"></a></div>
+				<div class="cell text-center footer">
+					<?php if(has_ancestors()): ?>
+						<a href="<?php echo get_parent_url(); ?>" class="arrow back"></a>
+					<?php else: ?>
+						<a href="#top" class="arrow scrollTop"></a>
+					<?php endif; ?>
+				</div>
 			</div><?php
 		} else {
 			?>

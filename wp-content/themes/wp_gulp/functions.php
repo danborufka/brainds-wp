@@ -614,6 +614,24 @@ function contactForm() {
     
 // }
 
+function has_ancestors($id=false) {
+	$postId = $id ? $id : get_the_ID();
+	$parents = get_post_ancestors($postId);
+	return !!$parents;
+}
+
+function get_parent_url($id=false) {
+	$postId = $id ? $id : get_the_ID();
+	$parents = get_post_ancestors($postId);
+
+	if($parents) {
+		$parentId = $parents[0];
+		return get_permalink($parentId);
+	}
+
+	return '';
+}
+
 function get_section_name() {
 	global $pagename;
 
