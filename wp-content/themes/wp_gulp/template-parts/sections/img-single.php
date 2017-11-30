@@ -10,6 +10,6 @@
 ?>
 <div class="section cell img-block img-single">
 	<div class="grid-container grid-x">
-		<img class="cell small-12" src="<?php echo get_sub_field('image')['url']; ?>">
+		<div class="image cell small-12" style="background-image:url('<?php echo get_sub_field('image')['url']; ?>');"></div>
 	</div>
 </div>

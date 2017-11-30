@@ -8940,6 +8940,9 @@ h2 {
 
 .wide {
   padding: 0 10%; }
+  @media screen and (max-width: 39.9375em) {
+    .wide {
+      padding: 0; } }
 
 .journal p {
   column-count: 2; }
@@ -8964,17 +8967,27 @@ h2 {
 
 .image {
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top center;
   background-size: contain;
   display: block;
+  min-height: 200px;
+  max-height: 600px;
   height: 100%;
   width: 100%; }
+  .img-block .image {
+    background-position: top center;
+    background-size: cover;
+    min-height: 400px; }
 
 .embed,
 .featured-image {
   min-height: 40vh;
   max-height: 360px;
   width: 100%; }
+
+.featured-image {
+  background-size: cover;
+  background-position: center; }
 
 .embed {
   border: none; }
@@ -9015,7 +9028,7 @@ span.more {
   padding-top: 7px;
   padding-bottom: 48px; }
   .sections .section {
-    padding-bottom: 48px;
+    margin-bottom: 48px;
     padding-top: 48px; }
     .sections .section.darken {
       background: #f6f6f6; }
@@ -9028,6 +9041,13 @@ span.more {
       padding-top: 0; }
       .sections .section.img-block + .img-block {
         margin-top: 30px; }
+    .sections .section.img-single + .img-double {
+      margin-top: -20px; }
+      @media screen and (max-width: 39.9375em) {
+        .sections .section.img-single + .img-double {
+          margin-top: -38px; } }
+    .sections .section.img-double .cell {
+      margin-bottom: 10px; }
     .sections .section.quote quote {
       color: #071ac2;
       font-size: 130%; }
