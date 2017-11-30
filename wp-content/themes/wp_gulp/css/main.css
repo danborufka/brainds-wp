@@ -9024,6 +9024,8 @@ h2 {
   .section-title span {
     background: #fff;
     padding: 0 10px; }
+    .darken .section-title span {
+      background: #f6f6f6; }
 
 .modal {
   transition: 0.3s all;
@@ -9084,6 +9086,9 @@ h2 {
   .wpforms-container-full button   {
     background: transparent !important;
     border: none !important;
+    border-bottom: 2px solid #000 !important;
+    padding: 0 !important;
+    padding-bottom: 2px !important;
     font-size: 80% !important;
     text-decoration: underline; }
 

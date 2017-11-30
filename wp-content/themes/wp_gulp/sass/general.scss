@@ -151,6 +151,9 @@ $vspace-md: 30px;
 	span 						{
 									background: 			#fff;
 									padding: 				0 10px;
+		.darken & 				{
+									background: 			$dirty-white;
+		}							
 	}
 }
 
@@ -232,6 +235,9 @@ $vspace-md: 30px;
 	button   					{
 									background: 			transparent!important;
 									border: 				none!important;
+									border-bottom: 			2px solid #000!important;
+								    padding: 				0!important;
+								    padding-bottom: 		2px!important;
 									font-size: 				80%!important;
 									text-decoration: 		underline;
 	}
