@@ -9070,6 +9070,8 @@ h2 {
 
 /* FORMS */
 .wpforms-container-full {
+  margin-top: -50px !important;
+  margin-left: -2px !important;
   width: 100% !important; }
   .wpforms-container-full button   {
     background: transparent !important;
