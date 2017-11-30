@@ -8932,6 +8932,12 @@ h2 {
 .active {
   color: #071ac2; }
 
+.scrollTop {
+  background-image: url("../img/brainds_icon_up.svg");
+  display: inline-block;
+  height: 70px;
+  width: 70px; }
+
 .vspacer {
   flex-grow: 2; }
 
@@ -9488,3 +9494,5 @@ h2 {
 /* ==========================================================================
    Generell Custom Styling
    ========================================================================== */
+.footer {
+  padding-top: 30px; }

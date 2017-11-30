@@ -25,7 +25,9 @@ get_header();
 				include(dirname( __FILE__ ) . '/template-parts/sections/' . get_row_layout() . '.php');
 				$is_first_row = false;
 			}
-			?></div><?php
+			?>
+				<div class="cell text-center footer"><a href="#top" class="scrollTop"></a></div>
+			</div><?php
 		} else {
 			?>
 			<h2>Kein Layout definiert!</h2>
