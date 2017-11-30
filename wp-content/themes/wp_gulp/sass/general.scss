@@ -298,6 +298,9 @@ span.more 						{
 	.journal p 					{
 									column-count: 			1;
 	}
+	.top-bar-right 				{
+									flex: 					0 0 auto!important;
+	}
 }
 
 /* ADMIN VIEW */

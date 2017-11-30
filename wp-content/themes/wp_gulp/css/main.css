@@ -9132,7 +9132,9 @@ span.more {
   .section.quote, .section.text-simple {
     padding: 30px; }
   .journal p {
-    column-count: 1; } }
+    column-count: 1; }
+  .top-bar-right {
+    flex: 0 0 auto !important; } }
 
 /* ADMIN VIEW */
 .logged-in .hoverText {
