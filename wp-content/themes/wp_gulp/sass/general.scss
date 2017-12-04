@@ -92,6 +92,9 @@ h2 								{
 .featured-image 				{
 									background-size: 		cover;
 									background-position: 	center;
+	&.contain {
+									background-size: 		contain;
+	}
 }
 
 .embed 							{

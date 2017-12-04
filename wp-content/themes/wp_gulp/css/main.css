@@ -8988,6 +8988,8 @@ h2 {
 .featured-image {
   background-size: cover;
   background-position: center; }
+  .featured-image.contain {
+    background-size: contain; }
 
 .embed {
   border: none; }
