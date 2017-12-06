@@ -140,8 +140,13 @@ span.more 						{
 	}
 }
 .read-more 						{
+									@include animated;
 									display: 				block;
 									margin-top: 			16px;		
+									text-decoration: 		underline;
+	&:hover 					{
+									color: 					$brainds-active;
+	}								
 }
 
 .sections 						{
