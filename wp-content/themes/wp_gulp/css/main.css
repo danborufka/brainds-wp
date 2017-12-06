@@ -9023,8 +9023,12 @@ span.more {
     opacity: 1; }
 
 .read-more {
+  transition: 0.3s all;
   display: block;
-  margin-top: 16px; }
+  margin-top: 16px;
+  text-decoration: underline; }
+  .read-more:hover {
+    color: #071ac2; }
 
 .sections {
   padding-top: 7px;
