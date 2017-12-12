@@ -40,6 +40,10 @@ jQuery(document).ready(function ($) {
         $this.text($this.data(open ? 'more' : 'less')).parent().toggleClass('open');
 
         event.preventDefault();
+    }).on('keyup', function (event) {
+        if (event.key === 'Escape') {
+            $('.menu .close').click();
+        }
     }).foundation();
 
     $('.v-spacer').each(function () {

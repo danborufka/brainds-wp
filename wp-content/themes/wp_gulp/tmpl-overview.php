@@ -7,7 +7,7 @@
  */
 
 	$post_type 	= get_field('posttype');
-	$query 		= new WP_Query("post_type=page&post_parent=$post->ID");
+	$query 		= new WP_Query("post_type=page&post_parent=$post->ID&orderby=menu_order&order=ASC");
 
 	get_header();
 ?>
@@ -41,7 +41,7 @@
 												the_excerpt();
 												echo "<a class='more-link' href='$link'>mehr lesen</a>";
 											} else {
-												'Keine Zusammenfassung gefunden…';
+												echo 'Keine Zusammenfassung gefunden…';
 											} 
 										?>
 									</p></a>

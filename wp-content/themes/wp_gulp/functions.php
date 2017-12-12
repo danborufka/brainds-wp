@@ -82,8 +82,8 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 
 		add_editor_style();
 
-		add_image_size( 'header', 1280, 360  	 );
-		add_image_size( 'teaser', 600, 300, true );
+		add_image_size( 'header', 1280, 360, true );
+		add_image_size( 'teaser', 570, 	350, true  );
 
 		flush_rewrite_rules();
 	}
@@ -656,7 +656,7 @@ function get_section_url() {
 }
 
 function p2br($str) {
-	return str_replace(array('<p>', '</p>'), array('', '<br><br>'), $str);
+	return str_replace(array('<p></p>', '<p> </p>', '<p>', '</p>'), array('', '', '', '<br><br>'), $str);
 }
 
 function has_more_tag($str) {
@@ -671,8 +671,8 @@ function str_replace_first($from, $to, $subject)
 
 function make_more_tags_expandable($str, $more='read more …', $less='read less …') {
 	if(has_more_tag($str)) {
-		$link = '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">'.$more.'</a><span class="more">';
-		return str_replace_first('<!--more-->', $link, $str) . '</span>';
+		$link = '<a class="read-more" data-more="'.$more.'" data-less="'.$less.'" href="#more">'.$more.'</a><div class="more">';
+		return str_replace_first('<!--more-->', $link, $str) . '</div>';
 	}
 	return $str;
 }

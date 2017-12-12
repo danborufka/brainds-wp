@@ -43,8 +43,7 @@
 
 .main-nav 						{
 	.current-menu-item > a,
-	.current-page-ancestor,
-	.current-page-ancestor a 	{
+	.current-page-ancestor > a 	{
 									color: 			$brainds-active;
 	}
 }

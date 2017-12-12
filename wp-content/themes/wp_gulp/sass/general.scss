@@ -21,6 +21,9 @@ h2 								{
 									max-width: 				800px;
 									padding-bottom: 		8px;		
 }
+p 								{
+									line-height: 			1.4;
+}
 
 /* HELPERS */
 .vspacer 						{
@@ -32,9 +35,10 @@ h2 								{
 									color: 					$brainds-active;
 }
 .wide 							{
-									padding: 				0 10%;	
+									max-width: 				1024px;	
+									margin: 				0 auto;
 	@include breakpoint(small only)	{
-									padding: 				0;
+									padding: 				0 10%;
 	}
 }
 .journal 						{
@@ -101,9 +105,11 @@ h2 								{
 									border: none;
 }
 
+$teaser-height: 350px;
+
 .post-thumbnail-container 		{
 									width: 					100%;
-									height: 				300px;
+									height: 				$teaser-height;
 									overflow: 				hidden;
 
 	.post-thumbnail 			{
@@ -111,7 +117,7 @@ h2 								{
 									background-size: 		cover;
 									background-position: 	center;
 									background-repeat: 		no-repeat;
-									min-height: 			300px;
+									min-height: 			$teaser-height;
 									width: 					100%;
 	}
 	&:hover  					{
@@ -127,14 +133,43 @@ h2 								{
 	}	
 }
 
+/* SINGLE PAGE (DETAIL VIEW) */
+.page-template-default 			{
+	.section:first-child 		{
+		h2 						{
+									font-size: 				250%;
+									font-weight: 			700;
+									line-height: 			1.2;
+		}
+		&.wide p {
+									font-size: 				130%;
+		}
+	}
+}
+
+/* POST PAGE (OVERVIEW) */
+.page-template-tmpl-overview 	{
+	.sections 					{
+									margin: 				0 auto;
+									max-width: 				1200px;
+		h3 						{
+									font-size: 				200%;
+									font-weight: 			700;
+		}
+	}
+}
+
 /* READ MORE TAG */
 
-span.more 						{
+.more 							{
 									@include animated;
 									display: 				inline-block;
+									font-size: 				0;
 									line-height: 			0;
 									opacity: 				0;
+	.open + &,					
 	.open &						{
+									font-size: 				inherit;
 									line-height: 			inherit;
 									opacity: 				1;
 	}
@@ -153,16 +188,11 @@ span.more 						{
 									padding-top: 			7px;
 									padding-bottom: 		$vspace-lg;
 	.section 					{
-									margin-bottom: 			$vspace-lg;
+									//margin-bottom: 		$vspace-lg;
 									padding-top: 			$vspace-lg;
 		&.darken				{
 									background: 			#f6f6f6;
 		}
-
-		&.text-simple + 
-		 .img-block 			{
-								 	margin-top: 			-$vspace-lg;
-		 }
 
 		&.text-wide 			{
 									text-align: 			center;
@@ -178,9 +208,9 @@ span.more 						{
 
 		&.img-single 			{
 			+ .img-double 		{
-									margin-top: 			-20px;
+
 				@include breakpoint(small only) {
-									margin-top: 			-38px;
+									margin-top: 			10px;
 				}
 			}
 		}
@@ -317,9 +347,10 @@ span.more 						{
 /* FORMS */
 
 .wpforms-container-full 		{
-									margin-top: 			-50px!important;
+									margin-top: 			-20px!important;
 									margin-left: 			-2px !important;
-									width: 					100%!important;
+									padding-left: 			20px !important;
+									width: 					100% !important;
 	button   					{
 									background: 			transparent!important;
 									border: 				none!important;
