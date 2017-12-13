@@ -32,7 +32,9 @@
 			  		<br>
 					<?php the_sub_field('department'); ?>
 			  		<br>
+			  		<?php if(get_sub_field('contact')): ?>
 			  		<a class="link special" href="mailto:<?php the_sub_field('contact'); ?>">Kontakt</a>
+					<?php endif; ?>
 			  	</div>
 			<?php
 					}
