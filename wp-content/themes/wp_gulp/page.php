@@ -9,7 +9,7 @@ get_header();
 ?>
 <div class="mainContainer">
 	<?php if(has_post_thumbnail()): ?>
-		<div class="image featured-image <?php if (get_field("coverage") == "center" ) echo "contain" ?>" style="background-image:url('<?= get_the_post_thumbnail_url(); ?>');<?php if($featuredImageColor = get_field('background-color')): ?>background-color:<?= $featuredImageColor; ?>;<?php endif; ?>"></div>
+		<div class="image featured-image <?php if (get_field("coverage") == "center" ) echo "contain" ?>" style="background-image:url('<?= get_the_post_thumbnail_url(null, 'header'); ?>');<?php if($featuredImageColor = get_field('background-color')): ?>background-color:<?= $featuredImageColor; ?>;<?php endif; ?>"></div>
 	<?php elseif(get_field('embed')): ?>
 		<iframe class="embed" src="<?php the_field('embed'); ?>" frameborder="0" allowfullscreen></iframe>
 	<?php endif; ?>

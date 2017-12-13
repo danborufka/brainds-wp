@@ -428,7 +428,7 @@ function add_filter_to_restrict_by_parent() {
     global $wp_query;
 
     if ($typenow=='page') {
-    	wp_dropdown_pages(array('name' => 'post_parent', 'show_option_none' => 'Alle Seiten'));
+    	wp_dropdown_pages(array('name' => 'post_parent', 'show_option_none' => 'Alle Seiten', 'depth' => 2));
     }
 }
 add_action('restrict_manage_posts','add_filter_to_restrict_by_parent');

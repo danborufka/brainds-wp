@@ -8989,6 +8989,9 @@ p {
   max-height: 360px;
   width: 100%; }
 
+iframe {
+  max-width: 100%; }
+
 .featured-image {
   background-size: cover;
   background-position: center; }
@@ -9016,6 +9019,9 @@ p {
     line-height: 1.2;
     margin-top: 10px; }
 
+.post:hover .post-thumbnail-container  .post-thumbnail {
+  transform: scale(1.03); }
+
 /* SINGLE PAGE (DETAIL VIEW) */
 .page-template-default .section:first-child h2 {
   font-size: 250%;
@@ -9032,6 +9038,15 @@ p {
   .page-template-tmpl-overview .sections h3 {
     font-size: 200%;
     font-weight: 700; }
+
+.text-container {
+  width: 100%; }
+
+body.design .post-thumbnail {
+  background-color: #59a6dd; }
+
+body.consulting .post-thumbnail {
+  background-color: #fee35f; }
 
 /* READ MORE TAG */
 .more {

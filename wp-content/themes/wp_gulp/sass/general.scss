@@ -93,6 +93,10 @@ p 								{
 									width: 					100%;
 }
 
+iframe 							{
+									max-width: 				100%;
+}
+
 .featured-image 				{
 									background-size: 		cover;
 									background-position: 	center;
@@ -133,6 +137,14 @@ $teaser-height: 350px;
 	}	
 }
 
+.post:hover 					{
+	.post-thumbnail-container 	{
+		.post-thumbnail 		{
+									transform: 				scale(1.03);
+		}
+	}
+}
+
 /* SINGLE PAGE (DETAIL VIEW) */
 .page-template-default 			{
 	.section:first-child 		{
@@ -156,6 +168,22 @@ $teaser-height: 350px;
 									font-size: 				200%;
 									font-weight: 			700;
 		}
+	}
+}
+
+.text-container 				{
+ 									width: 					100%;
+}
+
+body.design 					{
+	.post-thumbnail 			{
+									background-color: 		$brainds-design;
+	}
+}
+
+body.consulting 				{
+	.post-thumbnail 			{
+									background-color: 		$brainds-consulting;
 	}
 }
 

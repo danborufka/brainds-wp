@@ -24,10 +24,12 @@
 			</div>
 		<?php endif; ?>
 
-		<div class="<?php if(get_sub_field('img_left')): ?>cell small-12 medium-9<?php endif; ?>">
+		<?php if(strlen(get_sub_field('content'))): ?>
+		<div class="text-container <?php if(get_sub_field('img_left')): ?>cell small-12 medium-9<?php endif; ?>">
 			<p>
 				<?php echo make_more_tags_expandable( p2br( get_sub_field('content')), 'mehr lesen', 'weniger'); ?>
 			</p>
 		</div>
+		<?php endif; ?>
 	</div>
 </div>

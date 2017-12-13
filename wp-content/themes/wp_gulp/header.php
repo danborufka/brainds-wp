@@ -28,7 +28,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(strtolower(get_section_name())); ?>>
 	<div class="modal main-nav">
 		<?php wp_nav_menu(array(
 				'menu_class' => 'grid-container grid-x'
