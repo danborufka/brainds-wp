@@ -50,6 +50,7 @@
 
 .brand 							{
 									font-family: 	Times, "Times New Roman", serif;
+									font-size: 		31px;
 									margin-left: 	56px;
 	@include breakpoint(small only) {
 									margin-left: 	-16px;
@@ -58,7 +59,8 @@
 
 .current-menu	 				{
 									color: 			$brainds-active;
-									font-size: 		80%;
+									font-size: 		22px;
+									font-weight: 	600;
 	&:hover 					{	
 									color: 			$brainds-active;
 									text-decoration: underline;
