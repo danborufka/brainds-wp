@@ -40,8 +40,7 @@
 									?>
 									<p>
 										<?php 
-											the_excerpt();
-											echo "<a class='more-link' href='$link'>mehr lesen</a>";
+											the_excerpt(); echo "…";
 										?>
 									</p>
 									<?php 

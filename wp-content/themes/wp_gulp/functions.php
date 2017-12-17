@@ -83,7 +83,7 @@ if ( ! function_exists( 'espresso_setup' ) ) :
 		add_editor_style();
 
 		add_image_size( 'header', 1280, 360, true );
-		add_image_size( 'teaser', 570, 	350, true  );
+		add_image_size( 'teaser', 570, 	300, true  );
 
 		flush_rewrite_rules();
 	}

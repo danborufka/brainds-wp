@@ -6,23 +6,25 @@ $vspace-md: 30px;
 body 							{
 									color: 					#000;
 									color: 					#000;
-									font-size: 				22px;
+									font-size: 				20px;
 									height: 				100vh;
 									width: 					100%;
 }
 
 h1, h2, h3, h4, h5 				{
-	width: 100%;
+									font-size: 				30px;
+									font-weight: 			700;
+									width: 					100%;
 }
 
 h2 								{
-									font-weight: 			600;
+									font-weight: 			700;
 									margin: 				0 auto;
 									max-width: 				800px;
 									padding-bottom: 		8px;		
 }
 p 								{
-									line-height: 			1.4;
+									line-height: 			1.25;
 }
 
 /* HELPERS */
@@ -131,13 +133,18 @@ $teaser-height: 350px;
 	}							
 
 	+ h3 						{
-								    font-weight: 			600;
+								    font-weight: 			700;
 								    line-height: 			1.2;
 									margin-top:  			10px;
 	}	
 }
 
+.post 							{
+									@include animated;
+}
+
 .post:hover 					{
+									color: 					$brainds-active;
 	.post-thumbnail-container 	{
 		.post-thumbnail 		{
 									transform: 				scale(1.03);
@@ -164,9 +171,16 @@ $teaser-height: 350px;
 	.sections 					{
 									margin: 				0 auto;
 									max-width: 				1200px;
+		p {
+									font-size: 				20;
+									font-weight: 			400;
+									line-height: 			25px;
+		}							
+		
 		h3 						{
-									font-size: 				200%;
+									font-size: 				30px;
 									font-weight: 			700;
+									line-height: 			33px;
 		}
 	}
 }

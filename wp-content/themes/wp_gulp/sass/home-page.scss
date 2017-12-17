@@ -1,10 +1,27 @@
 .homepage 						{	
 	.mainContainer 				{
-									height: 				calc(100vh - #{$brainds-header-height});
+									height: 				100vh;
 									padding-top: 			0;
 		> div 					{
 									height: 				100%;
 		}
+	}
+
+	.top-bar 					{	
+									position: 				absolute;
+									width: 					100%;
+									z-index:  				999;
+		&, .menu 				{
+									background-color: 		transparent;
+
+		}	
+		.brand 					{
+									display: 				none;
+		}						
+	}
+
+	.modal 						{
+									top: 					0;
 	}
 
 	.area 						{
@@ -78,16 +95,17 @@
 									background-color: 		#fff;
 									font-weight:  			700;
 									font-size:  			5vh;
-									height: 				calc(100% - #{$brainds-header-height});
+									height: 				calc(100%);
 									opacity: 				0;
 									overflow: 				hidden;
 									padding: 				7vh;
 									pointer-events: 		none;
 									position: 				absolute;
-									top: 					$brainds-header-height;
+									text-align: 			left;
+									top: 					0;
 									width: 					50%;
 			@include breakpoint(medium down) {
-									height: 				calc(50vh - #{$brainds-header-height / 2});
+									height: 				calc(50vh);
 									width: 					100%;
   			}						
   			a 					{
