@@ -159,16 +159,21 @@ $teaser-height: 350px;
 									font-size: 				40px;
 									line-height: 			45px;
 									font-weight: 			700;
-			.consulting &,						
-			.design & 			{
-									font-size: 				25px;
-									line-height: 			35px		
-			}						
 		}
 		&.wide p {
 									font-size: 				25px;
-									line-height: 			35px		
+									line-height: 			35px;		
 		}
+	}
+}
+
+.page-template-default 			{
+	&.consulting, &.design 		{
+		.section:first-child
+			h2 					{
+									//font-size: 				55px;
+									//line-height: 			60px;		
+		}						
 	}
 }
 
