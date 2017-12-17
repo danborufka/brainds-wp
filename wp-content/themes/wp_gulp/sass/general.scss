@@ -156,12 +156,18 @@ $teaser-height: 350px;
 .page-template-default 			{
 	.section:first-child 		{
 		h2 						{
-									font-size: 				250%;
+									font-size: 				40px;
+									line-height: 			45px;
 									font-weight: 			700;
-									line-height: 			1.2;
+			.consulting &,						
+			.design & 			{
+									font-size: 				25px;
+									line-height: 			35px		
+			}						
 		}
 		&.wide p {
-									font-size: 				130%;
+									font-size: 				25px;
+									line-height: 			35px		
 		}
 	}
 }
@@ -266,7 +272,8 @@ body.consulting 				{
 		&.quote 				{
 			quote 				{
 									color: 					$brainds-active;
-									font-size: 				130%;
+									font-size: 				25px;
+									line-height: 			35px;
 				+ p 			{
 									font-size: 				70%;
 									margin-top: 			$vspace-md;
@@ -291,7 +298,7 @@ body.consulting 				{
 }
 
 .section-title 					{
-									font-size: 				100%;
+									font-size: 				18px;
 									margin-bottom: 			44px;
 									position: 				relative;
 									text-align: 			center;

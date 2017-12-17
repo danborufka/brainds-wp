@@ -9031,12 +9031,17 @@ iframe {
 
 /* SINGLE PAGE (DETAIL VIEW) */
 .page-template-default .section:first-child h2 {
-  font-size: 250%;
-  font-weight: 700;
-  line-height: 1.2; }
+  font-size: 40px;
+  line-height: 45px;
+  font-weight: 700; }
+  .consulting .page-template-default .section:first-child h2,
+  .design .page-template-default .section:first-child h2 {
+    font-size: 25px;
+    line-height: 35px; }
 
 .page-template-default .section:first-child.wide p {
-  font-size: 130%; }
+  font-size: 25px;
+  line-height: 35px; }
 
 /* POST PAGE (OVERVIEW) */
 .page-template-tmpl-overview .sections {
@@ -9102,7 +9107,8 @@ body.consulting .post-thumbnail {
       margin-bottom: 10px; }
     .sections .section.quote quote {
       color: #071ac2;
-      font-size: 130%; }
+      font-size: 25px;
+      line-height: 35px; }
       .sections .section.quote quote + p {
         font-size: 70%;
         margin-top: 30px;
@@ -9117,7 +9123,7 @@ body.consulting .post-thumbnail {
         color: #071ac2; }
 
 .section-title {
-  font-size: 100%;
+  font-size: 18px;
   margin-bottom: 44px;
   position: relative;
   text-align: center;
@@ -9274,6 +9280,7 @@ body.consulting .post-thumbnail {
 
 .brand {
   font-family: Times, "Times New Roman", serif;
+  font-size: 31px;
   margin-left: 56px; }
   @media screen and (max-width: 39.9375em) {
     .brand {
@@ -9281,7 +9288,8 @@ body.consulting .post-thumbnail {
 
 .current-menu {
   color: #071ac2;
-  font-size: 80%; }
+  font-size: 22px;
+  font-weight: 600; }
   .current-menu:hover {
     color: #071ac2;
     text-decoration: underline; }
