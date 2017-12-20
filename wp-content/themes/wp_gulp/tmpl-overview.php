@@ -40,7 +40,7 @@
 									?>
 									<p>
 										<?php 
-											the_excerpt(); echo "…";
+											the_excerpt();;
 										?>
 									</p>
 									<?php 
