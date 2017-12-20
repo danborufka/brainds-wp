@@ -8921,14 +8921,14 @@ body {
   height: 100vh;
   width: 100%; }
 
-h1, h2, h3, h4, h5 {
+h1, h3, h4, h5 {
   font-size: 30px;
   font-weight: 700;
   width: 100%; }
 
 h2 {
   font-weight: 700;
-  margin: 0 auto;
+  margin: 0;
   max-width: 800px;
   padding-bottom: 8px; }
 
@@ -9038,6 +9038,9 @@ iframe {
 .page-template-default .section:first-child.wide p {
   font-size: 25px;
   line-height: 35px; }
+
+.page-template-default.cases-child h2, .page-template-default.journals-child h2 {
+  margin: 0 auto; }
 
 /* POST PAGE (OVERVIEW) */
 .page-template-tmpl-overview .sections {

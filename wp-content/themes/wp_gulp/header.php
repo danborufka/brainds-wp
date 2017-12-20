@@ -6,6 +6,8 @@
  	$title = $post->post_title;
  	$postID = $post->ID;
 
+ 	$parent_slug = get_post(get_post_ancestors($postID)[0])->post_name;
+ 	$parent_class = $parent_slug . '-child';
 ?><!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
 <!-- <html class="no-js" style="html {margin-top: 0 !important;}" <?php language_attributes(); ?>> -->
@@ -28,7 +30,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(strtolower(get_section_name())); ?>>
+<body <?php body_class(strtolower(get_section_name()) . ' ' . $parent_class); ?>>
 	<div class="modal main-nav">
 		<?php wp_nav_menu(array(
 				'menu_class' => 'grid-container grid-x'

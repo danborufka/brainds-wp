@@ -11,7 +11,7 @@ body 							{
 									width: 					100%;
 }
 
-h1, h2, h3, h4, h5 				{
+h1, h3, h4, h5 					{
 									font-size: 				30px;
 									font-weight: 			700;
 									width: 					100%;
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5 				{
 
 h2 								{
 									font-weight: 			700;
-									margin: 				0 auto;
+									margin: 				0;
 									max-width: 				800px;
 									padding-bottom: 		8px;		
 }
@@ -163,6 +163,13 @@ $teaser-height: 300px;
 		&.wide p {
 									font-size: 				25px;
 									line-height: 			35px;		
+		}
+	}
+	&.cases-child,
+	&.journals-child 			{
+		h2						{
+									margin: 				0 auto;
+		
 		}
 	}
 }
