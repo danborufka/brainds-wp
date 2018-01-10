@@ -8935,6 +8935,13 @@ h2 {
 p {
   line-height: 1.25; }
 
+select {
+  -webkit-appearance: none;
+  border: none; }
+  select::before {
+    content: "▾";
+    display: block; }
+
 /* HELPERS */
 .vspacer {
   flex-grow: 2; }
@@ -8952,6 +8959,12 @@ p {
 
 .journal p {
   column-count: 2; }
+
+.archive-link  {
+  margin-left: 15px; }
+  @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+    .archive-link  {
+      margin-left: 20px; } }
 
 .arrow {
   background-image: url("../img/brainds_icon_up.svg");
@@ -9040,7 +9053,8 @@ iframe {
   line-height: 35px; }
 
 .page-template-default.cases-child h2, .page-template-default.journals-child h2 {
-  margin: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
 /* POST PAGE (OVERVIEW) */
 .page-template-tmpl-overview .sections {
@@ -9074,7 +9088,7 @@ body.consulting .post-thumbnail {
   .open + .more,
   .open .more {
     font-size: inherit;
-    line-height: inherit;
+    line-height: 1.25;
     opacity: 1; }
 
 .read-more {
@@ -9130,6 +9144,7 @@ body.consulting .post-thumbnail {
   margin-bottom: 44px;
   position: relative;
   text-align: center;
+  width: 100%;
   z-index: 1; }
   .section-title::before {
     border-top: 2px solid #000;
@@ -9255,6 +9270,7 @@ body.consulting .post-thumbnail {
 .top-bar {
   height: 60px;
   margin: 0;
+  margin-top: -2px;
   overflow: hidden;
   padding: 0; }
   .top-bar .menu-icon {

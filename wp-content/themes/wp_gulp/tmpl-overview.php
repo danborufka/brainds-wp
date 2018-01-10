@@ -9,6 +9,8 @@
 	$post_type 	= get_field('posttype');
 	$query 		= new WP_Query("post_type=page&post_parent=$post->ID&orderby=menu_order&order=ASC&posts_per_page=-1");
 
+	$slug 		= $post->post_name;
+
 	get_header();
 ?>
 	<div class="mainContainer">
@@ -29,7 +31,7 @@
 
 						?>
 							<div class="small-12 medium-6 cell">
-								<a class="post" href="<?php echo $link; ?>">
+								<a class="post" href="<?php echo $link; ?>" name="<?php echo $post->post_name; ?>">
 									<div class="post-thumbnail-container">
 										<div class="post-thumbnail" style="background-image:url(<?php echo $image; ?>);">
 										</div>
@@ -52,6 +54,12 @@
 					}
 				?>
 			</div>
+			<?php if($parent_slug !== 'archiv'): ?>
+				<br>
+				<a class="link archive-link" href="<?php bloginfo('wpurl') ?>/archiv/<?php echo $parent_slug; ?>-<?php echo $slug; ?>">
+					Zum Archiv
+				</a>
+			<?php endif; ?>
 		</div>
 	</div>
 <?php get_footer(); ?>

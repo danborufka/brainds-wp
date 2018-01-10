@@ -145,9 +145,10 @@ gulp.task('sass', function () {
         .pipe(rename({suffix: '.min'}))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(bases.css))
-        .pipe(sourcemaps.write('./'));
+        .pipe(sourcemaps.write('./'))
+        .pipe(notify({ message: 'All CSS compiled.' }));
 
-
+/*
     cssStream = gulp.src([
         './node_modules/slick-carousel/slick/slick.css',
         './node_modules/slick-carousel/slick/slick-theme.css',
@@ -163,7 +164,7 @@ gulp.task('sass', function () {
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest(bases.css));
         // .pipe(notify("Ready!"), 5000);
-
+*/
 
     // return merge(sassStream, cssStream)
 

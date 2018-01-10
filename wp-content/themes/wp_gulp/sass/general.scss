@@ -26,6 +26,14 @@ h2 								{
 p 								{
 									line-height: 			1.25;
 }
+select 							{
+									-webkit-appearance: 	none;
+									border: 				none;
+	&::before 					{
+									content: 				"▾";
+									display: 				block;
+	}								
+}
 
 /* HELPERS */
 .vspacer 						{
@@ -46,6 +54,13 @@ p 								{
 .journal 						{
 	p 							{
 									column-count: 			2;
+	}
+}
+
+.archive-link 					{
+									margin-left: 			15px;
+	@include breakpoint(large only)	{
+									margin-left: 			20px;
 	}
 }
 
@@ -168,19 +183,10 @@ $teaser-height: 300px;
 	&.cases-child,
 	&.journals-child 			{
 		h2						{
-									margin: 				0 auto;
+									margin-left:			auto;
+									margin-right:			auto;
 		
 		}
-	}
-}
-
-.page-template-default 			{
-	&.consulting, &.design 		{
-		.section:first-child
-			h2 					{
-									//font-size: 				55px;
-									//line-height: 			60px;		
-		}						
 	}
 }
 
@@ -229,7 +235,7 @@ body.consulting 				{
 	.open + &,					
 	.open &						{
 									font-size: 				inherit;
-									line-height: 			inherit;
+									line-height: 			1.25;
 									opacity: 				1;
 	}
 }
@@ -317,6 +323,7 @@ body.consulting 				{
 									margin-bottom: 			44px;
 									position: 				relative;
 									text-align: 			center;
+									width: 					100%;
 									z-index: 				1;
 	&::before 					{
 									border-top: 			2px solid #000;
