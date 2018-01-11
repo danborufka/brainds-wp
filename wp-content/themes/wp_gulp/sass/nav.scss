@@ -1,13 +1,12 @@
 .top-bar 						{
 									height: 		$brainds-header-height;
 									margin: 		0;
-									margin-top: 	-2px;
 									overflow: 		hidden;
 									padding: 		0;
 	.menu-icon 					{
 									@include animated;
 									margin-right: 	(56px + $vspace-md);
-									margin-top: 	10px;
+									margin-top: 	7px;
 									padding-left: 	14px!important;
 		&::after 				{
 									background-color: #000;

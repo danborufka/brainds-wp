@@ -8937,10 +8937,19 @@ p {
 
 select {
   -webkit-appearance: none;
-  border: none; }
-  select::before {
-    content: "▾";
-    display: block; }
+  border: 0;
+  border-radius: 0; }
+
+.wpforms-field-select::before  {
+  content: "▾";
+  display: block;
+  margin-left: 310px;
+  margin-top: 30px;
+  pointer-events: none;
+  position: absolute; }
+  @media screen and (max-width: 39.9375em) {
+    .wpforms-field-select::before  {
+      margin-left: 250px; } }
 
 /* HELPERS */
 .vspacer {
@@ -9078,6 +9087,9 @@ body.design .post-thumbnail {
 body.consulting .post-thumbnail {
   background-color: #fee35f; }
 
+body.consulting.services .arrow.back {
+  transform: none; }
+
 /* READ MORE TAG */
 .more {
   transition: 0.3s all;
@@ -9209,6 +9221,7 @@ body.consulting .post-thumbnail {
 
 .person {
   padding: 30px;
+  line-height: 1.3;
   text-align: center; }
   .person .portrait {
     border-radius: 300px;
@@ -9270,13 +9283,12 @@ body.consulting .post-thumbnail {
 .top-bar {
   height: 60px;
   margin: 0;
-  margin-top: -2px;
   overflow: hidden;
   padding: 0; }
   .top-bar .menu-icon {
     transition: 0.3s all;
     margin-right: 86px;
-    margin-top: 10px;
+    margin-top: 7px;
     padding-left: 14px !important; }
     .top-bar .menu-icon::after {
       background-color: #000;
@@ -9401,6 +9413,7 @@ body.consulting .post-thumbnail {
           left: 0; } }
   .homepage .area h3 {
     font-family: Times, "Times New Roman", serif;
+    font-size: 31px;
     font-weight: 700; }
   .homepage .area > a {
     font-size: 120%;

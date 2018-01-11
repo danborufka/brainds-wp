@@ -60,6 +60,9 @@
 					Zum Archiv
 				</a>
 			<?php endif; ?>
+			<div class="cell text-center footer">
+				<a href="#top" class="arrow scrollTop"></a>
+			</div>
 		</div>
 	</div>
 <?php get_footer(); ?>
