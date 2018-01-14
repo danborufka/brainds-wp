@@ -109,8 +109,7 @@ select 							{
 									width: 					100%;
 	.img-block & 				{
 									background-position: 	top center;
-									background-size: 		cover;
-									min-height: 			400px;
+									background-size: 		contain;
 	}								
 }								
 
@@ -287,6 +286,10 @@ body.consulting 				{
 									padding-top: 			0;
 			+.img-block 		{
 									margin-top: 			$vspace-md;
+			}
+
+			img 				{
+									visibility: 			hidden;
 			}
 		}
 

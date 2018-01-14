@@ -9004,8 +9004,7 @@ select {
   width: 100%; }
   .img-block .image {
     background-position: top center;
-    background-size: cover;
-    min-height: 400px; }
+    background-size: contain; }
 
 .embed,
 .featured-image {
@@ -9128,6 +9127,8 @@ body.consulting.services .arrow.back {
       padding-top: 0; }
       .sections .section.img-block + .img-block {
         margin-top: 30px; }
+      .sections .section.img-block img {
+        visibility: hidden; }
     @media screen and (max-width: 39.9375em) {
       .sections .section.img-single + .img-double {
         margin-top: 10px; } }
