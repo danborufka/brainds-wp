@@ -8934,6 +8934,8 @@ h2 {
 
 p {
   line-height: 1.25; }
+  p:empty {
+    display: none; }
 
 select {
   -webkit-appearance: none;
@@ -9101,6 +9103,12 @@ body.consulting.services .arrow.back {
     font-size: inherit;
     line-height: 1.25;
     opacity: 1; }
+    .open + .more *,
+    .open .more * {
+      height: auto; }
+  .more * {
+    transition: 0.3s all;
+    height: 0; }
 
 .read-more {
   transition: 0.3s all;
@@ -9687,4 +9695,4 @@ body.consulting.services .arrow.back {
    Generell Custom Styling
    ========================================================================== */
 .footer {
-  padding-top: 30px; }
+  padding-top: 55px; }

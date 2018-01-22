@@ -25,6 +25,9 @@ h2 								{
 }
 p 								{
 									line-height: 			1.25;
+	&:empty 					{
+									display: 				none;
+	}								
 }
 select 							{
 									-webkit-appearance: 	none;
@@ -252,6 +255,14 @@ body.consulting 				{
 									font-size: 				inherit;
 									line-height: 			1.25;
 									opacity: 				1;
+		* 						{
+									height: 				auto;
+		}							
+	}
+
+	* 							{
+									@include animated;
+									height: 				0;
 	}
 }
 .read-more 						{
