@@ -31,10 +31,17 @@
 			  		<?php the_sub_field('role'); ?>
 			  		<br>
 					<?php the_sub_field('department'); ?>
-			  		<br>
 			  		<?php if(get_sub_field('contact')): ?>
+			  		<br>
 			  		<a class="link special" href="mailto:<?php the_sub_field('contact'); ?>">Kontakt</a>
 					<?php endif; ?>
+					<?php if(get_sub_field('attachment')): ?>
+					<br>
+			  		<a class="link special" target="_blank" href="<?php the_sub_field('attachment'); ?>">Download</a>
+					<?php endif; ?>
+
+
+
 			  	</div>
 			<?php
 					}
