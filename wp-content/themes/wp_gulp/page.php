@@ -27,10 +27,10 @@ get_header();
 			}
 			?>
 				<div class="cell text-center footer">
-					<?php if(has_ancestors()): ?>
-						<a href="<?php echo get_parent_url(); ?>" class="arrow back"></a>
-					<?php else: ?>
+					<?php if(!has_ancestors() || get_the_ID() == "155" || get_the_ID() == "157")  : ?>
 						<a href="#top" class="arrow scrollTop"></a>
+					<?php else: ?>
+						<a href="<?php echo get_parent_url(); ?>" class="arrow back"></a>
 					<?php endif; ?>
 				</div>
 			</div><?php
