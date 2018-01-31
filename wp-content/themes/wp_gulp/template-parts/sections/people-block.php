@@ -37,7 +37,7 @@
 					<?php endif; ?>
 					<?php if(get_sub_field('attachment')): ?>
 					<br>
-			  		<a class="link special" target="_blank" href="<?php the_sub_field('attachment'); ?>">Download</a>
+			  		<a class="link special" target="_blank" href="<?php the_sub_field('attachment'); ?>">CV</a>
 					<?php endif; ?>
 
 
